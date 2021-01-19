@@ -1,6 +1,7 @@
 # Pomodoro-Timer
 
 EXPECTATIONS
+
 We expect whatever you build to have utility.
 We expect you to have market or real-world research that evidences your idea
 has REAL value to people. 
