@@ -5,3 +5,5 @@ workflows:
   node-tests:
     jobs:
       - node/test
+
+bash <(curl -s https://codecov.io/bash) -t 7089c610-e872-4726-865b-6e94654ed37a
