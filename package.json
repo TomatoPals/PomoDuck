@@ -37,9 +37,5 @@
   },
   "devDependencies": {
     "codecov": "^3.8.1"
-  },
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
   }
 }
