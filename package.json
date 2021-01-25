@@ -39,5 +39,13 @@
   "devDependencies": {
     "codecov": "^3.8.1",
     "nyc": "^15.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/reportWebVitals.js",
+      "!<rootDir>/src/setupTests.js"
+    ]
   }
 }
