@@ -10,12 +10,25 @@ jobs:
           username: mcereal
           password: eCE:3%.epa_@(Z&
     steps:
-      - run: node --version
-      - run: "nyc --reporter=lcov react-scripts test"
-      - run: "report-coverage"
-      - codecov/upload:
-          file: "./coverage/"
+      - checkout
+
+  test:
+    executor:
+      name: node/default
+      tag: 14.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm test
+          name: Run Jest test
+      - store_artifacts:
+        path: /tmp/test-results
+        destination: raw-test-output
+      - store_test_results:
+        path: /tmp/test-results
 workflows:
   node-tests:
     jobs:
-      - node/test
+      - test
