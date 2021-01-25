@@ -10,11 +10,3 @@ cache:
     - node_modules
 services:
   - mysql
-before_install:
-  - npm install -g codecov
-script:
-  - jest --ci --coverage && codecov
-  - codecov
-  - curl -s https://codecov.io/bash -t 7089c610-e872-4726-865b-6e94654ed37a
-env:
-  - CODECOV_TOKEN="7089c610-e872-4726-865b-6e94654ed37a"
