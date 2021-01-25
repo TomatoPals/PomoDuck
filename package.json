@@ -14,7 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "nyc --reporter=lcov react-scripts test && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test": "nyc --reporter=lcov react-scripts test",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
