@@ -11,9 +11,9 @@ jobs:
           password: eCE:3%.epa_@(Z&
     steps:
       - run: node --version
-      - run: jest --ci --coverage && codecov -t 7089c610-e872-4726-865b-6e94654ed37a
+      - run: "nyc --reporter=lcov react-scripts test && codecov"
       - codecov/upload:
-          file: "./coverage/clover.xml"
+          file: "./coverage/lcov-report/index.html"
 workflows:
   node-tests:
     jobs:
