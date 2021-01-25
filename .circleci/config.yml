@@ -24,7 +24,7 @@ jobs:
           command: npm test
           name: Run Jest test
       - run:
-          command: npm install codecov
+          command: npm install -g codecov
           name: npm install codecov
       - run:
           command: codecov
