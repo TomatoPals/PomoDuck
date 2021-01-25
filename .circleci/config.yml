@@ -1,9 +1,12 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+jobs:
+  build:
+    steps:
+      - codecov/upload:
+          file: { { /coverage } }
 workflows:
   node-tests:
     jobs:
       - node/test
-
-bash <(curl -s https://codecov.io/bash) -t 7089c610-e872-4726-865b-6e94654ed37a
