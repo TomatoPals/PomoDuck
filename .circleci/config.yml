@@ -13,7 +13,7 @@ jobs:
       - run: node --version
       - run: "nyc --reporter=lcov react-scripts test && codecov"
       - codecov/upload:
-          file: "./coverage/lcov-report/index.html"
+          file: "./coverage/lcov-report/"
 workflows:
   node-tests:
     jobs:
