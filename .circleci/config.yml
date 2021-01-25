@@ -5,11 +5,12 @@ orbs:
 jobs:
   build:
     docker:
-      - image: 'cimg/node:14.14.0'
+      - image: "cimg/node:14.14.0"
         auth:
           username: mcereal
           password: eCE:3%.epa_@(Z&
     steps:
+      - run: node --version
       - codecov/upload:
           file: /coverage
 workflows:
