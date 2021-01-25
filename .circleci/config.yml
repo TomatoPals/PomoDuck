@@ -23,12 +23,7 @@ jobs:
       - run:
           command: npm test
           name: Run Jest test
-      - run:
-          command: npm install -g codecov
-          name: npm install codecov
-      - run:
-          command: codecov
-          name: run codecov
+      - codecov
       - codecov/upload:
           file: /coverage
       - store_artifacts:
