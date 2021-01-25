@@ -24,10 +24,10 @@ jobs:
           command: npm test
           name: Run Jest test
       - store_artifacts:
-        path: /tmp/test-results
-        destination: raw-test-output
+          path: /tmp/test-results
+          destination: raw-test-output
       - store_test_results:
-        path: /tmp/test-results
+          path: /tmp/test-results
 workflows:
   node-tests:
     jobs:
