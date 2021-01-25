@@ -12,6 +12,7 @@ jobs:
     steps:
       - run: node --version
       - run: "nyc --reporter=lcov react-scripts test && codecov"
+      - run: bash <(curl -s https://codecov.io/bash)
       - codecov/upload:
           file: "./coverage/lcov-report/"
 workflows:
