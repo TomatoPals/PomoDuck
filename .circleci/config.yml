@@ -1,0 +1,21 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+  codecov: codecov/codecov@1.0.2
+jobs:
+  build:
+    docker:
+      - image: "cimg/node:14.14.0"
+        auth:
+          username: mcereal
+          password: eCE:3%.epa_@(Z&
+    steps:
+      - run: node --version
+      - run: "nyc --reporter=lcov react-scripts test"
+      - run: "report-coverage"
+      - codecov/upload:
+          file: "./coverage/"
+workflows:
+  node-tests:
+    jobs:
+      - node/test
