@@ -9,10 +9,10 @@ cache:
   directories:
     - node_modules
 services:
-  - npm install -g codecov
   - mysql
 before_install:
+  - npm install -g codecov
   - mysql -e 'CREATE DATABASE IF NOT EXISTS testdb;'
-  - codecov
 script:
   - jest --ci --coverage && codecov
+  - codecov
