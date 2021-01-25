@@ -11,7 +11,7 @@ jobs:
           password: eCE:3%.epa_@(Z&
     steps:
       - run: node --version
-      - run: jest --ci --coverage && codecov
+      - run: jest --ci --coverage && codecov -t 7089c610-e872-4726-865b-6e94654ed37a
       - codecov/upload:
           file: "./coverage/clover.xml"
 workflows:
