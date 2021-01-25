@@ -11,7 +11,8 @@ jobs:
           password: eCE:3%.epa_@(Z&
     steps:
       - run: node --version
-      - run: "nyc --reporter=lcov react-scripts test && codecov"
+      - run: "nyc --reporter=lcov react-scripts test"
+      - run: "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
       - codecov/upload:
           file: "../coverage/lcov-report/"
 workflows:
