@@ -1,5 +1,7 @@
 # Pomodoro-Timer
 
+[![PomoDuck](https://codecov.io/gh/tomatopals/pomoduck/branch/main/graphs/badge.svg)](https://app.codecov.io/gh/tomatopals/pomoduck/branch/main)
+
 EXPECTATIONS
 
 We expect whatever you build to have utility.
