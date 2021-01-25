@@ -23,9 +23,8 @@ jobs:
       - run:
           command: npm test
           name: Run Jest test
-      - codecov
       - codecov/upload:
-          file: /coverage
+          file: coverage/
       - store_artifacts:
           path: /tmp/test-results
           destination: raw-test-output
