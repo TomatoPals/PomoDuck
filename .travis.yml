@@ -12,7 +12,6 @@ services:
   - mysql
 before_install:
   - npm install -g codecov
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS testdb;'
 script:
   - jest --ci --coverage && codecov
   - codecov
