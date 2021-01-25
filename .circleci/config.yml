@@ -24,7 +24,7 @@ jobs:
           command: npm test
           name: Run Jest test
       - codecov/upload:
-          file: ~./coverage
+          file: ~./home/circleci/project/coverage/
       - store_artifacts:
           path: /tmp/test-results
           destination: raw-test-output
