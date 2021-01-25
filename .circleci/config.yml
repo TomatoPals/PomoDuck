@@ -23,11 +23,9 @@ jobs:
       - run:
           command: npm test
           name: Run Jest test
-      - run:
-          command: codecov
-          name: Run codecov
       - codecov/upload:
-          file: /coverage
+          file: "./coverage/clover.xml"
+          file: "./coverage/lcov-report/index.html"
       - store_artifacts:
           path: /tmp/test-results
           destination: raw-test-output
