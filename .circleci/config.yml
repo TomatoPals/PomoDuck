@@ -19,4 +19,3 @@ workflows:
   node-tests:
     jobs:
       - node/test
-      - node/report-coverage
