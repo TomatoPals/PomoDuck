@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --ci --coverage && codecov",
+    "test": "react-scripts test --ci --coverage",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "eject": "react-scripts eject"
   },
