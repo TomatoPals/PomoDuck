@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: node --version
       - codecov/upload:
-          file: /coverage
+          file: "./coverage/clover.xml"
 workflows:
   node-tests:
     jobs:
