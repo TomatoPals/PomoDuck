@@ -16,5 +16,6 @@ before_install:
 script:
   - jest --ci --coverage && codecov
   - codecov
+  - bash <(curl -s https://codecov.io/bash)
 env:
   - CODECOV_TOKEN="7089c610-e872-4726-865b-6e94654ed37a"
