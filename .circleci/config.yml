@@ -4,6 +4,11 @@ orbs:
   codecov: codecov/codecov@1.0.2
 jobs:
   build:
+    docker:
+      - image: 'cimg/node:14.14.0'
+        auth:
+          username: mcereal
+          password: eCE:3%.epa_@(Z&
     steps:
       - codecov/upload:
           file: /coverage
