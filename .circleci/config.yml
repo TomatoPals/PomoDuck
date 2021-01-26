@@ -10,6 +10,9 @@ jobs:
       - image: "cimg/node:14.14.0"
     steps:
       - checkout
+      - run:
+          command: npm run docker:build:dev
+          name: Build Docker image
 
   test:
     executor:
