@@ -5,14 +5,26 @@ orbs:
   doctl: digitalocean/cli@0.1.1
   k8s: circleci/kubernetes@0.1.0
 jobs:
-  build:
-    docker:
-      - image: "cimg/node:14.14.0"
+  build-and-push:
+    executor: docker/docker
     steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
       - checkout
-      - run:
-          command: npm run docker:build:dev
-          name: Build Docker image
+      - attach_workspace:
+          at: /home/circleci/project
+      - digitalocean/install
+      - digitalocean/initialize:
+          digitalocean-access-token: DIGITAL_OCEAN_ACCESS_TOKEN
+      - run: doctl registry login
+      - docker/build:
+          image: "pomoduck"
+          registry: "registry.digitalocaen.com"
+          tag: "v0.1.0-dev"
+      - docker/push:
+          image: "pomoduck"
+          registry: "registry.digitalocaen.com"
+          tag: "v0.1.0-dev"
 
   test:
     executor:
@@ -26,9 +38,13 @@ jobs:
           command: npm run ci:test
           name: Run Jest test
 workflows:
-  node-tests:
+  devops_flow:
     jobs:
       - test
+      - build-and-push:
+        image: "pomoduck/pomoduck:v0.1.0-dev"
+          requires:
+            - test
       #Envs: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_ECR_ACCOUNT_URL
       # - aws-ecr/build-and-push-image:
       #     repo: pomoduck
