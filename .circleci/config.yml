@@ -42,10 +42,10 @@ workflows:
   devops_flow:
     jobs:
       - test
-      - build-and-push:
-          # filters:
-          #   branches:
-          #     only:
-          #       - main
-          requires:
-            - test
+      # - build-and-push:
+      #     # filters:
+      #     #   branches:
+      #     #     only:
+      #     #       - main
+      #     requires:
+      #       - test
