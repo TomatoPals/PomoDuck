@@ -20,12 +20,12 @@ jobs:
       - docker/build:
           dockerfile: build/Dockerfile.dev
           image: "pomoduck"
-          registry: "registry.digitalocaen.com"
+          registry: "registry.digitalocean.com"
           tag: "v0.1.0-dev"
       - docker/push:
-          image: "pomoduck:v0.1.0-dev"
-          registry: "registry.digitalocaen.com"
-          tag: "pomoduck"
+          image: "pomoduck"
+          registry: "registry.digitalocean.com"
+          tag: "v0.1.0-dev"
 
   test:
     executor:
