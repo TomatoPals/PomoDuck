@@ -18,14 +18,14 @@ jobs:
           digitalocean-access-token: DIGITAL_OCEAN_ACCESS_TOKEN
       - run: doctl registry login
       - docker/build:
-          dockerfile: build/Dockerfile.dev
+          dockerfile: build/Dockerfile.prod
           image: "pomoduck"
           registry: "registry.digitalocean.com/pomoduck"
-          tag: "v0.1.0-dev"
+          tag: "v0.1.0-prod"
       - docker/push:
           image: "pomoduck"
           registry: "registry.digitalocean.com/pomoduck"
-          tag: "v0.1.0-dev"
+          tag: "v0.1.0-prod"
 
   test:
     executor:
@@ -43,17 +43,9 @@ workflows:
     jobs:
       - test
       - build-and-push:
-          filters:
-            branches:
-              only:
-                - main
+          # filters:
+          #   branches:
+          #     only:
+          #       - main
           requires:
             - test
-      #Envs: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_ECR_ACCOUNT_URL
-      # - aws-ecr/build-and-push-image:
-      #     repo: pomoduck
-      #     tag: "latest,v0.1.${CIRCLE_BUILD_NUM}"
-      #     dockerfile: build/Dockerfile.prod
-      #     path: .
-      #     requires:
-      #       - test
