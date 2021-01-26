@@ -37,8 +37,7 @@
     ]
   },
   "devDependencies": {
-    "codecov": "^3.8.1",
-    "nyc": "^15.1.0"
+    "codecov": "^3.8.1"
   },
   "jest": {
     "collectCoverageFrom": [
