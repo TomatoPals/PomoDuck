@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  codecov: codecov/codecov@1.0.2
+  docker: circleci/docker@1.0.1
   doctl: digitalocean/cli@0.1.1
   k8s: circleci/kubernetes@0.1.0
 jobs:
@@ -15,7 +15,7 @@ jobs:
           at: /home/circleci/project
       - digitalocean/install
       - digitalocean/initialize:
-          digitalocean-access-token: DIGITAL_OCEAN_ACCESS_TOKEN
+          digitalocean-access-token: ${DIGITAL_OCEAN_ACCESS_TOKEN}
       - run: doctl registry login
       - docker/build:
           image: "pomoduck"
