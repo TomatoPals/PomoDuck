@@ -20,7 +20,7 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          command: npm ci:test
+          command: npm run ci:test
           name: Run Jest test
 workflows:
   node-tests:
