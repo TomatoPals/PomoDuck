@@ -18,11 +18,11 @@ jobs:
           digitalocean-access-token: DIGITAL_OCEAN_ACCESS_TOKEN
       - run: doctl registry login
       - docker/build:
-          image: "pomoduck"
+          image: "build/Dockerfile.prod"
           registry: "registry.digitalocaen.com"
           tag: "v0.1.0-dev"
       - docker/push:
-          image: "pomoduck"
+          image: "build/Dockerfile.prod"
           registry: "registry.digitalocaen.com"
           tag: "v0.1.0-dev"
 
