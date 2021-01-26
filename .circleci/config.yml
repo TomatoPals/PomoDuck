@@ -43,6 +43,10 @@ workflows:
     jobs:
       - test
       - build-and-push:
+          filters:
+            branches:
+              only:
+                - main
           requires:
             - test
       #Envs: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, AWS_ECR_ACCOUNT_URL
