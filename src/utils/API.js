@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASEURL = "localhost:3001/api/user/";
+const BASEURL = "http://localhost:3001/api/login/";
 
 const userLogin = {
-  userLogin: (input) =>
-    axios.get(`${BASEURL}${input}`).then((res) => res.data.results)
+  userLogin: (email, password) =>
+    axios.post(BASEURL, { email: email, password: password }).then((res) => res)
 };
 
 export default userLogin;

@@ -6,27 +6,41 @@ import API from "../../utils/API";
 import "./Login.css";
 
 const Login = () => {
-  const [inputState, setinputState] = useState({});
-  const handleInputChange = (event) => {
-    const { email, password, value } = event.target;
-    setinputState({ [email]: value, [password]: value });
-    console.log(value);
+  const [inputEmailState, setInputEmailState] = useState({
+    email: ""
+  });
+  const [inputPasswordState, setInputPasswordState] = useState({
+    password: ""
+  });
+  const handleInputEmailChange = (event) => {
+    setInputEmailState({ email: event.target.value });
   };
-  const handleFormSubmit = (event) => {
-    console.log(event);
+  const handleInputPasswordChange = (event) => {
+    setInputPasswordState({ password: event.target.value });
+  };
+  const handleFormSubmit = async () => {
+    try {
+      const userInfo = await API.userLogin(
+        inputEmailState.email,
+        inputPasswordState.password
+      );
+      console.log(userInfo.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div>
       <FormControl>
         <TextField
-          value={inputState.email}
-          onChange={handleInputChange}
+          value={inputEmailState.email}
+          onChange={handleInputEmailChange}
           type="text"
           placeholder="Enter Email address"
         />
         <TextField
-          value={inputState.password}
-          onChange={handleInputChange}
+          value={inputPasswordState.password}
+          onChange={handleInputPasswordChange}
           type="password"
           placeholder="Enter Password"
         />
