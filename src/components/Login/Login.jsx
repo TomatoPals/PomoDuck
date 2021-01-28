@@ -24,7 +24,7 @@ const Login = () => {
         inputEmailState.email,
         inputPasswordState.password
       );
-      console.log(userInfo.data);
+      console.log(userInfo);
     } catch (error) {
       console.log(error);
     }
