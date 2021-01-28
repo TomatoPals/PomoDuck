@@ -39,6 +39,9 @@ jobs:
           command: echo 'skip tests'
           # command: npm run ci:test
           name: Run Jest test
+      - run:
+          command: npm run lint
+          name: Run ESLint
 workflows:
   devops_flow:
     jobs:
