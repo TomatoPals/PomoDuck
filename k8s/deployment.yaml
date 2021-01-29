@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pomoduck
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pomoduck
+  template:
+    metadata:
+      labels:
+        app: pomoduck
+    spec:
+      containers:
+        - name: pomoduck
+          image: registry.digitalocean.com/pomoduck/pomoduck-backend:v0.1.0-prod
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
