@@ -4,3 +4,5 @@ node_modules/
 /coverage
 Makefile
 *md
+.eslintrc.json
+.prettierrc
