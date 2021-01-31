@@ -3,9 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import API from "../../utils/API";
-import "./Login.css";
+import "./CreateUser.css";
 
-const Login = () => {
+const CreateUser = () => {
   const [inputEmailState, setInputEmailState] = useState({
     email: ""
   });
@@ -20,7 +20,7 @@ const Login = () => {
   };
   const handleFormSubmit = async () => {
     try {
-      const userInfo = await API.userLogin(
+      const userInfo = await API.createUser(
         inputEmailState.email,
         inputPasswordState.password
       );
@@ -52,4 +52,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default CreateUser;
