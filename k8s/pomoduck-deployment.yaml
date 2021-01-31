@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: pomoduck
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: pomoduck

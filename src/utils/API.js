@@ -1,14 +1,14 @@
 import axios from "axios";
 
 // const BASEURL = "http://localhost:3001/api/login/";
-const DEVURL = "http://localhost";
-// const PRODURL = process.env.EXPRESS_SERVICE;
+// const DEVURL = "localhost";
+const PRODURL = process.env.EXPRESS_SERVICE;
 const API_ROUTE = "/api/user/";
 const PORT = "3001";
 
 const userLogin = {
   userLogin: async (email, password) => {
-    const BASEURL = `${DEVURL}:${PORT}${API_ROUTE}`;
+    const BASEURL = `http://${PRODURL}:${PORT}${API_ROUTE}`;
     try {
       const request = await axios.post(BASEURL, {
         email: email,
