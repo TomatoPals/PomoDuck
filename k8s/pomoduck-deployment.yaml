@@ -1,20 +1,21 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: pomoduck
+  name: pomoduck-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pomoduck
+      app: pomoduck-frontend
   template:
     metadata:
       labels:
-        app: pomoduck
+        app: pomoduck-frontend
     spec:
       containers:
-        - name: pomoduck
-          image: registry.digitalocean.com/pomoduck/pomoduck:v0.1.0-prod
+        - name: pomoduck-frontend
+          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v0.2.0-prod
+          imagePullPolicy: Always
           resources:
             limits:
               memory: "512Mi"
@@ -32,10 +33,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: pomoduck
+  name: pomoduck-frontend
 spec:
   selector:
-    app: pomoduck
+    app: pomoduck-frontend
   type: LoadBalancer
   ports:
     - port: 80

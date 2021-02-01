@@ -1,6 +1,6 @@
 import axios from "axios";
 const envRoutes = require("../utils/env-routes")[
-  process.env.NODE_ENV || "development"
+  process.env.EXPRESS_SERVICE || "development"
 ];
 
 const CreateUser = {
