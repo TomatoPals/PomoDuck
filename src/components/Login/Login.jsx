@@ -4,6 +4,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import API from "../../utils/API";
 import "./Login.css";
+import Navbar from "../MenuAppBar/MenuAppBar";
 
 const Login = () => {
   const [inputEmailState, setInputEmailState] = useState({
@@ -31,6 +32,7 @@ const Login = () => {
   };
   return (
     <div>
+      <Navbar />
       <FormControl>
         <TextField
           value={inputEmailState.email}
