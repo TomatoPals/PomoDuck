@@ -16,4 +16,4 @@ spec:
           - path: /api/user
             backend:
               serviceName: express-service
-              servicePort: 80
+              servicePort: 3001
