@@ -13,6 +13,5 @@ spec:
             path: "/"
             backend:
               service:
-                serviceName: pomoduck-frontend
+                serviceName: pomoduck-frontend.default.svc.cluster.local
                 servicePort: 80
-                nodePort: 30000
