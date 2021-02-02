@@ -3,6 +3,6 @@ module.exports = {
     createUser: "localhost:3001/api/user/"
   },
   production: {
-    createUser: `${process.env.EXPRESS_SERVICE}:3001/api/user/`
+    createUser: "pomoduck.com/api/user/"
   }
 };

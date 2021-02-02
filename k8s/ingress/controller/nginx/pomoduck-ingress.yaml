@@ -9,9 +9,11 @@ spec:
     - host: pomoduck.com
       http:
         paths:
-          - pathType: Prefix
-            path: "/"
+          - path: "/"
             backend:
-              service:
-                serviceName: pomoduck-frontend.default.svc.cluster.local
-                servicePort: 80
+              serviceName: pomoduck-frontend
+              servicePort: 80
+          - path: /api/user
+            backend:
+              serviceName: express-service
+              servicePort: 80
