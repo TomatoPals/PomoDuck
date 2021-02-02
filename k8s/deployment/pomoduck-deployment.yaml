@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pomoduck-frontend
-          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v0.3.4-prod
+          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v0.3.5-prod
           imagePullPolicy: Always
           resources:
             limits:

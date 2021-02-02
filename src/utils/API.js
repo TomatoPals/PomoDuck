@@ -3,7 +3,6 @@ const envRoutes = require("../utils/env-routes")[process.env.NODE_ENV];
 
 const CreateUser = {
   createUser: async (email, password) => {
-    console.log(process.env);
     const BASEURL = `http://${envRoutes.createUser}`;
 
     try {
