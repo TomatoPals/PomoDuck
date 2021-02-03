@@ -1,11 +1,11 @@
 import React from "react";
 import "./HomePage.css";
-import Login from "../../components/Login/Login";
+import CreateUser from "../../components/CreateUser/CreateUser";
 
 const HomePage = () => {
   return (
     <div>
-      <Login />
+      <CreateUser />
     </div>
   );
 };

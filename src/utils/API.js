@@ -1,9 +1,10 @@
 import axios from "axios";
+const envRoutes = require("../utils/env-routes")[process.env.NODE_ENV];
 
-const BASEURL = "http://localhost:3001/api/login/";
+const CreateUser = {
+  createUser: async (email, password) => {
+    const BASEURL = `http://${envRoutes.createUser}`;
 
-const userLogin = {
-  userLogin: async (email, password) => {
     try {
       const request = await axios.post(BASEURL, {
         email: email,
@@ -16,4 +17,4 @@ const userLogin = {
   }
 };
 
-export default userLogin;
+export default CreateUser;
