@@ -1,0 +1,69 @@
+body {
+    background-color: #01222C;
+}
+
+/* ====== LAYOUT ====== */
+
+.navbar {
+    height: 200px;
+    padding-top: 20px;
+}
+
+.topLayer {
+    background-image: url("../../images/whitebackground-color.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+    .topLayer {
+        background-size: auto;
+    }
+  }
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.logo img {
+    width: 30%;
+}
+.logo img:nth-child(2) {
+    width: 10%;
+}
+
+.timer {
+    background-color: #7094BE;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.tasks h2 {
+    padding: 20px 0px;
+    border-bottom: 1px solid #01222C;
+}
+
+.taskbox {
+    background-color: #7094BE;
+    border-radius: 20px;
+    border: 4px dashed #01222C;
+}
+
+.taskbox p {
+    text-align: center;
+    font-size: 26px;
+}
+
+.lowerbox {
+    background-image: url("../../images/darktomatoes.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+.instructions {
+    color: #fff;
+}
