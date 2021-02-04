@@ -34,8 +34,12 @@ class Countdown extends Component {
   };
   resetTimer = () => {
     if (this.state.timerOn === false) {
+      
       this.setState({
-        timerTime: this.state.timerStart
+        timerOn: false,
+        timerStart: 0,
+        timerTime: 1200000
+        // timerTime: this.state.timerStart
       });
     }
   };
@@ -98,8 +102,8 @@ class Countdown extends Component {
             Stop
           </button>
         )}
-        {timerOn === false &&
-          (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
+        {timerOn === false && 
+        (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
             <button className="Button-start" onClick={this.startTimer}>
               Resume
             </button>
