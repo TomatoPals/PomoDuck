@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import Login from "../Login/Login";
+import CreateUser from "../CreateUser/CreateUser";
 import Button from "@material-ui/core/Button";
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -45,7 +45,7 @@ export default function SimpleModal() {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <Login />
+      <CreateUser />
       <SimpleModal />
     </div>
   );
@@ -53,7 +53,7 @@ export default function SimpleModal() {
   return (
     <div>
       <Button type="button" color="inherit" onClick={handleOpen}>
-        Login
+        Signup
       </Button>
       <Modal
         open={open}
