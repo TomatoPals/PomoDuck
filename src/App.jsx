@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from "react";
+import Countdown from "./components/Countdown";
 
 function App() {
   return (
@@ -20,6 +22,18 @@ function App() {
       </header>
     </div>
   );
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div className="CountDownApp">
+        <div className="Timers">
+          <Countdown />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
