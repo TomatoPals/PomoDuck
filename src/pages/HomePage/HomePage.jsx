@@ -1,19 +1,26 @@
 import React from "react";
 import "./HomePage.css";
+// import Login from "../../components/Login/Login";
+import CircularIndeterminate from "../../components/Spinners/LoadingSpinner";
+
+import MenuAppBar from "../../components/MenuAppBar/MenuAppBar";
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
 const HomePage = () => {
   return (
-    <div>
-      <div className="navbar">
+    <>
+      <MenuAppBar />
+      {/* <Login /> */}
+      <CircularIndeterminate />
+      <nav className="navbar">
         <div className="container">
           <div className="logo">
             <img src="/Assets/pomoduck-logo.svg" alt="logo" />
             <img src="/Assets/pomoduck-duck.svg" alt="duck icon" />
           </div>
         </div>
-      </div>
-      <div className="topLayer">
+      </nav>
+      <article className="topLayer">
         <div className="container">
           <div className="timer"></div>
           <div className="tasks">
@@ -23,7 +30,7 @@ const HomePage = () => {
             <p>Add Task</p>
           </div>
         </div>
-      </div>
+      </article>
       <div className="lowerbox"></div>
       <div className="container">
         <div className="instructions">
@@ -33,7 +40,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* <CreateUser /> */}
-    </div>
+    </>
   );
 };
 
