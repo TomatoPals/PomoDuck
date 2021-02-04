@@ -1,5 +1,8 @@
 node_modules/
 .git
 .gitignore
-coverage
+/coverage
 Makefile
+*md
+.eslintrc.json
+.prettierrc

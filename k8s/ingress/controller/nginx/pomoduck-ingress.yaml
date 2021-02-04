@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pomoduck-ingress
+  labels:
+    name: pomoduck-ingress
+spec:
+  rules:
+    - host: pomoduck.com
+      http:
+        paths:
+          - path: "/"
+            backend:
+              serviceName: pomoduck-frontend
+              servicePort: 80
+          - path: /api/
+            backend:
+              serviceName: express-service
+              servicePort: 3001
