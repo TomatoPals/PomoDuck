@@ -1,40 +1,26 @@
 import React from "react";
 import "./HomePage.css";
-// import Login from "../../components/Login/Login";
-import Countdown from "../../components/Timer/Countdown";
-import MenuAppBar from "../../components/MenuAppBar/MenuAppBar";
+
+import Header from "./Header";
+import Content from "./Content";
+// import { makeStyles } from '@material-ui/core/styles';
+import Grid from "@material-ui/core/Grid";
+
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
 const HomePage = () => {
   return (
     <>
-      <MenuAppBar />
-      {/* <Login /> */}
-      <nav className="navbar">
-        <div className="container">
-          <div className="logo">
-            <img src="/Assets/pomoduck-logo.svg" alt="logo" />
-            <img src="/Assets/pomoduck-duck.svg" alt="duck icon" />
-          </div>
-        </div>
-      </nav>
-      <article className="topLayer">
-        <div className="container">
-          <div className="timer">
-            <div className="CountDownApp">
-              <div className="Timers">
-                <Countdown />
-              </div>
-            </div>
-          </div>
-          <div className="tasks">
-            <h2>Tasks</h2>
-          </div>
-          <div className="taskbox">
-            <p>Add Task</p>
-          </div>
-        </div>
-      </article>
+      <Grid container direction="column">
+        <Grid item>
+          <Header />
+        </Grid>
+        <Grid item container>
+          <Grid item sm={12}>
+            <Content />
+          </Grid>
+        </Grid>
+      </Grid>
       <div className="lowerbox"></div>
       <div className="container">
         <div className="instructions">
