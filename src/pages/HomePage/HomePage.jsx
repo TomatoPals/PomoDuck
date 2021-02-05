@@ -6,12 +6,11 @@ import Content from "./Content";
 // import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 
-
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Grid container direction="column">
         <Grid item>
           <Header />
