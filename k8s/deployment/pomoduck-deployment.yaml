@@ -1,0 +1,43 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pomoduck-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pomoduck-frontend
+  template:
+    metadata:
+      labels:
+        app: pomoduck-frontend
+    spec:
+      containers:
+        - name: pomoduck-frontend
+          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v0.3.5-prod
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+          env:
+            - name: EXPRESS_SERVICE
+              valueFrom:
+                configMapKeyRef:
+                  name: express-configmap
+                  key: EXPRESS_SERVICE
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pomoduck-frontend
+spec:
+  selector:
+    app: pomoduck-frontend
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80

@@ -1,21 +1,55 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  codecov: codecov/codecov@1.0.2
+  docker: circleci/docker@1.0.1
+  doctl: digitalocean/cli@0.1.1
+  k8s: circleci/kubernetes@0.1.0
 jobs:
-  build:
-    docker:
-      - image: "cimg/node:14.14.0"
-        auth:
-          username: mcereal
-          password: eCE:3%.epa_@(Z&
+  build-and-push:
+    executor: docker/docker
     steps:
-      - run: node --version
-      - run: "nyc --reporter=lcov react-scripts test"
-      - run: "report-coverage"
-      - codecov/upload:
-          file: "./coverage/"
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - attach_workspace:
+          at: /home/circleci/project
+      - doctl/install
+      - doctl/initialize:
+          digitalocean-access-token: DIGITAL_OCEAN_ACCESS_TOKEN
+      - run: doctl registry login
+      - docker/build:
+          dockerfile: Dockerfile
+          image: "pomoduck"
+          registry: "registry.digitalocean.com/pomoduck"
+          tag: "v0.1.0-prod"
+      - docker/push:
+          image: "pomoduck"
+          registry: "registry.digitalocean.com/pomoduck"
+          tag: "v0.1.0-prod"
+
+  test:
+    executor:
+      name: node/default
+      tag: 14.14.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: echo 'skip tests'
+          # command: npm run ci:test
+          name: Run Jest test
+      - run:
+          command: npm run lint
+          name: Run ESLint
 workflows:
-  node-tests:
+  devops_flow:
     jobs:
-      - node/test
+      - test
+      # - build-and-push:
+      #     # filters:
+      #     #   branches:
+      #     #     only:
+      #     #       - main
+      #     requires:
+      #       - test
