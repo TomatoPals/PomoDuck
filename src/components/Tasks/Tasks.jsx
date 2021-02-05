@@ -1,11 +1,13 @@
 import React from "react";
-
+import Timer from "../Timer/Timer";
 const Tasks = () => {
   return (
     <>
       <article className="topLayer">
         <div className="container">
-          <div className="timer"></div>
+          <div className="timer">
+            <Timer />
+          </div>
           <div className="tasks">
             <h2>Tasks</h2>
           </div>
