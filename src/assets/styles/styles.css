@@ -10,14 +10,14 @@
     display: inline-block;
 }
 
-#logo {
-    height: 70px;
-}
-
 #logo > img {
     height: inherit;
     display: inline-block;
 } */
+#logo {
+    margin-left: 60px;
+    margin-top: 4px;
+}
 
 #gridcontainertomato > img {
     height: 70px; 
