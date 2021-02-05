@@ -2,6 +2,7 @@ import React from "react";
 import "./HomePage.css";
 // import Login from "../../components/Login/Login";
 import Tasks from "../../components/Tasks/Tasks";
+// import Timer from "../../components/Timer/Timer";
 import MenuAppBar from "../../components/MenuAppBar/MenuAppBar";
 // import CreateUser from "../../components/CreateUser/CreateUser";
 import Instructions from "../../components/Instructions/Instructions";

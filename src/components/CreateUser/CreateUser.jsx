@@ -21,10 +21,7 @@ const CreateUser = () => {
   };
   const handleFormSubmit = async () => {
     try {
-      const userInfo = await API.createUser(
-        inputEmailState.email,
-        inputPasswordState.password
-      );
+      const userInfo = await API.createUser(inputEmailState.email, inputPasswordState.password);
       console.log(userInfo);
     } catch (error) {
       console.log(error);

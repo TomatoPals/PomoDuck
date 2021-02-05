@@ -1,0 +1,82 @@
+.CountDownApp {
+  text-align: center;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Sriracha", cursive;
+  /* font-family: 'Alex Brush', cursive; */
+  background-color: rgb(34, 34, 34);
+  height: 200vh;
+  color: rgb(255, 255, 255);
+}
+.Countdown {
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 2px solid rgb(148, 13, 13);
+  border-radius: 4px;
+  padding: 20px;
+  width: calc(1em + 80vw);
+  background-color: rgb(233, 114, 114);
+  box-shadow: 0 3px 6px rgb(12, 12, 12);
+  border-radius: 30px 30px 30px 30px;
+}
+.Countdown {
+  padding-top: 10px;
+}
+
+.Countdown-header {
+  font-size: 40px;
+  font-weight: bold;
+}
+/* vv This is for the start button vv */
+button {
+  background-color: #202b33;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #106ba3;
+}
+
+.Countdown-display {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.Countdown-display button {
+  margin: 0 15px;
+  border: solid 1px transparent;
+  border-radius: 2px;
+  padding: 4px 16px;
+  color: #ffffff;
+
+  font-size: 16px;
+}
+.Countdown-display button:hover {
+  background-color: #ffa202;
+}
+.Countdown-label {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.Countdown-time {
+  font-size: 50px;
+  margin: 5px 0;
+  font-family: "Sriracha", cursive;
+}
+.Countdown-time2 {
+  margin: 5px 0;
+  font-family: "Inter", sans-serif;
+  font-size: calc(1em + 2vw);
+  font-weight: 900;
+  /* -webkit-text-fill-color: 5px rgb(21, 18, 18); */
+  -webkit-text-stroke: 3px rgb(212, 88, 88);
+  text-shadow: 0 0px 15px rgb(84, 31, 31);
+}
+.Timers {
+  display: flex;
+  justify-content: center;
+}
