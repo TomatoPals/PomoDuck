@@ -1,0 +1,9 @@
+#gridcontainertomato {
+    height: 70px;
+}
+/* > finds the nest children */
+/* #gridcontainertomato > div.className */
+#gridcontainertomato > img {
+    height: inherit; 
+    display: inline-block;
+}

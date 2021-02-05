@@ -1,0 +1,49 @@
+
+/* > finds the nest children */
+/* #gridcontainertomato > div.className */
+
+/* #gridcontainertomato {
+    height: 70px;
+}
+#gridcontainertomato > img {
+    height: inherit; 
+    display: inline-block;
+}
+
+#logo {
+    height: 70px;
+}
+
+#logo > img {
+    height: inherit;
+    display: inline-block;
+} */
+
+#gridcontainertomato > img {
+    height: 70px; 
+}
+
+#logo > img {
+    height: 70px;
+}
+
+.contentContainer {
+    background-image: url("../../images/whitebackground-color.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.timer {
+    height: 500px;
+    width: 800px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .timer {
+        width: 100%;
+    }
+  }
