@@ -1,8 +1,7 @@
 import React from "react";
 import "./HomePage.css";
 // import Login from "../../components/Login/Login";
-import CircularIndeterminate from "../../components/Spinners/LoadingSpinner";
-
+import Countdown from "../../components/Timer/Countdown";
 import MenuAppBar from "../../components/MenuAppBar/MenuAppBar";
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
@@ -11,7 +10,6 @@ const HomePage = () => {
     <>
       <MenuAppBar />
       {/* <Login /> */}
-      <CircularIndeterminate />
       <nav className="navbar">
         <div className="container">
           <div className="logo">
@@ -22,7 +20,13 @@ const HomePage = () => {
       </nav>
       <article className="topLayer">
         <div className="container">
-          <div className="timer"></div>
+          <div className="timer">
+            <div className="CountDownApp">
+              <div className="Timers">
+                <Countdown />
+              </div>
+            </div>
+          </div>
           <div className="tasks">
             <h2>Tasks</h2>
           </div>

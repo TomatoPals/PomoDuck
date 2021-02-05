@@ -21,15 +21,11 @@ export default function DarkModeSwitch() {
       <FormLabel component="legend">Assign responsibility</FormLabel>
       <FormGroup>
         <FormControlLabel
-          control={
-            <Switch checked={state.dark} onChange={handleChange} name="dark" />
-          }
+          control={<Switch checked={state.dark} onChange={handleChange} name="dark" />}
           label="Dark Mode"
         />
         <FormControlLabel
-          control={
-            <Switch checked={state.dark} onChange={handleChange} name="sound" />
-          }
+          control={<Switch checked={state.dark} onChange={handleChange} name="sound" />}
           label="Sound"
         />
       </FormGroup>
