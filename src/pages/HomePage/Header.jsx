@@ -3,6 +3,8 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/styles";
 import "../../assets/styles/styles.css";
+import SimpleModal from "../../components/Modal/SimpleModal";
+import SettingsModal from "../../components/Modal/SettingsModal";
 
 const useStyles = makeStyles(() => ({
   toolbarStyles: {
@@ -23,6 +25,8 @@ const Header = () => {
         <Grid item xs={12} sm={12} id="logo">
           <img src="/Assets/pomoduck-logo.svg" alt="logo" />
           <img src="/Assets/pomoduck-duck.svg" alt="duck icon" />
+          <SimpleModal />
+          <SettingsModal />
         </Grid>
       </Toolbar>
     </AppBar>
