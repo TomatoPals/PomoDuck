@@ -1,10 +1,11 @@
 import React from "react";
 import "./HomePage.css";
 
-import Header from "./Header";
-import Content from "./Content";
+import Header from "../../components/Header/Header";
+import Timer from "../../components/Timer/Timer";
 // import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
+import "../../assets/styles/styles.css";
 
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
@@ -15,9 +16,9 @@ const HomePage = () => {
         <Grid item>
           <Header />
         </Grid>
-        <Grid item container>
+        <Grid item container className="contentContainer">
           <Grid item sm={12}>
-            <Content />
+            <Timer />
           </Grid>
         </Grid>
       </Grid>
