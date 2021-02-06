@@ -1,5 +1,6 @@
 body {
     background-color: #01222C;
+    margin: 0!important;
 }
 
 /* ====== LAYOUT ====== */
@@ -56,9 +57,12 @@ body {
     background-image: url("../../images/darktomatoes.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 300px;
+    background-color: #fff;
 }
 
 .instructions {
     color: #fff;
+    margin: auto;
+    width: 700px;
 }
