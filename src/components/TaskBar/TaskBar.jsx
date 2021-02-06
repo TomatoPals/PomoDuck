@@ -1,10 +1,12 @@
 import { Button, FormControl, TextField } from "@material-ui/core";
 // import CreateTask from "./CreateTask";
 import React, { useState } from "react";
+import "./TaskBar.css";
 
 const TaskBar = () => {
   const [taskListState, setTaskListState] = useState({
-    tasks: ""
+    tasks: "",
+    taskList: []
   });
 
   const handleTaskListChange = (e) => {
@@ -21,7 +23,7 @@ const TaskBar = () => {
   return (
     <>
       {/* onClick to register when the add task button is clicked */}
-      <FormControl>
+      <FormControl className="taskBar">
         <TextField
           value={taskListState.tasks}
           onChange={handleTaskListChange}
