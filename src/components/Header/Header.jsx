@@ -21,7 +21,6 @@ const Header = () => {
   return (
     <AppBar position="relative" className={classes.appbarStyles}>
       <Toolbar className={classes.toolbarStyles}>
-        <Grid item xs={0} sm={2} />
         <Grid item xs={12} sm={12} id="logo">
           <img src="/Assets/pomoduck-logo.svg" alt="logo" />
           <img src="/Assets/pomoduck-duck.svg" alt="duck icon" />
