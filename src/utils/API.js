@@ -1,8 +1,11 @@
 import axios from "axios";
+// goes to env-route.js and chooses route based off prod vs dev
 const envRoutes = require("../utils/env-routes")[process.env.NODE_ENV];
 
-const CreateUser = {
+const UserAPIs = {
+  // createUser is the
   createUser: async (email, password) => {
+    // chooses url on prod vs dev
     const BASEURL = `http://${envRoutes.createUser}`;
 
     try {
@@ -17,4 +20,4 @@ const CreateUser = {
   }
 };
 
-export default CreateUser;
+export default UserAPIs;
