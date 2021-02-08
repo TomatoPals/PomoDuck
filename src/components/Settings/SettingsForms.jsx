@@ -25,7 +25,7 @@ export default function SettingsForms() {
           label="Dark Mode"
         />
         <FormControlLabel
-          control={<Switch checked={state.dark} onChange={handleChange} name="sound" />}
+          control={<Switch checked={state.sound} onChange={handleChange} name="sound" />}
           label="Sound"
         />
       </FormGroup>
