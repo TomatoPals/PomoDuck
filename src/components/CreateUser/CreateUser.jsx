@@ -28,7 +28,7 @@ const CreateUser = () => {
     }
   };
   return (
-    <div>
+    <>
       <FormControl>
         <TextField
           value={inputEmailState.email}
@@ -46,7 +46,7 @@ const CreateUser = () => {
           Submit
         </Button>
       </FormControl>
-    </div>
+    </>
   );
 };
 

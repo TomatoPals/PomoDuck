@@ -31,6 +31,7 @@ export default function SignUpModal() {
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -40,6 +41,15 @@ export default function SignUpModal() {
     setOpen(false);
   };
 
+  const changeLoggedIn = () => {
+    setLoggedIn(!loggedIn);
+  };
+
+  const wrapperFunction = () => {
+    handleOpen();
+    changeLoggedIn();
+  };
+
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <CreateUser />
@@ -47,9 +57,9 @@ export default function SignUpModal() {
   );
 
   return (
-    <div>
-      <Button type="button" color="inherit" onClick={handleOpen}>
-        Signup
+    <>
+      <Button type="button" color="inherit" onClick={wrapperFunction}>
+        {loggedIn ? "Logout" : "Signup"}
       </Button>
       <Modal
         open={open}
@@ -59,6 +69,6 @@ export default function SignUpModal() {
       >
         {body}
       </Modal>
-    </div>
+    </>
   );
 }
