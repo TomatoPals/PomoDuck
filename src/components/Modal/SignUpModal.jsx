@@ -1,11 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import SettingsForms from "../Settings/SettingsForms";
+import CreateUser from "../CreateUser/CreateUser";
 import Button from "@material-ui/core/Button";
-// function rand() {
-//   return Math.round(Math.random() * 20) - 10;
-// }
 
 function getModalStyle() {
   const top = 50;
@@ -29,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SettingsModal() {
+export default function SignUpModal() {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -45,14 +42,14 @@ export default function SettingsModal() {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <SettingsForms />
+      <CreateUser />
     </div>
   );
 
   return (
     <div>
       <Button type="button" color="inherit" onClick={handleOpen}>
-        Settings
+        Signup
       </Button>
       <Modal
         open={open}

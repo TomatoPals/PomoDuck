@@ -3,7 +3,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/styles";
 import "../../assets/styles/styles.css";
-import SimpleModal from "../../components/Modal/SimpleModal";
+import SignUpModal from "../Modal/SignUpModal";
 import SettingsModal from "../../components/Modal/SettingsModal";
 
 const useStyles = makeStyles(() => ({
@@ -21,10 +21,11 @@ const Header = () => {
   return (
     <AppBar position="relative" className={classes.appbarStyles}>
       <Toolbar className={classes.toolbarStyles}>
-        <Grid item xs={12} sm={12} id="logo">
+        <Grid item xs={10} sm={10} id="logo">
           <img src="/Assets/pomoduck-logo.svg" alt="logo" />
           <img src="/Assets/pomoduck-duck.svg" alt="duck icon" />
-          <SimpleModal />
+          <Grid item xs={10} sm={10} id="logo"></Grid>
+          <SignUpModal />
           <SettingsModal />
         </Grid>
       </Toolbar>
