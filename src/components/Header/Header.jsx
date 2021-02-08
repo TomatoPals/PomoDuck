@@ -21,11 +21,14 @@ const Header = () => {
   return (
     <AppBar position="relative" className={classes.appbarStyles}>
       <Toolbar className={classes.toolbarStyles}>
-        <Grid item xs={10} sm={10} id="logo">
+        <Grid item xs={8} sm={10} id="logo">
           <img src="/Assets/pomoduck-logo.svg" alt="logo" />
           <img src="/Assets/pomoduck-duck.svg" alt="duck icon" />
-          <Grid item xs={10} sm={10} id="logo"></Grid>
+        </Grid>
+        <Grid item xs={2} sm={1} id="signUp">
           <SignUpModal />
+        </Grid>
+        <Grid item xs={2} sm={1} id="signUp">
           <SettingsModal />
         </Grid>
       </Toolbar>
