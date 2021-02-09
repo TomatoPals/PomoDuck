@@ -44,6 +44,20 @@ const UserAPIs = {
     } catch (error) {
       console.log(error);
     }
+  },
+  login: async (email, password) => {
+    // chooses url on prod vs dev
+    const BASEURL = `http://${envRoutes.login}`;
+
+    try {
+      const request = await axios.post(BASEURL, {
+        email: email,
+        password: password
+      });
+      return request;
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 
