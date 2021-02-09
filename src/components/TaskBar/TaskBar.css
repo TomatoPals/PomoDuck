@@ -22,3 +22,16 @@ button {
   margin: 0 5px !important;
   cursor: pointer !important;
 }
+
+.MuiFormControl-root {
+  width: 100%;
+}
+.MuiFormControl-root {
+  margin-bottom: 20px !important;
+}
+.MuiButtonBase-root {
+  margin: 0 40px 20px 40px !important;
+}
+.makeStyles-root-5 {
+  background-color: transparent !important;
+}

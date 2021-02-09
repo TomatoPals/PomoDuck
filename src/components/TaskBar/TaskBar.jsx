@@ -30,9 +30,9 @@ const TaskBar = () => {
   // useEffect to render tasks currently in the db?
   return (
     <>
-      <Grid item>
+      <Grid container sm={12} alignItems="center" justify="center">
         {/* onClick to register when the add task button is clicked */}
-        <div className="taskBar">
+        <Grid item xs={10} sm={10} md={7} className="taskBar">
           <FormControl>
             <TextField
               // value={taskListState.tasks}
@@ -45,7 +45,7 @@ const TaskBar = () => {
             </Button>
             <CreateTask taskList={taskListState.taskList} />
           </FormControl>
-        </div>
+        </Grid>
       </Grid>
     </>
   );
