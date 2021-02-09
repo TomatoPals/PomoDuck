@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomePage.css";
+import TaskBar from "../../components/TaskBar/TaskBar";
 
 import Header from "../../components/Header/Header";
 import Timer from "../../components/Timer/Timer";
@@ -20,6 +21,7 @@ const HomePage = () => {
         <Grid item container className="contentContainer">
           <Grid item sm={12}>
             <Timer />
+            <TaskBar />
           </Grid>
         </Grid>
       </Grid>
