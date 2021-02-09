@@ -6,7 +6,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
 
-export default function DarkModeSwitch() {
+export default function SettingsForms() {
   const [state, setState] = React.useState({
     dark: false,
     sound: true
@@ -18,14 +18,14 @@ export default function DarkModeSwitch() {
 
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Assign responsibility</FormLabel>
+      <FormLabel component="legend">Settings</FormLabel>
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={state.dark} onChange={handleChange} name="dark" />}
           label="Dark Mode"
         />
         <FormControlLabel
-          control={<Switch checked={state.dark} onChange={handleChange} name="sound" />}
+          control={<Switch checked={state.sound} onChange={handleChange} name="sound" />}
           label="Sound"
         />
       </FormGroup>
