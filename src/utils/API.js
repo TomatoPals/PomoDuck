@@ -2,7 +2,7 @@ import axios from "axios";
 // goes to env-route.js and chooses route based off prod vs dev
 const envRoutes = require("../utils/env-routes")[process.env.NODE_ENV];
 
-const UserAPIs = {
+const PomoDuckBackendAPIs = {
   // createUser is the
   signup: async (email, password) => {
     // chooses url on prod vs dev
@@ -72,4 +72,4 @@ const UserAPIs = {
   }
 };
 
-export default UserAPIs;
+export default PomoDuckBackendAPIs;
