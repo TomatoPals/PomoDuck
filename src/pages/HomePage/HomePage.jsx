@@ -10,7 +10,8 @@ import "../../assets/styles/styles.css";
 
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
-const HomePage = () => {
+const HomePage = (props) => {
+  console.log(props);
   return (
     <>
       <Grid container direction="column">
