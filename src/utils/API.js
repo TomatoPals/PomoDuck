@@ -58,6 +58,17 @@ const UserAPIs = {
     } catch (error) {
       console.log(error);
     }
+  },
+  logout: async () => {
+    // chooses url on prod vs dev
+    const BASEURL = `http://${envRoutes.logout}`;
+
+    try {
+      const request = await axios.get(BASEURL);
+      return request;
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 
