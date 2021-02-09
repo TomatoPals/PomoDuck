@@ -4,14 +4,16 @@ const envRoutes = require("../utils/env-routes")[process.env.NODE_ENV];
 
 const UserAPIs = {
   // createUser is the
-  signup: async (email, password) => {
+  signup: async (firstName, lastName, email, password) => {
     // chooses url on prod vs dev
     const BASEURL = `http://${envRoutes.signup}`;
 
     try {
       const request = await axios.post(BASEURL, {
-        email: email,
-        password: password
+        firstName,
+        lastName,
+        email,
+        password
       });
       return request;
     } catch (error) {

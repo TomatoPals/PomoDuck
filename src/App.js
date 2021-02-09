@@ -18,6 +18,7 @@ function App() {
           path="/"
           render={(props) => <HomePage {...props} callback={handleLogin} isLoggedin={isLoggedIn} />}
         />
+        {/* move create user into homepage */}
         <Route exact path="/signup" component={CreateUser} />
         <Route component={NoMatch} />
       </Switch>
