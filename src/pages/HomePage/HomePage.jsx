@@ -4,6 +4,7 @@ import TaskBar from "../../components/TaskBar/TaskBar";
 
 import Header from "../../components/Header/Header";
 import Timer from "../../components/Timer/Timer";
+import Footer from "../../components/Footer/Footer";
 // import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import "../../assets/styles/styles.css";
@@ -35,6 +36,11 @@ const HomePage = (props) => {
         </p>
       </div>
       {/* <CreateUser /> */}
+      <Grid container sm={12} alignItems="center" justify="center">
+        <Grid item xs={12} sm={12} md={10} lg={8}>
+          <Footer />
+        </Grid>
+      </Grid>
     </>
   );
 };
