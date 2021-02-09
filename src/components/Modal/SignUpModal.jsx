@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import CreateUser from "../CreateUser/CreateUser";
+import Login from "../Login/Login";
 import Button from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
 
 function getModalStyle() {
   const top = 50;
@@ -50,12 +52,19 @@ export default function SignUpModal() {
     changeLoggedIn();
   };
 
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <CreateUser />
-    </div>
-  );
+  // const [text, setText] = useState("");
+  const [isNew, setIsNew] = useState(false);
 
+  const body = (
+    <>
+      <div style={modalStyle} className={classes.paper}>
+        <div>
+          <Link onClick={() => setIsNew(!isNew)}>Been here before? Login</Link>
+        </div>
+        {!isNew ? <CreateUser /> : <Login />}
+      </div>
+    </>
+  );
   return (
     <>
       <Button type="button" color="inherit" onClick={wrapperFunction}>
@@ -67,7 +76,7 @@ export default function SignUpModal() {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body}
+        <div>{body}</div>
       </Modal>
     </>
   );
