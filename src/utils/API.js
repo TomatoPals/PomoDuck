@@ -26,6 +26,24 @@ const UserAPIs = {
     } catch (error) {
       console.log(error);
     }
+  },
+  remove: async (userID) => {
+    const BASEURL = `http://${envRoutes.remove}${userID}`;
+    try {
+      const request = await axios.delete(BASEURL);
+      return request;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  update: async (userID) => {
+    const BASEURL = `http://${envRoutes.update}${userID}`;
+    try {
+      const request = await axios.delete(BASEURL);
+      return request;
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 
