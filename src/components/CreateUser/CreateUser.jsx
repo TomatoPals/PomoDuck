@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
+// we can rename UserAPIs to API because it is a default function
 import API from "../../utils/API";
 import "./CreateUser.css";
 
