@@ -59,7 +59,7 @@ export default function SignUpModal() {
     <>
       <div style={modalStyle} className={classes.paper}>
         <div>
-          <Link onClick={() => setIsNew(!isNew)}>Been here before? Login</Link>
+          <Link onClick={() => setIsNew(!isNew)}>{!isNew ? "Been here before? Login" : "New User SignUp"}</Link>
         </div>
         {!isNew ? <CreateUser /> : <Login />}
       </div>
