@@ -33,7 +33,6 @@ const Login = () => {
   return (
     <>
       <h1>Login:</h1>
-      <p>{state.userInfo.firstName}</p>
       <TextField
         value={inputEmailState.email}
         onChange={handleInputEmailChange}
