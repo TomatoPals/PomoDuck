@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { useStoreContext } from "../../utils/GlobalState";
-import { USER_LOGIN } from "../../utils/actions";
+import { USER_LOGIN } from "../../actions/UserActions";
 import API from "../../utils/API";
 import "./Login.css";
 
@@ -33,6 +33,7 @@ const Login = () => {
   return (
     <>
       <h1>Login:</h1>
+      <p>{state.userInfo.firstName}</p>
       <TextField
         value={inputEmailState.email}
         onChange={handleInputEmailChange}
