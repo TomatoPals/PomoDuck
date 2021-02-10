@@ -1,16 +1,13 @@
-### STAGE 1: Build ###
-FROM node:15.7.0-alpine3.10 as build
-WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY package*.json /app/
-RUN npm install --silent --production
+FROM node:15.8.0-alpine3.10 as build
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+COPY package*.json /usr/src/app/
+RUN npm install --silent
 RUN npm install react-scripts -g --silent
-COPY . /app
+COPY . /usr/src/app
 RUN npm run build
-
-### STAGE 2: Production Environment ###
 FROM nginx:1.19.6-alpine
-COPY  /build/ /usr/share/nginx/html
+COPY --from=build /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
-ENV NODE_ENV production
 CMD ["nginx", "-g", "daemon off;"]clear
