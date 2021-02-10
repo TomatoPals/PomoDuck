@@ -15,19 +15,19 @@ const Footer = () => {
       </Grid>
       <Grid container alignItems="center" justify="center">
         <Grid item xs={1}>
-          <a href="#" target="_blank" rel="noopener">
+          {/* <a href="#" target="_blank" rel="noopener">
             <img src="/assets/images/icons/face.svg" alt="facebook icon" />
-          </a>
+          </a> */}
         </Grid>
         <Grid item xs={1}>
-          <a href="#" target="_blank" rel="noopener">
+          {/* <a href="#" target="_blank" rel="noopener">
             <img src="/assets/images/icons/twit.svg" alt="facebook icon" />
-          </a>
+          </a> */}
         </Grid>
         <Grid item xs={1}>
-          <a href="#" target="_blank" rel="noopener">
+          {/* <a href="#" target="_blank" rel="noopener">
             <img src="/assets/images/icons/in.svg" alt="facebook icon" />
-          </a>
+          </a> */}
         </Grid>
       </Grid>
       <Grid container alignItems="center" justify="center">

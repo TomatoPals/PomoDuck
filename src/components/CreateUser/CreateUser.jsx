@@ -7,12 +7,24 @@ import API from "../../utils/API";
 import "./CreateUser.css";
 
 const CreateUser = () => {
+  const [inputFirstNameState, setInputFirstNameState] = useState({
+    firstName: ""
+  });
+  const [inputLastNameState, setInputLastNameState] = useState({
+    lastName: ""
+  });
   const [inputEmailState, setInputEmailState] = useState({
     email: ""
   });
   const [inputPasswordState, setInputPasswordState] = useState({
     password: ""
   });
+  const handleInputFirstNameChange = (event) => {
+    setInputFirstNameState({ firstName: event.target.value });
+  };
+  const handleInputLastNameChange = (event) => {
+    setInputLastNameState({ lastName: event.target.value });
+  };
   const handleInputEmailChange = (event) => {
     setInputEmailState({ email: event.target.value });
   };
@@ -21,15 +33,33 @@ const CreateUser = () => {
   };
   const handleFormSubmit = async () => {
     try {
-      const userInfo = await API.signup(inputEmailState.email, inputPasswordState.password);
+      const userInfo = await API.signup(
+        inputFirstNameState.firstName,
+        inputLastNameState.lastName,
+        inputEmailState.email,
+        inputPasswordState.password
+      );
       console.log(userInfo);
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div>
+    <>
+      <h1>New User Signup:</h1>
       <FormControl>
+        <TextField
+          value={inputFirstNameState.email}
+          onChange={handleInputFirstNameChange}
+          type="text"
+          placeholder="Enter First Name"
+        />
+        <TextField
+          value={inputLastNameState.password}
+          onChange={handleInputLastNameChange}
+          type="text"
+          placeholder="Enter Last Name"
+        />
         <TextField
           value={inputEmailState.email}
           onChange={handleInputEmailChange}
@@ -46,7 +76,7 @@ const CreateUser = () => {
           Submit
         </Button>
       </FormControl>
-    </div>
+    </>
   );
 };
 
