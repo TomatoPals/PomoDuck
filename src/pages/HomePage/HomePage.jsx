@@ -12,12 +12,12 @@ import "../../assets/styles/styles.css";
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
 const HomePage = (props) => {
-  console.log(props);
+  console.log("homepage props", props);
   return (
     <>
       <Grid container direction="column">
         <Grid item>
-          <Header />
+          <Header isLoggedin={props.isLoggedin} callback={props.callback} />
         </Grid>
         <Grid item container className="contentContainer">
           <Grid item sm={12}>

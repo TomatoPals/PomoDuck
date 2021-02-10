@@ -16,7 +16,8 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const Header = () => {
+const Header = (props) => {
+  console.log("props:", props);
   const classes = useStyles();
   return (
     <AppBar position="relative" className={classes.appbarStyles}>
@@ -29,7 +30,7 @@ const Header = () => {
           <SettingsModal />
         </Grid>
         <Grid item xs={3} sm={2} id="signUp">
-          <SignUpModal />
+          <SignUpModal isLoggedin={props.isLoggedin} callback={props.callback} />
         </Grid>
       </Toolbar>
     </AppBar>
