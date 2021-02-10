@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { useStoreContext } from "../../utils/GlobalState";
-import { USER_LOGIN } from "../../actions/UserActions";
+import { USER_LOGIN, LOADING } from "../../actions/UserActions";
 import API from "../../utils/API";
 import "./Login.css";
 
@@ -23,6 +23,7 @@ const Login = () => {
   };
   const handleFormSubmit = async () => {
     try {
+      dispatch({ type: LOADING });
       const userInfo = await API.login(inputEmailState.email, inputPasswordState.password);
       dispatch({ type: USER_LOGIN, userInfo: userInfo.data });
       console.log(state);
@@ -30,6 +31,7 @@ const Login = () => {
       console.log(error);
     }
   };
+
   return (
     <>
       <h1>Login:</h1>
