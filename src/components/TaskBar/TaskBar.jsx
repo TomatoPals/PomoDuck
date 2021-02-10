@@ -23,7 +23,8 @@ const TaskBar = () => {
     temp.push(taskListState.tasks);
     setTaskListState({
       ...taskListState,
-      taskList: temp
+      taskList: temp,
+      tasks: ""
     });
     // have post route
   };
@@ -35,7 +36,7 @@ const TaskBar = () => {
         <Grid item xs={10} sm={10} md={7} className="taskBar">
           <FormControl>
             <TextField
-              // value={taskListState.tasks}
+              value={taskListState.tasks}
               onChange={handleTaskListChange}
               type="text"
               placeholder="Enter task"
