@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+import "./Timer.css";
 
 class Countdown extends Component {
   state = {
@@ -34,7 +34,6 @@ class Countdown extends Component {
   };
   resetTimer = () => {
     if (this.state.timerOn === false) {
-      
       this.setState({
         timerOn: false,
         timerStart: 0,
@@ -44,7 +43,7 @@ class Countdown extends Component {
     }
   };
 
-  adjustTimer = input => {
+  adjustTimer = (input) => {
     const { timerTime, timerOn } = this.state;
     if (!timerOn) {
       if (input === "incHours" && timerTime + 3600000 < 216000000) {
@@ -65,9 +64,9 @@ class Countdown extends Component {
 
   render() {
     const { timerTime, timerStart, timerOn } = this.state;
-    let seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
-    let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
-    let hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
+    const seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
+    const minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
+    const hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
 
     return (
       <div className="Countdown">
@@ -79,8 +78,9 @@ class Countdown extends Component {
           <button onClick={() => this.adjustTimer("incSeconds")}>&#8679;</button> */}
 
           <div className="Countdown-time">
-          <div className="Countdown-time2">{hours} : {minutes} : {seconds}
-          </div>
+            <div className="Countdown-time2">
+              {hours} : {minutes} : {seconds}
+            </div>
           </div>
 
           {/* <button onClick={() => this.adjustTimer("decHours")}>&#8681;</button>
@@ -102,19 +102,17 @@ class Countdown extends Component {
             Stop
           </button>
         )}
-        {timerOn === false && 
-        (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
-            <button className="Button-start" onClick={this.startTimer}>
-              Resume
-            </button>
-          )}
+        {timerOn === false && timerStart !== 0 && timerStart !== timerTime && timerTime !== 0 && (
+          <button className="Button-start" onClick={this.startTimer}>
+            Resume
+          </button>
+        )}
 
-        {(timerOn === false || timerTime < 1000) &&
-          (timerStart !== timerTime && timerStart > 0) && (
-            <button className="Button-reset" onClick={this.resetTimer}>
-              Reset
-            </button>
-          )}
+        {(timerOn === false || timerTime < 1000) && timerStart !== timerTime && timerStart > 0 && (
+          <button className="Button-reset" onClick={this.resetTimer}>
+            Reset
+          </button>
+        )}
       </div>
     );
   }
