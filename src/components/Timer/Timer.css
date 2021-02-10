@@ -73,7 +73,7 @@ button:hover {
   font-size: calc(1em + 2vw);
   font-weight: 900;
   /* -webkit-text-fill-color: 5px rgb(21, 18, 18); */
-  -webkit-text-stroke: 3px rgb(212, 88, 88);
+  /* -webkit-text-stroke: 3px rgb(212, 88, 88); */
   text-shadow: 0 0px 15px rgb(84, 31, 31);
 }
 .Timers {
