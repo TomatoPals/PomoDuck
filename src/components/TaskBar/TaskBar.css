@@ -35,3 +35,8 @@ button {
 .makeStyles-root-5 {
   background-color: transparent !important;
 }
+.MuiListItemText-primary {
+  font-size: 20px !important;
+}
+
+/* .MuiTypography-root .MuiListItemText-primary .MuiTypography-body2  */

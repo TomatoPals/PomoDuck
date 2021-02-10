@@ -33,7 +33,7 @@ const TaskBar = () => {
       <Grid container sm={12} alignItems="center" justify="center">
         {/* onClick to register when the add task button is clicked */}
         <Grid item xs={10} sm={10} md={7} className="taskBar">
-          <FormControl>
+          <FormControl id="jak">
             <TextField
               // value={taskListState.tasks}
               onChange={handleTaskListChange}
