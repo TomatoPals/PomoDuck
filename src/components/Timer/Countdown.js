@@ -23,6 +23,7 @@ class Countdown extends Component {
       } else {
         clearInterval(this.timer);
         this.setState({ timerOn: false });
+        //// => This is where you can call a function to send data to the database.
         alert("Countdown ended");
       }
     }, 10);
@@ -46,11 +47,25 @@ class Countdown extends Component {
   adjustTimer = (input) => {
     const { timerTime, timerOn } = this.state;
     if (!timerOn) {
-      if (input === "incHours" && timerTime + 3600000 < 216000000) {
-        this.setState({ timerTime: timerTime + 3600000 });
-      } else if (input === "decHours" && timerTime - 3600000 >= 0) {
-        this.setState({ timerTime: timerTime - 3600000 });
-      } else if (input === "incMinutes" && timerTime + 60000 < 216000000) {
+      // if (input === "incHours" && timerTime + 3600000 < 216000000) {
+      //   this.setState({ timerTime: timerTime + 3600000 });
+      // } else if (input === "decHours" && timerTime - 3600000 >= 0) {
+      //   this.setState({ timerTime: timerTime - 3600000 });
+      // } else if (input === "incMinutes" && timerTime + 60000 < 216000000) {
+      //   this.setState({ timerTime: timerTime + 60000 });
+      // } else if (input === "decMinutes" && timerTime - 60000 >= 0) {
+      //   this.setState({ timerTime: timerTime - 60000 });
+      // } else if (input === "incSeconds" && timerTime + 1000 < 216000000) {
+      //   this.setState({ timerTime: timerTime + 1000 });
+      // } else if (input === "decSeconds" && timerTime - 1000 >= 0) {
+      //   this.setState({ timerTime: timerTime - 1000 });
+      // }
+      //////
+      // if (input === "incHours" && timerTime + 3600000 < 216000000) {
+      //   this.setState({ timerTime: timerTime + 3600000 });
+      // } else if (input === "decHours" && timerTime - 3600000 >= 0) {
+      //   this.setState({ timerTime: timerTime - 3600000 });
+      if (input === "incMinutes" && timerTime + 60000 < 216000000) {
         this.setState({ timerTime: timerTime + 60000 });
       } else if (input === "decMinutes" && timerTime - 60000 >= 0) {
         this.setState({ timerTime: timerTime - 60000 });
@@ -59,6 +74,7 @@ class Countdown extends Component {
       } else if (input === "decSeconds" && timerTime - 1000 >= 0) {
         this.setState({ timerTime: timerTime - 1000 });
       }
+      //////
     }
   };
 
@@ -66,12 +82,12 @@ class Countdown extends Component {
     const { timerTime, timerStart, timerOn } = this.state;
     const seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
     const minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
-    const hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
+    // const hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
 
     return (
       <div className="Countdown">
         <div className="Countdown-header">Take A Break</div>
-        <div className="Countdown-label">Hours : Minutes : Seconds</div>
+        <div className="Countdown-label">Minutes : Seconds</div>
         <div className="Countdown-display">
           {/* <button onClick={() => this.adjustTimer("incHours")}>&#8679;</button>
           <button onClick={() => this.adjustTimer("incMinutes")}>&#8679;</button>
@@ -79,7 +95,7 @@ class Countdown extends Component {
 
           <div className="Countdown-time">
             <div className="Countdown-time2">
-              {hours} : {minutes} : {seconds}
+              {minutes} : {seconds}
             </div>
           </div>
 
