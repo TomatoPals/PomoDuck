@@ -23,7 +23,7 @@ button {
   cursor: pointer !important;
 }
 
-.MuiFormControl-root {
+/* .MuiFormControl-root {
   width: 100%;
 }
 .MuiFormControl-root {
@@ -34,4 +34,4 @@ button {
 }
 .makeStyles-root-5 {
   background-color: transparent !important;
-}
+} */

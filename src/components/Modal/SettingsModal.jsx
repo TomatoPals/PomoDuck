@@ -50,7 +50,7 @@ export default function SettingsModal() {
   );
 
   return (
-    <div>
+    <>
       <Button type="button" color="inherit" onClick={handleOpen}>
         Settings
       </Button>
@@ -62,6 +62,6 @@ export default function SettingsModal() {
       >
         {body}
       </Modal>
-    </div>
+    </>
   );
 }

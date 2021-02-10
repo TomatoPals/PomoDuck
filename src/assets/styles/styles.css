@@ -1,19 +1,12 @@
-
-/* > finds the nest children */
-/* #gridcontainertomato > div.className */
-
-/* #gridcontainertomato {
-    height: 70px;
-}
-#gridcontainertomato > img {
-    height: inherit; 
-    display: inline-block;
+.outside-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 40px;
 }
 
-#logo > img {
-    height: inherit;
-    display: inline-block;
-} */
+
 #logo {
     margin-left: 60px;
     margin-top: 4px;
