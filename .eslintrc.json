@@ -8,7 +8,18 @@
     "commonjs": true,
     "node": true
   },
-  "extends": ["prettier", "react-app", "react-app/jest"],
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "react-app",
+    "react-app/jest",
+    "prettier/@typescript-eslint",
+    "prettier/babel",
+    "prettier/flowtype",
+    "prettier/prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "array-callback-return": "error",
