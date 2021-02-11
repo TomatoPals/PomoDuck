@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function CheckboxList(props) {
+export default function CreateTask(props) {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
 
@@ -37,6 +37,7 @@ export default function CheckboxList(props) {
   return (
     <List className={classes.root}>
       {/* passes the taskList  */}
+
       {props.taskList.map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 

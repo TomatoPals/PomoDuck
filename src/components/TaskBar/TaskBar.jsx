@@ -1,6 +1,9 @@
 import { Button, FormControl, TextField, Grid } from "@material-ui/core";
 import CreateTask from "./CreateTask";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import store from "../../store";
+import { ADD_TASKS, LOADING } from "../../actions/TaskActions";
 import "./TaskBar.css";
 
 const TaskBar = () => {
@@ -17,7 +20,8 @@ const TaskBar = () => {
     console.log("e: ", e.target.value);
   };
   const handleTaskSubmit = (e) => {
-    console.log(taskListState);
+    store.dispatch({ type: LOADING });
+    store.dispatch({ type: ADD_TASKS, payload: taskListState.tasks });
     // pass props to create task
     const temp = taskListState.taskList;
     temp.push(taskListState.tasks);
@@ -28,6 +32,15 @@ const TaskBar = () => {
     });
     // have post route
   };
+
+  const tasks = useSelector((state) => state.taskList.tasks);
+
+  useEffect(() => {
+    if (tasks.length < 1) {
+      return;
+    }
+    console.log(tasks);
+  }, [tasks]);
   // useEffect to render tasks currently in the db?
   return (
     <>

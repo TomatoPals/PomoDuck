@@ -1,10 +1,13 @@
 import { USER_LOGIN, LOADING } from "../actions/UserActions";
-const UserReducer = (state, action) => {
+
+const initialstate = {};
+
+const UserReducer = (state = initialstate, action) => {
   switch (action.type) {
     case USER_LOGIN:
       return {
         ...state,
-        userInfo: action.userInfo,
+        userDetails: action.payload,
         loading: false
       };
     case LOADING:
