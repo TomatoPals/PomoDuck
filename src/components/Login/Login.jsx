@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { useStoreContext } from "../../utils/GlobalState";
+import store from "../../store";
 import { USER_LOGIN, LOADING } from "../../actions/UserActions";
 import API from "../../utils/API";
 import "./Login.css";
 
 const Login = () => {
-  const [state, dispatch] = useStoreContext();
-
   const [inputEmailState, setInputEmailState] = useState({
     email: ""
   });
@@ -23,10 +21,10 @@ const Login = () => {
   };
   const handleFormSubmit = async () => {
     try {
-      dispatch({ type: LOADING });
+      store.dispatch({ type: LOADING });
       const userInfo = await API.login(inputEmailState.email, inputPasswordState.password);
-      dispatch({ type: USER_LOGIN, userInfo: userInfo.data });
-      console.log(state);
+      store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
+      // console.log(state);
     } catch (error) {
       console.log(error);
     }
@@ -35,6 +33,7 @@ const Login = () => {
   return (
     <>
       <h1>Login:</h1>
+      {/* <p>{state.userInfo.firstName}</p> */}
       <TextField
         value={inputEmailState.email}
         onChange={handleInputEmailChange}

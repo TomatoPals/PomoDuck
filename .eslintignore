@@ -3,3 +3,4 @@ reportWebVitals.js
 setupTests.js
 /src/utils/GlobalState.js
 /src/reducers/UserReducer.js
+/src/reducers/TaskReducer.js
