@@ -1,6 +1,6 @@
 import { USER_LOGIN, LOADING } from "../actions/UserActions";
 
-const initialstate = {};
+const initialstate = { userDetails: {} };
 
 const UserReducer = (state = initialstate, action) => {
   switch (action.type) {
