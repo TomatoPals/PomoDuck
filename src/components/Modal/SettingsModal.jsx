@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import SettingsForms from "../Settings/SettingsForms";
 import Button from "@material-ui/core/Button";
+import "../../assets/styles/styles.css";
 // function rand() {
 //   return Math.round(Math.random() * 20) - 10;
 // }
@@ -52,7 +53,8 @@ export default function SettingsModal() {
   return (
     <>
       <Button type="button" color="inherit" onClick={handleOpen}>
-        Settings
+        <img src="/Assets/icons/config-white.png" alt="config icon" className="settingsIcon" />
+        <div className="settingsTitle">Settings</div>
       </Button>
       <Modal
         open={open}

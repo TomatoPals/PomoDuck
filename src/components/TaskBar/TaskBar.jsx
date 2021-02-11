@@ -1,7 +1,7 @@
-import { Button, FormControl, TextField, Grid } from "@material-ui/core";
+import { Button, FormControl, TextField } from "@material-ui/core";
 import CreateTask from "./CreateTask";
 import React, { useState } from "react";
-import "./TaskBar.css";
+import "../../assets/styles/styles.css";
 
 const TaskBar = () => {
   const [taskListState, setTaskListState] = useState({
@@ -30,23 +30,21 @@ const TaskBar = () => {
   // useEffect to render tasks currently in the db?
   return (
     <>
-      <Grid container sm={12} alignItems="center" justify="center">
-        {/* onClick to register when the add task button is clicked */}
-        <Grid item xs={10} sm={10} md={7} className="taskBar">
-          <FormControl>
-            <TextField
-              // value={taskListState.tasks}
-              onChange={handleTaskListChange}
-              type="text"
-              placeholder="Enter task"
-            />
-            <Button variant="contained" onClick={handleTaskSubmit}>
-              Add Task
-            </Button>
-            <CreateTask taskList={taskListState.taskList} />
-          </FormControl>
-        </Grid>
-      </Grid>
+      {/* onClick to register when the add task button is clicked */}
+      <div className="taskBar">
+        <FormControl>
+          <TextField
+            // value={taskListState.tasks}
+            onChange={handleTaskListChange}
+            type="text"
+            placeholder="Enter task"
+          />
+          <Button variant="contained" onClick={handleTaskSubmit} className="addtaskbtn">
+            Add Task
+          </Button>
+          <CreateTask taskList={taskListState.taskList} />
+        </FormControl>
+      </div>
     </>
   );
 };

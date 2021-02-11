@@ -5,6 +5,7 @@ import CreateUser from "../CreateUser/CreateUser";
 import Login from "../Login/Login";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
+import "../../assets/styles/styles.css";
 
 function getModalStyle() {
   const top = 50;
@@ -69,7 +70,8 @@ export default function SignUpModal(props) {
   return (
     <>
       <Button type="button" color="inherit" onClick={wrapperFunction}>
-        {loggedIn ? "Logout" : "Signup"}
+        <img src="/Assets/icons/user-white.png" alt="signup" className="signupIcon" />
+        <div className="signupTitle">{loggedIn ? "Logout" : "Signup"}</div>
       </Button>
       <Modal
         open={open}

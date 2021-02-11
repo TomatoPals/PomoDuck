@@ -1,27 +1,16 @@
 import { AppBar, Toolbar } from "@material-ui/core";
 import React from "react";
 // import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/styles";
+// import { makeStyles } from "@material-ui/styles";
 import "../../assets/styles/styles.css";
 import SignUpModal from "../Modal/SignUpModal";
 import SettingsModal from "../../components/Modal/SettingsModal";
 
-const useStyles = makeStyles(() => ({
-  toolbarStyles: {
-    padding: 10
-  },
-  appbarStyles: {
-    backgroundColor: "#001015",
-    height: 100
-  }
-}));
-
 const Header = (props) => {
   console.log("props:", props);
-  const classes = useStyles();
   return (
-    <AppBar position="relative" className={classes.appbarStyles}>
-      <Toolbar className={classes.toolbarStyles}>
+    <AppBar position="relative" id="appbarStyles">
+      <Toolbar id="toolbarStyles">
         <div className="outside-box">
           <div className="left-box" id="logo">
             <img src="/Assets/pomoduck-logo.svg" alt="logo" />
