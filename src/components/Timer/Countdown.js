@@ -5,7 +5,7 @@ const Countdown = () => {
   const [timeState, setTimeState] = useState({
     timerOn: false,
     timerStart: 0,
-    remainingTime: 1200000
+    remainingTime: 1500000
   });
 
   const startTimer = () => {
@@ -23,7 +23,7 @@ const Countdown = () => {
     setTimeState({
       timerOn: false,
       timerStart: 0,
-      remainingTime: 1200000
+      remainingTime: 1500000
     });
   };
 
