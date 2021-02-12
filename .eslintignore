@@ -2,5 +2,5 @@ node_modules
 reportWebVitals.js
 setupTests.js
 /src/utils/GlobalState.js
-/src/reducers/UserReducer.js
-/src/reducers/TaskReducer.js
+/src/reducers/
+/src/components/Timer/

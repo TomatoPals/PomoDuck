@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import store from "../../store";
-import { TIME_REMAINING } from "../../actions/TimerActions";
+import { LONG_TIME_REMAINING } from "../../actions/TimerActions";
 import "../../assets/styles/styles.css";
 
 const Countdown = () => {
   const [timeState, setTimeState] = useState({
     timerOn: false,
     timerStart: 0,
-    remainingTime: 1500000,
-    minutes: 25,
+    remainingTime: 900000,
+    minutes: 15,
     seconds: "00"
   });
 
@@ -19,7 +19,7 @@ const Countdown = () => {
       timerOn: true,
       remainingTime: timeState.remainingTime,
       timerStart: timeState.remainingTime,
-      minutes: 25,
+      minutes: 15,
       seconds: "00"
     });
   };
@@ -31,8 +31,8 @@ const Countdown = () => {
     setTimeState({
       timerOn: false,
       timerStart: 0,
-      remainingTime: 1500000,
-      minutes: 25,
+      remainingTime: 900000,
+      minutes: 15,
       seconds: "00"
     });
   };
@@ -52,7 +52,7 @@ const Countdown = () => {
           10
         );
       if (timeState.remainingTime % 1000 === 0) {
-        store.dispatch({ type: TIME_REMAINING, payload: `${timeState.minutes}:${timeState.seconds}` });
+        store.dispatch({ type: LONG_TIME_REMAINING, payload: `${timeState.minutes}:${timeState.seconds}` });
       }
       return () => clearInterval(timer);
     }
