@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Timer.css";
+import "../../assets/styles/styles.css";
 
 class Countdown extends Component {
   state = {
