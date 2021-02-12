@@ -30,18 +30,17 @@ const TaskBar = () => {
       taskList: temp,
       tasks: ""
     });
-    // have post route
   };
 
-  const tasks = useSelector((state) => state.taskList.tasks);
+  const userInfo = useSelector((state) => state.userInfo);
 
   useEffect(() => {
-    if (tasks.length < 1) {
+    if (Object.keys(userInfo.userDetails).length === 0) {
       return;
     }
-    console.log(tasks);
-  }, [tasks]);
-  // useEffect to render tasks currently in the db?
+    console.log(userInfo.userDetails.id);
+  }, [userInfo]);
+
   return (
     <>
       {/* onClick to register when the add task button is clicked */}
