@@ -23,6 +23,9 @@ const TaskBar = () => {
     store.dispatch({ type: LOADING });
     store.dispatch({ type: ADD_TASKS, payload: taskListState.tasks });
     // pass props to create task
+    if (taskListState.tasks.length < 1) {
+      return;
+    }
     const temp = taskListState.taskList;
     temp.push(taskListState.tasks);
     setTaskListState({
@@ -47,7 +50,7 @@ const TaskBar = () => {
       <div className="taskBar">
         <FormControl>
           <TextField
-            // value={taskListState.tasks}
+            value={taskListState.tasks}
             onChange={handleTaskListChange}
             type="text"
             placeholder="Enter task"
