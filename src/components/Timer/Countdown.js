@@ -5,14 +5,14 @@ const Countdown = () => {
   const [timeState, setTimeState] = useState({
     timerOn: false,
     timerStart: 0,
-    timerTime: 1200000
+    remainingTime: 1200000
   });
 
   const startTimer = () => {
     setTimeState({
       timerOn: true,
-      timerTime: timeState.timerTime,
-      timerStart: timeState.timerTime
+      remainingTime: timeState.remainingTime,
+      timerStart: timeState.remainingTime
     });
   };
 
@@ -23,22 +23,22 @@ const Countdown = () => {
     setTimeState({
       timerOn: false,
       timerStart: 0,
-      timerTime: 1200000
+      remainingTime: 1200000
     });
   };
 
   useEffect(() => {
     if (timeState.timerOn === true) {
       const timer =
-        timeState.timerTime > 0 &&
-        setInterval(() => setTimeState({ ...timeState, timerTime: timeState.timerTime - 10 }), 10);
+        timeState.remainingTime > 0 &&
+        setInterval(() => setTimeState({ ...timeState, remainingTime: timeState.remainingTime - 10 }), 10);
       return () => clearInterval(timer);
     }
   }, [timeState]);
 
-  const { timerTime, timerStart, timerOn } = timeState;
-  const seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
-  const minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
+  const { remainingTime, timerStart, timerOn } = timeState;
+  const seconds = ("0" + (Math.floor((remainingTime / 1000) % 60) % 60)).slice(-2);
+  const minutes = ("0" + Math.floor((remainingTime / 60000) % 60)).slice(-2);
 
   return (
     <div className="Countdown">
@@ -52,23 +52,23 @@ const Countdown = () => {
         </div>
       </div>
 
-      {timerOn === false && (timerStart === 0 || timerTime === timerStart) && (
+      {timerOn === false && (timerStart === 0 || remainingTime === timerStart) && (
         <button className="Button-start" onClick={startTimer}>
           Start
         </button>
       )}
-      {timerOn === true && timerTime >= 1000 && (
+      {timerOn === true && remainingTime >= 1000 && (
         <button className="Button-stop" onClick={stopTimer}>
           Stop
         </button>
       )}
-      {timerOn === false && timerStart !== 0 && timerStart !== timerTime && timerTime !== 0 && (
+      {timerOn === false && timerStart !== 0 && timerStart !== remainingTime && remainingTime !== 0 && (
         <button className="Button-start" onClick={startTimer}>
           Resume
         </button>
       )}
 
-      {(timerOn === false || timerTime < 1000) && timerStart !== timerTime && timerStart > 0 && (
+      {(timerOn === false || remainingTime < 1000) && timerStart !== remainingTime && timerStart > 0 && (
         <button className="Button-reset" onClick={resetTimer}>
           Reset
         </button>
