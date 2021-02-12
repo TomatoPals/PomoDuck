@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../assets/styles/styles.css";
 import TaskBar from "../../components/TaskBar/TaskBar";
 
@@ -12,7 +12,9 @@ import "../../assets/styles/styles.css";
 // import CreateUser from "../../components/CreateUser/CreateUser";
 
 const HomePage = (props) => {
+  const [currentTask, setCurrentTask] = useState("");
   console.log("homepage props", props);
+
   return (
     <>
       <header>
@@ -20,8 +22,8 @@ const HomePage = (props) => {
       </header>
       <main>
         <div className="contentContainer">
-          <Timer />
-          <TaskBar />
+          <Timer currentTask={currentTask} />
+          <TaskBar setCurrentTask={setCurrentTask} />
         </div>
         <div className="instructionbox">
           <div className="lowerbox"></div>
