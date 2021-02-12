@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from "react";
+import store from "../../store";
+import { TIME_REMAINING } from "../../actions/TimerActions";
 import "../../assets/styles/styles.css";
 
 const Countdown = () => {
   const [timeState, setTimeState] = useState({
     timerOn: false,
     timerStart: 0,
-    remainingTime: 1500000
+    remainingTime: 1500000,
+    minutes: 25,
+    seconds: "00"
   });
+
+  const { remainingTime, timerStart, timerOn, minutes, seconds } = timeState;
 
   const startTimer = () => {
     setTimeState({
       timerOn: true,
       remainingTime: timeState.remainingTime,
-      timerStart: timeState.remainingTime
+      timerStart: timeState.remainingTime,
+      minutes: 25,
+      seconds: "00"
     });
   };
 
@@ -23,7 +31,9 @@ const Countdown = () => {
     setTimeState({
       timerOn: false,
       timerStart: 0,
-      remainingTime: 1500000
+      remainingTime: 1500000,
+      minutes: 25,
+      seconds: "00"
     });
   };
 
@@ -31,14 +41,22 @@ const Countdown = () => {
     if (timeState.timerOn === true) {
       const timer =
         timeState.remainingTime > 0 &&
-        setInterval(() => setTimeState({ ...timeState, remainingTime: timeState.remainingTime - 10 }), 10);
+        setInterval(
+          () =>
+            setTimeState({
+              ...timeState,
+              minutes: ("0" + Math.floor((remainingTime / 60000) % 60)).slice(-2),
+              seconds: ("0" + (Math.floor((remainingTime / 1000) % 60) % 60)).slice(-2),
+              remainingTime: timeState.remainingTime - 10
+            }),
+          10
+        );
+      if (timeState.remainingTime % 1000 === 0) {
+        store.dispatch({ type: TIME_REMAINING, payload: `${timeState.minutes}:${timeState.seconds}` });
+      }
       return () => clearInterval(timer);
     }
   }, [timeState]);
-
-  const { remainingTime, timerStart, timerOn } = timeState;
-  const seconds = ("0" + (Math.floor((remainingTime / 1000) % 60) % 60)).slice(-2);
-  const minutes = ("0" + Math.floor((remainingTime / 60000) % 60)).slice(-2);
 
   return (
     <div className="Countdown">
