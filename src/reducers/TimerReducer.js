@@ -1,6 +1,6 @@
-import { TIME_REMAINING } from "../actions/TimerActions";
+import { TIME_REMAINING, SHORT_TIME_REMAINING, LONG_TIME_REMAINING } from "../actions/TimerActions";
 
-const initialstate = { timeRemaining: "" };
+const initialstate = { timeRemaining: "", shortTimeRemaining: "", longTimeRemaining: "" };
 
 const TimerReducer = (state = initialstate, action) => {
   switch (action.type) {
@@ -8,6 +8,16 @@ const TimerReducer = (state = initialstate, action) => {
       return {
         ...state,
         timeRemaining: action.payload
+      };
+    case SHORT_TIME_REMAINING:
+      return {
+        ...state,
+        shortTimeRemaining: action.payload
+      };
+    case LONG_TIME_REMAINING:
+      return {
+        ...state,
+        longTimeRemaining: action.payload
       };
     default:
       return state;
