@@ -1,6 +1,6 @@
-import { ADD_TASKS, LOADING } from "../actions/TaskActions";
+import { ADD_TASKS, LOADING, CURRENT_TASK } from "../actions/TaskActions";
 
-const initialstate = { tasks: [] };
+const initialstate = { tasks: [], currentTask: "" };
 
 const TaskReducer = (state = initialstate, action) => {
   switch (action.type) {
@@ -14,6 +14,11 @@ const TaskReducer = (state = initialstate, action) => {
       return {
         ...state,
         loading: true
+      };
+    case CURRENT_TASK:
+      return {
+        ...state,
+        currentTask: action.payload
       };
 
     default:
