@@ -65,12 +65,26 @@ export default function SignUpModal() {
   };
 
   const handleLogout = () => {
-    try {
-      console.log(`${300 - checkTime(parseInt(storeState.timeRemaining.shortTimeRemaining), 300)}`);
-      console.log(`${1500 - checkTime(parseInt(storeState.timeRemaining.pomoTimeremaining), 1500)}`);
-      console.log(`${900 - checkTime(parseInt(storeState.timeRemaining.longTimeRemaining), 900)}`);
-      // console.log(storeState.userInfo.userDetails);
+    const totalPomSeconds =
+      1500 -
+      checkTime(parseInt(storeState.timeRemaining.pomoTimeRemaining), 1500) +
+      storeState.userInfo.userDetails.totalPomSeconds;
+    const totalSmallBreakSeconds =
+      300 -
+      checkTime(parseInt(storeState.timeRemaining.shortTimeRemaining), 300) +
+      storeState.userInfo.userDetails.totalSmallBreakSeconds;
+    const totalBigBreakSeconds =
+      900 -
+      checkTime(parseInt(storeState.timeRemaining.longTimeRemaining), 900) +
+      storeState.userInfo.userDetails.totalBigBreakSeconds;
 
+    try {
+      API.updateTotalUserMinutes(
+        storeState.userInfo.userDetails.id,
+        totalPomSeconds,
+        totalSmallBreakSeconds,
+        totalBigBreakSeconds
+      );
       API.logout();
       setLoggedIn(false);
       store.dispatch({ type: LOGGED_IN, payload: false });
