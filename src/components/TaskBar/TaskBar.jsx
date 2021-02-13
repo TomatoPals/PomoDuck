@@ -41,7 +41,7 @@ const TaskBar = () => {
     if (Object.keys(userInfo.userDetails).length === 0) {
       return;
     }
-    console.log(userInfo.userDetails.id);
+    console.log("userInfo.userDetails.id:", userInfo.userDetails.id);
   }, [userInfo]);
 
   return (
