@@ -15,7 +15,8 @@ const Timer = (props) => {
   const handlePomoClick = () => {
     setTimerState({
       pomo: true,
-      short: false
+      short: false,
+      long: false
     });
   };
 
@@ -52,7 +53,7 @@ const Timer = (props) => {
                 <Button variant="contained" onClick={handleLongClick}>
                   Long Break
                 </Button>
-                <div className="Countdown-label">{props.currentTask} - Minutes : Seconds</div>
+                <div className="Countdown-label">{props.currentTask}</div>
                 {timerState.pomo ? <Countdown /> : timerState.short ? <ShortBreak /> : <LongBreak />}
               </div>
             </div>

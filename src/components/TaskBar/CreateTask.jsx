@@ -47,7 +47,7 @@ export default function CreateTask(props) {
   return (
     <List className="listitem">
       {/* passes the taskList  */}
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+      <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
         {props.taskList.map((value) => {
           // const labelId = `checkbox-list-label-${value}`;
 
