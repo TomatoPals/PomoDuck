@@ -24,7 +24,8 @@ export default function CreateTask(props) {
 
   return (
     <List className="listitem">
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+      {/* passes the taskList  */}
+      <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
         {props.taskList.map((value) => {
           return (
             <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>

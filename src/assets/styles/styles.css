@@ -74,7 +74,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9eaeb3;
+  color: #f0f0f0;
 }
 .contentContainer {
   background-image: url("../../images/whitebackground-color.svg");
@@ -130,7 +130,7 @@ body {
 }
 /* vv This is for the start button vv */
 button {
-  background-color: #202b33;
+  background-color: transparent;
   border: solid 1px transparent;
   border-radius: 4px;
   padding: 10px 20px;
@@ -142,6 +142,40 @@ button {
 button:hover {
   background-color: #106ba3;
 }
+
+.Countdown button {
+  background: none rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 1%;
+}
+
+.Countdown button:hover {
+  background: none rgba(0, 0, 0, 0.55);
+}
+
+.Button-start, .Button-stop, .Button-reset, .addtaskbtn {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: .9;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+
+.Button-start:hover, .Button-stop:hover, .Button-reset:hover, .addtaskbtn:hover {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.addtaskbtn {
+  width: 200px;
+  margin: 10px auto !important;
+  color:#fff !important;
+}
+
+
+/* BUTTON STYLES END */
 
 .Countdown-display {
   margin-top: 5px;
@@ -160,9 +194,14 @@ button:hover {
   background-color: #ffa202;
 }
 .Countdown-label {
-  font-size: 18px;
-  margin-top: 5px;
+  width: 90%;
+  font-size: 24px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  margin: 0 auto;
+  margin-top: 40px;
   margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65) !important;
+  padding-bottom: 10px;
 }
 .Countdown-time {
   font-size: 50px;
@@ -201,26 +240,21 @@ button:hover {
   margin: auto;
 }
 
+.taskBar > div > div > .MuiInput-underline:before {
+  border-bottom: none;
+}
+
 .taskBar input {
   width: 700px; /* 100%; */
   text-align: center !important;
   color: white;
+  background-color: rgba(130, 6, 6, 0.3);
+  border-radius: 6px;
 }
 
-.addtaskbtn {
-  width: 200px;
-  margin: 10px auto !important;
-}
-
-button {
-  background-color: #202b33 !important;
-  border: solid 1px transparent !important;
-  border-radius: 4px !important;
-  padding: 10px 20px !important;
-  color: #ffffff !important;
-  font-size: 16px !important;
-  margin: 0 5px !important;
-  cursor: pointer !important;
+.taskBar input::placeholder {
+  color: #fff !important;
+  font-weight: bold;
 }
 
 .listitem {
@@ -229,16 +263,41 @@ button {
   color: white;
 }
 
+.MuiRadio-colorSecondary.Mui-checked {
+  color: #fff !important;
+}
+
+/* .taskBar > div > ul > .MuiFormGroup-root{
+  display: block;
+  height: 112px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color:rgba(116, 39, 39, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
+
 /* ==== FOOTER ==== */
 
 footer {
   border-top: 1px solid #134150;
   margin: 50px 0px 30px 0px;
   text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .copyright {
-  color: rgb(191, 191, 191);
+  color: rgb(240, 240, 240);
   font-size: 12px;
 }
 
@@ -249,6 +308,10 @@ footer {
 .flex-center-all img {
   height: 40px;
   margin: 0px 6px 20px 6px;
+}
+
+.instructionbox {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 /* ===== MOBILE STYLES ===== */
@@ -312,7 +375,16 @@ footer {
     text-align: center !important;
   }
 
+
   .MuiFormControl-root {
     width: 100%;
+  }
+
+  .Countdown button {
+    padding: 6px 8px;
+  }
+
+  .Button-start {
+    padding: 10px 20px !important;
   }
 }
