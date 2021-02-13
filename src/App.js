@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "../src/pages/NoMatch/NoMatch";
 import CreateUser from "../src/components/CreateUser/CreateUser";
+import StatsPage from "./pages/StatsPage/StatsPage";
 
 function App() {
   // handle logged in status
@@ -19,6 +20,7 @@ function App() {
           render={(props) => <HomePage {...props} callback={handleLogin} isLoggedin={isLoggedIn} />}
         />
         {/* move create user into homepage */}
+        <Route exact path="/stats" component={StatsPage} />
         <Route exact path="/signup" component={CreateUser} />
         <Route component={NoMatch} />
       </Switch>

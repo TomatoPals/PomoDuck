@@ -1,11 +1,12 @@
-import React from "react";
-import Header from "../../components/Header";
+import React, { useState } from "react";
+import Header from "../../components/Header/Header";
 import StatsTable from "../../components/StatsTable/StatsTable";
 import Footer from "../../components/Footer/Footer";
+import { Button, Grid } from "@material-ui/core";
 
 // pass logged in?
 const StatsPage = () => {
-  const [statsState, setStatsState] = useState({
+  const [statsState, setStatState] = useState({
     //   will be replaced with API call
     statsList: [
       {
@@ -41,13 +42,14 @@ const StatsPage = () => {
         <Grid item>
           <Header />
           <Grid item sm={12}>
-            <StatsTable stat={this.statsState.statsList}/>
+            <StatsTable stat={statsState.statsList} />
           </Grid>
           <Grid container sm={12} alignItems="center" justify="center">
             <Grid item xs={12} sm={12} md={10} lg={8}>
               <Footer />
             </Grid>
           </Grid>
+          <Button onClick={setStatState}>I'm Useless!</Button>
         </Grid>
       </Grid>
     </>

@@ -13,17 +13,15 @@ const CreateStatsTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {console.log(props.stats)}
+        {/* {console.log(props.stats)} */}
         {props.stats.length > 0 ? (
-          props.emp.map((stat) => {
+          props.stats.map((stat) => {
             return (
               <tr key={stat.createdAt}>
-                <td scope="row">
-                </td>
-                <td>
-                  {stat.userID}
-                </td>
-                <td>{stat.task}</td>
+                {console.log(stat)}
+                <td scope="row"></td>
+                <td>{stat.userID}</td>
+                <td>{stat.taskName}</td>
                 <td>{stat.estimatedPoms}</td>
                 <td>{stat.completedPoms}</td>
                 <td>{stat.completedSmallBreak}</td>

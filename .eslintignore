@@ -1,3 +1,5 @@
 node_modules
 reportWebVitals.js
 setupTests.js
+src/pages/StatsPage/statsPage.jsx
+src/components/StatsTable/StatsTable.jsx
