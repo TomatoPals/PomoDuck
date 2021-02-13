@@ -45,12 +45,13 @@ const StatsPage = () => {
             <StatsTable stat={statsState.statsList} />
           </Grid>
           <Grid container sm={12} alignItems="center" justify="center">
-            <Grid item xs={12} sm={12} md={10} lg={8}>
-              <Footer />
-            </Grid>
+
           </Grid>
           <Button onClick={setStatState}>I'm Useless!</Button>
         </Grid>
+        {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
+              <Footer />
+            {/* </Grid> */}
       </Grid>
     </>
   );
