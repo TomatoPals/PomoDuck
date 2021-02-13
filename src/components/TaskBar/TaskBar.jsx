@@ -17,13 +17,10 @@ const TaskBar = (props) => {
       ...taskListState,
       tasks: e.target.value
     });
-
-    console.log("e: ", e.target.value);
   };
   const handleTaskSubmit = (e) => {
     store.dispatch({ type: LOADING });
     store.dispatch({ type: ADD_TASKS, payload: taskListState.tasks });
-    // pass props to create task
     if (taskListState.tasks.length < 1) {
       return;
     }

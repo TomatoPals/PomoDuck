@@ -3,9 +3,10 @@ import Countdown from "./Countdown";
 import ShortBreak from "./ShortBreak";
 import LongBreak from "./LongBreak";
 import { Grid, Button } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import "../../assets/styles/styles.css";
 
-const Timer = (props) => {
+const Timer = () => {
   const [timerState, setTimerState] = useState({
     pomo: true,
     short: false,
@@ -35,9 +36,10 @@ const Timer = (props) => {
     });
   };
 
+  const currentTask = useSelector((state) => state.taskList.currentTask);
+
   return (
     <>
-    {console.log("CurrentTask ", props.currentTask)}
       <Grid item>
         <div className="timer">
           <div className="CountDownApp">
@@ -52,7 +54,7 @@ const Timer = (props) => {
                 <Button variant="contained" onClick={handleLongClick}>
                   Long Break
                 </Button>
-                <div className="Countdown-label">{props.currentTask} - Minutes : Seconds</div>
+                <div className="Countdown-label">{currentTask}</div>
                 {timerState.pomo ? <Countdown /> : timerState.short ? <ShortBreak /> : <LongBreak />}
               </div>
             </div>
