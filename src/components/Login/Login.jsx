@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import store from "../../store";
-import { USER_LOGIN, LOADING } from "../../actions/UserActions";
+import { USER_LOGIN, LOADING, LOGGED_IN } from "../../actions/UserActions";
 import API from "../../utils/API";
 import "./Login.css";
 
-const Login = () => {
+const Login = (props) => {
   const [inputEmailState, setInputEmailState] = useState({
     email: ""
   });
@@ -24,6 +24,8 @@ const Login = () => {
       store.dispatch({ type: LOADING });
       const userInfo = await API.login(inputEmailState.email, inputPasswordState.password);
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
+      store.dispatch({ type: LOGGED_IN, payload: true });
+      props.handleClose();
       // console.log(state);
     } catch (error) {
       console.log(error);
