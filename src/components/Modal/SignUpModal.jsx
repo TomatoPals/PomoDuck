@@ -33,23 +33,21 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SignUpModal(props) {
+export default function SignUpModal() {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
-
   const [loggedIn, setLoggedIn] = React.useState(false);
 
-  const userInfo = useSelector((state) => state.userInfo);
+  const storeState = useSelector((state) => state);
 
   // changed local state of loggedin based off of redux global state
   useEffect(() => {
-    if (!userInfo.loggedIn) {
+    if (!storeState.userInfo.loggedIn) {
       return;
     }
     setLoggedIn(true);
-  }, [userInfo]);
+  }, [storeState]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -59,8 +57,20 @@ export default function SignUpModal(props) {
     setOpen(false);
   };
 
+  const checkTime = (time, seconds) => {
+    if (isNaN(time)) {
+      return seconds;
+    }
+    return time;
+  };
+
   const handleLogout = () => {
     try {
+      console.log(`${300 - checkTime(parseInt(storeState.timeRemaining.shortTimeRemaining), 300)}`);
+      console.log(`${1500 - checkTime(parseInt(storeState.timeRemaining.pomoTimeremaining), 1500)}`);
+      console.log(`${900 - checkTime(parseInt(storeState.timeRemaining.longTimeRemaining), 900)}`);
+      // console.log(storeState.userInfo.userDetails);
+
       API.logout();
       setLoggedIn(false);
       store.dispatch({ type: LOGGED_IN, payload: false });

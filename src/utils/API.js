@@ -38,10 +38,14 @@ const PomoDuckBackendAPIs = {
       console.log(error);
     }
   },
-  update: async (userID) => {
+  updateTime: async (userID, pomTime, smallBreakTime, bigBreakTime) => {
     const BASEURL = `http://${envRoutes.update}${userID}`;
     try {
-      const request = await axios.delete(BASEURL);
+      const request = await axios.put(BASEURL, {
+        pomTime,
+        smallBreakTime,
+        bigBreakTime
+      });
       return request;
     } catch (error) {
       console.log(error);
