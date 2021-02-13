@@ -9,7 +9,7 @@ import "../../assets/styles/styles.css";
 import { useSelector } from "react-redux";
 import API from "../../utils/API";
 import store from "../../store";
-import { LOGGED_IN } from "../../actions/UserActions";
+import { LOGGED_IN, USER_LOGOUT } from "../../actions/UserActions";
 
 function getModalStyle() {
   const top = 50;
@@ -87,6 +87,7 @@ export default function SignUpModal() {
       );
       API.logout();
       setLoggedIn(false);
+      store.dispatch({ type: USER_LOGOUT });
       store.dispatch({ type: LOGGED_IN, payload: false });
     } catch (error) {
       console.log(error);
@@ -101,7 +102,7 @@ export default function SignUpModal() {
         <div>
           <Link onClick={() => setIsNew(!isNew)}>{isNew ? "Been here before? Login" : "New User SignUp"}</Link>
         </div>
-        {!isNew ? <Login handleClose={handleClose} /> : <CreateUser />}
+        {!isNew ? <Login handleClose={handleClose} /> : <CreateUser handleClose={handleClose} />}
       </div>
     </>
   );

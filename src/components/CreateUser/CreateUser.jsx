@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
-// we can rename UserAPIs to API because it is a default function
 import API from "../../utils/API";
+import store from "../../store";
+import { USER_LOGIN, LOGGED_IN } from "../../actions/UserActions";
+import { useSelector } from "react-redux";
 import "./CreateUser.css";
 
-const CreateUser = () => {
+const CreateUser = (props) => {
   const [inputFirstNameState, setInputFirstNameState] = useState({
     firstName: ""
   });
@@ -39,11 +41,26 @@ const CreateUser = () => {
         inputEmailState.email,
         inputPasswordState.password
       );
-      console.log(userInfo);
+      store.dispatch({ type: LOGGED_IN, payload: true });
+      store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
+      // const login = await API.login(inputEmailState.email, inputPasswordState.password);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const storeState = useSelector((state) => state);
+
+  useEffect(() => {
+    if (storeState.userInfo.loggedIn) {
+      try {
+        API.login(inputEmailState.email, inputPasswordState.password);
+        props.handleClose();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [storeState, inputEmailState.email, inputPasswordState.password, props]);
   return (
     <>
       <h1>New User Signup:</h1>

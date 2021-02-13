@@ -1,4 +1,4 @@
-import { USER_LOGIN, LOADING, LOGGED_IN } from "../actions/UserActions";
+import { USER_LOGIN, LOADING, LOGGED_IN, USER_LOGOUT } from "../actions/UserActions";
 
 const initialstate = {
   userDetails: {},
@@ -11,6 +11,12 @@ const UserReducer = (state = initialstate, action) => {
       return {
         ...state,
         userDetails: action.payload,
+        loading: false
+      };
+    case USER_LOGOUT:
+      return {
+        ...state,
+        userDetails: {},
         loading: false
       };
     case LOADING:
