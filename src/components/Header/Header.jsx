@@ -2,7 +2,6 @@ import { AppBar, Toolbar } from "@material-ui/core";
 import React from "react";
 // import Grid from "@material-ui/core/Grid";
 // import { makeStyles } from "@material-ui/styles";
-import "../../assets/styles/styles.css";
 import SignUpModal from "../Modal/SignUpModal";
 import SettingsModal from "../../components/Modal/SettingsModal";
 

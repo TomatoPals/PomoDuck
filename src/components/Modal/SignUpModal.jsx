@@ -5,7 +5,6 @@ import CreateUser from "../CreateUser/CreateUser";
 import Login from "../Login/Login";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
-import "../../assets/styles/styles.css";
 import { useSelector } from "react-redux";
 import API from "../../utils/API";
 import store from "../../store";

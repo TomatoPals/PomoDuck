@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import store from "../../store";
 import { SHORT_TIME_REMAINING } from "../../actions/TimerActions";
-import "../../assets/styles/styles.css";
 
 const Countdown = () => {
   const [timeState, setTimeState] = useState({
