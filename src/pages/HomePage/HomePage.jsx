@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-
+import "../../assets/styles/styles.css";
 import TaskBar from "../../components/TaskBar/TaskBar";
-
 import Header from "../../components/Header/Header";
 import Timer from "../../components/Timer/Timer";
 import Footer from "../../components/Footer/Footer";
@@ -61,8 +60,8 @@ const HomePage = (props) => {
       </header>
       <main>
         <div className="contentContainer">
-          <Timer currentTask={currentTask} />
-          <TaskBar setCurrentTask={setCurrentTask} />
+          <Timer />
+          <TaskBar />
         </div>
         <div className="instructionbox">
           <div className="lowerbox"></div>
