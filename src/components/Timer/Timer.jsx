@@ -5,7 +5,7 @@ import LongBreak from "./LongBreak";
 import { Grid, Button } from "@material-ui/core";
 import "../../assets/styles/styles.css";
 
-const Timer = () => {
+const Timer = (props) => {
   const [timerState, setTimerState] = useState({
     pomo: true,
     short: false,
@@ -37,6 +37,7 @@ const Timer = () => {
 
   return (
     <>
+    {console.log("CurrentTask ", props.currentTask)}
       <Grid item>
         <div className="timer">
           <div className="CountDownApp">
@@ -51,7 +52,7 @@ const Timer = () => {
                 <Button variant="contained" onClick={handleLongClick}>
                   Long Break
                 </Button>
-                <div className="Countdown-label">Minutes : Seconds</div>
+                <div className="Countdown-label">{props.currentTask} - Minutes : Seconds</div>
                 {timerState.pomo ? <Countdown /> : timerState.short ? <ShortBreak /> : <LongBreak />}
               </div>
             </div>
