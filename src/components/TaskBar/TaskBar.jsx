@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import store from "../../store";
 import { ADD_TASKS, LOADING } from "../../actions/TaskActions";
 
-const TaskBar = () => {
+const TaskBar = (props) => {
   const [taskListState, setTaskListState] = useState({
     tasks: "",
     taskList: []
@@ -17,6 +17,7 @@ const TaskBar = () => {
       ...taskListState,
       tasks: e.target.value
     });
+
     console.log("e: ", e.target.value);
   };
   const handleTaskSubmit = (e) => {
@@ -58,7 +59,7 @@ const TaskBar = () => {
           <Button variant="contained" onClick={handleTaskSubmit} className="addtaskbtn">
             Add Task
           </Button>
-          <CreateTask taskList={taskListState.taskList} />
+          <CreateTask taskList={taskListState.taskList} setCurrentTask={props.setCurrentTask} />
         </FormControl>
       </div>
     </>

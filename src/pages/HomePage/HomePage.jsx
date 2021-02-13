@@ -61,8 +61,8 @@ const HomePage = (props) => {
       </header>
       <main>
         <div className="contentContainer">
-          <Timer />
-          <TaskBar />
+          <Timer currentTask={currentTask} />
+          <TaskBar setCurrentTask={setCurrentTask} />
         </div>
         <div className="instructionbox">
           <div className="lowerbox"></div>
