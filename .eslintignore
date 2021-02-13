@@ -1,6 +1,8 @@
 node_modules
 reportWebVitals.js
 setupTests.js
+src/pages/StatsPage/statsPage.jsx
+src/components/StatsTable/StatsTable.jsx
 /src/utils/GlobalState.js
 /src/reducers/
 /src/components/Timer/
