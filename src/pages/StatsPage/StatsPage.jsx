@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import StatsTable from "../../components/StatsTable/StatsTable";
 import Footer from "../../components/Footer/Footer";
 import { Button, Grid } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
-// pass logged in?
 const StatsPage = () => {
+  const storeState = useSelector((state) => state);
   const [statsState, setStatState] = useState({
     //   will be replaced with API call
     statsList: [
@@ -36,6 +37,14 @@ const StatsPage = () => {
     ]
   });
 
+  //This useEffect gets all of the users info after they are logged in
+  //you can see their total stats on breaks, pomodoros with this
+  useEffect(() => {
+    if (storeState.userInfo.loggedIn) {
+      console.log(storeState.userInfo.userDetails);
+    }
+  }, [storeState]);
+
   return (
     <>
       <Grid container direction="column">
@@ -44,14 +53,12 @@ const StatsPage = () => {
           <Grid item sm={12}>
             <StatsTable stat={statsState.statsList} />
           </Grid>
-          <Grid container sm={12} alignItems="center" justify="center">
-
-          </Grid>
+          <Grid container sm={12} alignItems="center" justify="center"></Grid>
           <Button onClick={setStatState}>I'm Useless!</Button>
         </Grid>
         {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
-              <Footer />
-            {/* </Grid> */}
+        <Footer />
+        {/* </Grid> */}
       </Grid>
     </>
   );

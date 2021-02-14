@@ -14,12 +14,8 @@ spec:
     spec:
       containers:
         - name: pomoduck-frontend
-          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v0.3.6-prod
+          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v0.3.7-prod
           imagePullPolicy: Always
-          resources:
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
           ports:
             - containerPort: 80
           env:

@@ -7,26 +7,22 @@ import API from "../../utils/API";
 import "./Login.css";
 
 const Login = (props) => {
-  const [inputEmailState, setInputEmailState] = useState({
-    email: ""
-  });
-  const [inputPasswordState, setInputPasswordState] = useState({
+  const [inputState, setInputState] = useState({
+    email: "",
     password: ""
   });
-  const handleInputEmailChange = (event) => {
-    setInputEmailState({ email: event.target.value });
+
+  const handleChange = (event) => {
+    setInputState({ ...inputState, [event.target.name]: event.target.value });
   };
-  const handleInputPasswordChange = (event) => {
-    setInputPasswordState({ password: event.target.value });
-  };
+
   const handleFormSubmit = async () => {
     try {
       store.dispatch({ type: LOADING });
-      const userInfo = await API.login(inputEmailState.email, inputPasswordState.password);
+      const userInfo = await API.login(inputState.email, inputState.password);
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
       store.dispatch({ type: LOGGED_IN, payload: true });
       props.handleClose();
-      // console.log(state);
     } catch (error) {
       console.log(error);
     }
@@ -35,17 +31,18 @@ const Login = (props) => {
   return (
     <>
       <h1>Login:</h1>
-      {/* <p>{state.userInfo.firstName}</p> */}
       <TextField
-        value={inputEmailState.email}
-        onChange={handleInputEmailChange}
+        value={inputState.email}
+        onChange={handleChange}
         type="text"
+        name="email"
         placeholder="Enter Email address"
       />
       <TextField
-        value={inputPasswordState.password}
-        onChange={handleInputPasswordChange}
+        value={inputState.password}
+        onChange={handleChange}
         type="password"
+        name="password"
         placeholder="Enter Password"
       />
       <Button variant="contained" onClick={handleFormSubmit}>
