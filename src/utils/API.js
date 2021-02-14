@@ -52,7 +52,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   updateUserProfile: async (userID, firstName, lastName, email, password) => {
-    const BASEURL = `http://${envRoutes.update}${userID}`;
+    const BASEURL = `http://${envRoutes.updateprofile}${userID}`;
     try {
       const request = await axios.put(BASEURL, {
         firstName,

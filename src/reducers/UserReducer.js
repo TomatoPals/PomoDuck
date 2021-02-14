@@ -1,8 +1,9 @@
-import { USER_LOGIN, LOADING, LOGGED_IN, USER_LOGOUT } from "../actions/UserActions";
+import { USER_LOGIN, LOADING, LOGGED_IN, USER_LOGOUT, UPDATE_PROFILE } from "../actions/UserActions";
 
 const initialstate = {
   userDetails: {},
-  loggedIn: null
+  loggedIn: null,
+  updateProfile: null
 };
 
 const UserReducer = (state = initialstate, action) => {
@@ -28,6 +29,11 @@ const UserReducer = (state = initialstate, action) => {
       return {
         ...state,
         loggedIn: action.payload
+      };
+    case UPDATE_PROFILE:
+      return {
+        ...state,
+        updateProfile: action.payload
       };
 
     default:
