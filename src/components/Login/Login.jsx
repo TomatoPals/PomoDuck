@@ -26,7 +26,6 @@ const Login = (props) => {
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
       store.dispatch({ type: LOGGED_IN, payload: true });
       props.handleClose();
-      // console.log(state);
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +34,6 @@ const Login = (props) => {
   return (
     <>
       <h1>Login:</h1>
-      {/* <p>{state.userInfo.firstName}</p> */}
       <TextField
         value={inputEmailState.email}
         onChange={handleInputEmailChange}

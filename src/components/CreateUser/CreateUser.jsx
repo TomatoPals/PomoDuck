@@ -43,7 +43,6 @@ const CreateUser = (props) => {
       );
       store.dispatch({ type: LOGGED_IN, payload: true });
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
-      // const login = await API.login(inputEmailState.email, inputPasswordState.password);
     } catch (error) {
       console.log(error);
     }
