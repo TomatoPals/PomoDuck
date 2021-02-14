@@ -51,6 +51,20 @@ const PomoDuckBackendAPIs = {
       console.log(error);
     }
   },
+  updateUserProfile: async (userID, firstName, lastName, email, password) => {
+    const BASEURL = `http://${envRoutes.update}${userID}`;
+    try {
+      const request = await axios.put(BASEURL, {
+        firstName,
+        lastName,
+        email,
+        password
+      });
+      return request;
+    } catch (error) {
+      console.log(error);
+    }
+  },
   updateDefaultTime: async (userID, pomTime, smallBreakTime, bigBreakTime) => {
     const BASEURL = `http://${envRoutes.update}${userID}`;
     try {
