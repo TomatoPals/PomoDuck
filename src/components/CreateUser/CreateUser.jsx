@@ -9,37 +9,24 @@ import { useSelector } from "react-redux";
 import "./CreateUser.css";
 
 const CreateUser = (props) => {
-  const [inputFirstNameState, setInputFirstNameState] = useState({
-    firstName: ""
-  });
-  const [inputLastNameState, setInputLastNameState] = useState({
-    lastName: ""
-  });
-  const [inputEmailState, setInputEmailState] = useState({
-    email: ""
-  });
-  const [inputPasswordState, setInputPasswordState] = useState({
+  const [inputState, setInputState] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
     password: ""
   });
-  const handleInputFirstNameChange = (event) => {
-    setInputFirstNameState({ firstName: event.target.value });
+
+  const handleChange = (event) => {
+    setInputState({ ...inputState, [event.target.name]: event.target.value });
   };
-  const handleInputLastNameChange = (event) => {
-    setInputLastNameState({ lastName: event.target.value });
-  };
-  const handleInputEmailChange = (event) => {
-    setInputEmailState({ email: event.target.value });
-  };
-  const handleInputPasswordChange = (event) => {
-    setInputPasswordState({ password: event.target.value });
-  };
+
   const handleFormSubmit = async () => {
     try {
       const userInfo = await API.signup(
-        inputFirstNameState.firstName,
-        inputLastNameState.lastName,
-        inputEmailState.email,
-        inputPasswordState.password
+        inputState.firstName,
+        inputState.lastName,
+        inputState.email,
+        inputState.password
       );
       store.dispatch({ type: LOGGED_IN, payload: true });
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
@@ -53,39 +40,43 @@ const CreateUser = (props) => {
   useEffect(() => {
     if (storeState.userInfo.loggedIn) {
       try {
-        API.login(inputEmailState.email, inputPasswordState.password);
+        API.login(inputState.email, inputState.password);
         props.handleClose();
       } catch (error) {
         console.log(error);
       }
     }
-  }, [storeState, inputEmailState.email, inputPasswordState.password, props]);
+  }, [storeState, inputState.email, inputState.password, props]);
   return (
     <>
       <h1>New User Signup:</h1>
       <FormControl>
         <TextField
-          value={inputFirstNameState.email}
-          onChange={handleInputFirstNameChange}
+          value={inputState.firstName}
+          onChange={handleChange}
           type="text"
+          name="firstName"
           placeholder="Enter First Name"
         />
         <TextField
-          value={inputLastNameState.password}
-          onChange={handleInputLastNameChange}
+          value={inputState.lastName}
+          onChange={handleChange}
           type="text"
+          name="lastName"
           placeholder="Enter Last Name"
         />
         <TextField
-          value={inputEmailState.email}
-          onChange={handleInputEmailChange}
+          value={inputState.email}
+          onChange={handleChange}
           type="text"
+          name="email"
           placeholder="Enter Email address"
         />
         <TextField
-          value={inputPasswordState.password}
-          onChange={handleInputPasswordChange}
+          value={inputState.password}
+          onChange={handleChange}
           type="password"
+          name="password"
           placeholder="Enter Password"
         />
         <Button variant="contained" onClick={handleFormSubmit}>
