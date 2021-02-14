@@ -6,6 +6,8 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import store from "../../store";
 import { CURRENT_TASK } from "../../actions/TaskActions";
+import Grid from "@material-ui/core/Grid";
+import UpdateTaskModal from "../Modal/UpdateTaskModal";
 
 export default function CreateTask(props) {
   const [checked, setChecked] = React.useState([0]);
@@ -28,8 +30,20 @@ export default function CreateTask(props) {
       <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
         {props.taskList.map((value) => {
           return (
-            <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
-              <FormControlLabel value={` ${value}`} control={<Radio />} label={` ${value}`} />
+            <ListItem key={value} role={undefined} dense button>
+              <Grid container>
+                <Grid item xs={11}>
+                  <FormControlLabel
+                    value={` ${value}`}
+                    control={<Radio />}
+                    label={` ${value}`}
+                    onClick={handleToggle(value)}
+                  />
+                </Grid>
+                <Grid item xs={1}>
+                  <UpdateTaskModal />
+                </Grid>
+              </Grid>
             </ListItem>
           );
         })}
