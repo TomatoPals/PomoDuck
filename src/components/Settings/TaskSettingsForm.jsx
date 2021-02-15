@@ -3,12 +3,29 @@ import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import Button from "@material-ui/core/Button";
-
-// import { useSelector } from "react-redux";
+import Grid from "@material-ui/core/Grid";
+import { useSelector } from "react-redux";
+import store from "../../store";
+import { UPDATE_POMS } from "../../actions/TaskActions";
 
 export default function SettingsForms(props) {
-  //   const storeState = useSelector((state) => state);
-  const handleFormSubmit = () => {
+  const storeState = useSelector((state) => state);
+  const handleUpdate = () => {
+    const updateTask = [];
+    storeState.taskList.tasks.forEach((item) => {
+      for (const key of Object.keys(item)) {
+        if (props.currentItem[0] === key) {
+          updateTask.push({ [key]: { estmatedPoms: 5 } });
+        } else {
+          updateTask.push(item);
+        }
+      }
+    });
+    store.dispatch({ type: UPDATE_POMS, payload: updateTask });
+    console.log(storeState.taskList.tasks.taskName);
+  };
+
+  const handleDelete = () => {
     console.log("clicked");
   };
 
@@ -17,12 +34,14 @@ export default function SettingsForms(props) {
       <FormLabel component="legend">Task Settings</FormLabel>
       <FormGroup>
         Edit Task: {props.currentItem}
-        <Button variant="contained" onClick={handleFormSubmit}>
-          Update
-        </Button>
-        <Button variant="contained" onClick={handleFormSubmit}>
-          Delete
-        </Button>
+        <Grid>
+          <Button variant="contained" onClick={handleUpdate}>
+            Update
+          </Button>
+          <Button variant="contained" onClick={handleDelete}>
+            Delete
+          </Button>
+        </Grid>
       </FormGroup>
     </FormControl>
   );

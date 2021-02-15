@@ -1,4 +1,4 @@
-import { ADD_TASKS, LOADING, CURRENT_TASK } from "../actions/TaskActions";
+import { ADD_TASKS, LOADING, CURRENT_TASK, UPDATE_POMS } from "../actions/TaskActions";
 
 const initialstate = { tasks: [], currentTask: "" };
 
@@ -19,6 +19,10 @@ const TaskReducer = (state = initialstate, action) => {
       return {
         ...state,
         currentTask: action.payload
+      };
+    case UPDATE_POMS:
+      return {
+        tasks: action.payload
       };
 
     default:

@@ -20,7 +20,7 @@ const TaskBar = (props) => {
   };
   const handleTaskSubmit = (e) => {
     store.dispatch({ type: LOADING });
-    store.dispatch({ type: ADD_TASKS, payload: taskListState.tasks });
+    store.dispatch({ type: ADD_TASKS, payload: { [taskListState.tasks]: { estimatedPoms: 1 } } });
     if (taskListState.tasks.length < 1) {
       return;
     }
