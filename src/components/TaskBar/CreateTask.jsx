@@ -26,13 +26,15 @@ export default function CreateTask(props) {
 
   return (
     <List className="listitem">
+      {/* passes the taskList  */}
+
       {props.taskList.map((item) => {
         return (
-          <ListItem key={item}>
-            <Grid xs={11}>
+          <ListItem key={item} role={undefined} dense button>
+            <Grid item xs={11}>
               <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
                 <Grid container>
-                  <Grid item xs={11} role={undefined} dense button>
+                  <Grid item xs={11}>
                     <FormControlLabel
                       value={` ${item}`}
                       control={<Radio />}
