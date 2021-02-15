@@ -53,7 +53,7 @@ export default function UpdateTaskModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <TaskSettingsForm currentItem={props.radioValue} />
+            <TaskSettingsForm currentItem={props.currentItem} />
           </div>
         </Fade>
       </Modal>
