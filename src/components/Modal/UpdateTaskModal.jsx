@@ -52,7 +52,7 @@ export default function UpdateTaskModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Current Task is: {props.radioValue}</h2>
+            <h2 id="transition-modal-title">Selected task is: {props.radioValue}</h2>
             <p id="transition-modal-description">react-transition-group animates me.</p>
           </div>
         </Fade>
