@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function TransitionsModal() {
+export default function UpdateTaskModal() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 

@@ -30,7 +30,7 @@ export default function CreateTask(props) {
 
       {props.taskList.map((item) => {
         return (
-          <ListItem key={item} role={undefined} dense button>
+          <ListItem key={item}>
             <Grid item xs={11}>
               <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
                 <Grid container>
