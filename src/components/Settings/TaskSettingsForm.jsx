@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { useSelector } from "react-redux";
 import store from "../../store";
-import { UPDATE_POMS } from "../../actions/TaskActions";
+import { UPDATE_TASK } from "../../actions/TaskActions";
 
 export default function SettingsForms(props) {
   const storeState = useSelector((state) => state);
@@ -21,7 +21,7 @@ export default function SettingsForms(props) {
         }
       }
     });
-    store.dispatch({ type: UPDATE_POMS, payload: updateTask });
+    store.dispatch({ type: UPDATE_TASK, payload: updateTask });
     console.log(storeState.taskList.tasks.taskName);
   };
 
