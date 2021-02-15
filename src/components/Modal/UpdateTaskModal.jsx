@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -32,9 +33,9 @@ export default function TransitionsModal() {
 
   return (
     <div>
-      <a onClick={handleOpen}>
-        <img src="/Assets/icons/config-white.png" className="taskIcon" />
-      </a>
+      <Button type="button" color="inherit" onClick={handleOpen}>
+        <img src="/Assets/icons/config-white.png" alt="config icon" className="settingsIcon" />
+      </Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
