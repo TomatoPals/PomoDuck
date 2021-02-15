@@ -27,6 +27,8 @@ export default function UpdateTaskModal(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
+    // console.log(props.estimatedPoms[props.currentItem]);
+    // console.log(props.currentItem[Object.keys(props.currentItem)]);
     setOpen(true);
   };
 
@@ -53,7 +55,11 @@ export default function UpdateTaskModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <TaskSettingsForm currentItem={props.currentItem} />
+            <TaskSettingsForm
+              currentItem={Object.keys(props.currentItem)}
+              estimatedPoms={props.currentItem[Object.keys(props.currentItem)]}
+              handleClose={handleClose}
+            />
           </div>
         </Fade>
       </Modal>

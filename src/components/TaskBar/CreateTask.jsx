@@ -42,7 +42,7 @@ export default function CreateTask() {
               </RadioGroup>
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
-              <UpdateTaskModal currentItem={Object.keys(item)} />
+              <UpdateTaskModal currentItem={item} />
             </Grid>
           </ListItem>
         );
