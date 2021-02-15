@@ -26,8 +26,6 @@ export default function CreateTask(props) {
 
   return (
     <List className="listitem">
-      {/* passes the taskList  */}
-
       {props.taskList.map((item) => {
         return (
           <ListItem key={item}>
