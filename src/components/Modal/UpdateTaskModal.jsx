@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
+import TaskSettingsForm from "../Settings/TaskSettingsForm";
 // import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -52,8 +53,7 @@ export default function UpdateTaskModal(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Selected task is: {props.radioValue}</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+            <TaskSettingsForm currentItem={props.radioValue} />
           </div>
         </Fade>
       </Modal>
