@@ -90,6 +90,9 @@ body {
   margin-right: 10px;
 }
 
+.taskIcon {
+  width: 100%;
+}
 /* ==== TIMER ==== */
 
 .timer {
@@ -154,26 +157,31 @@ button:hover {
   background: none rgba(0, 0, 0, 0.55);
 }
 
-.Button-start, .Button-stop, .Button-reset, .addtaskbtn {
+.Button-start,
+.Button-stop,
+.Button-reset,
+.addtaskbtn {
   background-color: rgba(0, 0, 0, 0.85) !important;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 500;
-  line-height: .9;
+  line-height: 0.9;
   border-radius: 4px;
   letter-spacing: 0.02857em;
   text-transform: uppercase;
 }
 
-.Button-start:hover, .Button-stop:hover, .Button-reset:hover, .addtaskbtn:hover {
+.Button-start:hover,
+.Button-stop:hover,
+.Button-reset:hover,
+.addtaskbtn:hover {
   background-color: rgba(0, 0, 0, 0.65) !important;
 }
 
 .addtaskbtn {
   width: 200px;
   margin: 10px auto !important;
-  color:#fff !important;
+  color: #fff !important;
 }
-
 
 /* BUTTON STYLES END */
 
@@ -267,6 +275,9 @@ button:hover {
   color: #fff !important;
 }
 
+.taskIcon {
+  margin-right: 10px;
+}
 /* .taskBar > div > ul > .MuiFormGroup-root{
   display: block;
   height: 112px;
@@ -375,7 +386,6 @@ footer {
     text-align: center !important;
   }
 
-
   .MuiFormControl-root {
     width: 100%;
   }
@@ -388,3 +398,11 @@ footer {
     padding: 10px 20px !important;
   }
 }
+
+/* @media (min-width: 600px) {
+  .MuiGrid-grid-sm-1 {
+    flex-grow: null !important;
+    max-width: 0 !important;
+    flex-basis: 0 !important;
+  }
+} */

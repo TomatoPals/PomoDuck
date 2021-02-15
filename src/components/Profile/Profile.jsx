@@ -76,7 +76,7 @@ export default function Profile() {
         firstName: storeState.userInfo.userDetails.firstName,
         lastName: storeState.userInfo.userDetails.lastName,
         email: storeState.userInfo.userDetails.email,
-        password: "password"
+        password: ""
       });
     }
   }, [storeState]);
