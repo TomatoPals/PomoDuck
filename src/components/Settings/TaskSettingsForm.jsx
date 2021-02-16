@@ -24,10 +24,16 @@ export default function SettingsForms(props) {
     storeState.taskList.tasks.forEach((item) => {
       for (const key of Object.keys(item)) {
         if (props.currentItem[0] === key) {
-          if (inputState.taskName.length < 1) {
+          if (inputState.taskName.length === 0) {
             alert("Task Name can not be empty");
-            //   updateTask.push({ [props.currentItem[0]]: { estmatedPoms: estimatedPoms.poms } });
+            console.log(inputState.taskName.length);
+            setInputState({ taskName: "Enter Task" });
+            // setEstimatedPoms({ poms: props.estimatedPoms.estimatedPoms });
+            // updateTask.push({ [props.currentItem[0]]: { estmatedPoms: estimatedPoms.poms } });
           }
+          console.log("current", props.currentItem[0]);
+          console.log("key", key);
+
           updateTask.push({ [inputState.taskName]: { estmatedPoms: estimatedPoms.poms } });
         } else {
           updateTask.push(item);
@@ -54,10 +60,10 @@ export default function SettingsForms(props) {
 
   useEffect(() => {
     setInputState({ taskName: props.currentItem });
-    if (estimatedPoms.poms.length === 0) {
-      setEstimatedPoms({ poms: props.estimatedPoms.estimatedPoms });
+    if (typeof estimatedPoms.poms === "undefined" || estimatedPoms.poms.length === 0) {
+      setEstimatedPoms({ poms: 1 });
     }
-  }, [props.currentItem, props.estimatedPoms.estimatedPoms, estimatedPoms.poms.length]);
+  }, [props.currentItem, props.estimatedPoms.estimatedPoms, estimatedPoms.poms]);
 
   const handleChange = (event) => {
     setInputState({ ...inputState, [event.target.name]: event.target.value });
