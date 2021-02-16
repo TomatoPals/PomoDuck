@@ -133,7 +133,16 @@ const PomoDuckBackendAPIs = {
   taskRemove: async (userID) => {
     const BASEURL = `http://${envRoutes.taskremove}${userID}`;
     try {
-      const request = axios.delete(BASEURL);
+      const request = await axios.delete(BASEURL);
+      return request;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  findAllTasks: async (userId) => {
+    const BASEURL = `http://${envRoutes.findtasks}${userId}`;
+    try {
+      const request = await axios.get(BASEURL);
       return request;
     } catch (error) {
       console.log(error);
