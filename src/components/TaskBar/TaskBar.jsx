@@ -36,8 +36,6 @@ const TaskBar = (props) => {
       request.data.forEach((item) => {
         store.dispatch({ type: ADD_TASKS_FROM_STORE, payload: item });
       });
-
-      console.log(request);
     } catch (error) {
       console.log(error);
     }
@@ -60,13 +58,11 @@ const TaskBar = (props) => {
 
   useEffect(() => {
     if (storeState.taskList.loading === true) {
-      console.log("hit");
       getTasks(storeState.userInfo.userDetails.id);
     }
     if (Object.keys(storeState.userInfo.userDetails).length === 0) {
       return;
     }
-    console.log("userInfo.userDetails.id:", storeState.userInfo.userDetails.id);
   }, [storeState]);
 
   return (

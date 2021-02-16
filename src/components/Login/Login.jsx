@@ -11,11 +11,6 @@ import { ADD_TASKS } from "../../actions/TaskActions";
 
 const Login = (props) => {
   const storeState = useSelector((state) => state);
-
-  // const [taskState, setTaskState] = useState({
-  //   tasks: {}
-  // });
-
   const [inputState, setInputState] = useState({
     email: "",
     password: ""
@@ -37,38 +32,20 @@ const Login = (props) => {
     }
   };
 
-  // const getTasks = async () => {
-  //   try {
-  //     const request = await API.findAllTasks(storeState.userInfo.userDetails.id);
-  //     return request;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   useEffect(() => {
     const getTasks = async (userId) => {
       try {
         const request = await API.findAllTasks(userId);
-        // setTaskState({ tasks: request.data });
         request.data.forEach((item) => {
           store.dispatch({ type: ADD_TASKS, payload: item });
         });
-
-        console.log(request);
       } catch (error) {
         console.log(error);
       }
     };
     if (storeState.userInfo.loggedIn === true) {
-      // console.log(getTasks());
-      // const myVar = getTasks();
-
       getTasks(storeState.userInfo.userDetails.id);
     }
-    // if (taskState.length > 0) {
-    //   console.log(taskState);
-    // }
   }, [storeState]);
 
   return (

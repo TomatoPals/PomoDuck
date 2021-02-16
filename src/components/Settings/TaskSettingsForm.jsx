@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import { useSelector } from "react-redux";
 import store from "../../store";
 import TextField from "@material-ui/core/TextField";
-import { UPDATE_TASK } from "../../actions/TaskActions";
+import { UPDATE_TASK, ADD_TASKS_FROM_STORE } from "../../actions/TaskActions";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
@@ -21,54 +21,64 @@ export default function SettingsForms(props) {
     taskName: ""
   });
   const handleUpdate = () => {
-    const updateTask = [];
-    storeState.taskList.tasks.forEach((item) => {
-      for (const key of Object.keys(item)) {
-        if (props.currentItem[0] === key) {
-          if (inputState.taskName.length === 0) {
-            alert("Task Name can not be empty");
-            console.log(inputState.taskName.length);
-            setInputState({ taskName: "Enter Task" });
-          }
-          updateTask.push({ [inputState.taskName]: { estmatedPoms: estimatedPoms.poms } });
-        } else {
-          updateTask.push(item);
-        }
-      }
-    });
-    props.handleClose();
-    store.dispatch({ type: UPDATE_TASK, payload: updateTask });
+    if (inputState.taskName.length === 0) {
+      alert("Task Name can not be empty");
+    } else {
+      updateTask();
+      props.handleClose();
+    }
+  };
+
+  const updateTask = async () => {
+    try {
+      await API.taskUpdate(props.currentItem.id, inputState.taskName, estimatedPoms.poms);
+      return store.dispatch({ type: UPDATE_TASK, payload: [] });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteTask = async () => {
+    try {
+      await API.taskRemove(props.currentItem.id);
+      return store.dispatch({ type: UPDATE_TASK, payload: [] });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getTasks = async (userId) => {
+    try {
+      const request = await API.findAllTasks(userId);
+      request.data.forEach((item) => {
+        store.dispatch({ type: ADD_TASKS_FROM_STORE, payload: item });
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleDelete = () => {
-    console.log(props.currentItem.taskName);
-    API.taskRemove(props.currentItem.id);
-    // const updateTask = [];
-    // storeState.taskList.tasks.forEach((item) => {
-    //   for (const key of Object.keys(item)) {
-    //     if (props.currentItem.taskName === key) {
-    //       break;
-    //     } else {
-    //       updateTask.push(item);
-    //     }
-    //   }
-    // });
-    // store.dispatch({ type: UPDATE_TASK, payload: updateTask });
+    deleteTask();
+    props.handleClose();
   };
 
   useEffect(() => {
-    setInputState({ taskName: props.currentItem.taskName });
-    if (typeof estimatedPoms.poms === "undefined" || estimatedPoms.poms.length === 0) {
-      setEstimatedPoms({ poms: 1 });
+    if (estimatedPoms.poms.length === 0) {
+      setEstimatedPoms({ poms: props.estimatedPoms.estimatedPoms });
     }
-  }, [props.currentItem, props.estimatedPoms.estimatedPoms, estimatedPoms.poms]);
+    setInputState({ taskName: props.currentItem.taskName });
+
+    if (storeState.taskList.loading === true) {
+      getTasks(storeState.userInfo.userDetails.id);
+    }
+  }, [props.currentItem, props.estimatedPoms, estimatedPoms, storeState]);
 
   const handleChange = (event) => {
     setInputState({ ...inputState, [event.target.name]: event.target.value });
   };
 
   const handlePomChange = (event) => {
-    console.log(event.target.value);
     setEstimatedPoms({ poms: event.target.value });
   };
   return (
