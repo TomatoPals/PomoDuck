@@ -36,7 +36,7 @@
 }
 /* vv This is for the start button vv */
 button {
-  background-color: #202b33;
+  background-color: transparent;
   border: solid 1px transparent;
   border-radius: 4px;
   padding: 10px 20px;
@@ -48,6 +48,45 @@ button {
 button:hover {
   background-color: #106ba3;
 }
+
+.Countdown button {
+  background: none rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 1%;
+}
+
+.Countdown button:hover {
+  background: none rgba(0, 0, 0, 0.55);
+}
+
+.Button-start,
+.Button-stop,
+.Button-reset,
+.addtaskbtn {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 0.9;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+
+.Button-start:hover,
+.Button-stop:hover,
+.Button-reset:hover,
+.addtaskbtn:hover {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.addtaskbtn {
+  width: 200px;
+  margin: 10px auto !important;
+  color: #fff !important;
+}
+
+/* BUTTON STYLES END */
 
 .Countdown-display {
   margin-top: 5px;
@@ -66,9 +105,14 @@ button:hover {
   background-color: #ffa202;
 }
 .Countdown-label {
-  font-size: 18px;
-  margin-top: 5px;
+  width: 90%;
+  font-size: 24px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  margin: 0 auto;
+  margin-top: 40px;
   margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65) !important;
+  padding-bottom: 10px;
 }
 .Countdown-time {
   font-size: 50px;

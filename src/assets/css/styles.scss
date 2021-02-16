@@ -1,12 +1,7 @@
 // @charset "UTF-8";
 
-// //Vendor
-// @import "vendor/__vendor-dir";
-// //Abstracts
-// @import "abstracts/__abstracts-dir";
-// //Base Styles
-// @import "base/__base-dir";
-// //Components
-@import "../_scss/components/_components-dir";
-// //Layout
-@import "../_scss/layouts/_layouts-dir";
+@import "../_scss/_footer";
+@import "../_scss/_homepage";
+@import "../_scss/_navigation";
+@import "../_scss/_taskbar";
+@import "../_scss/_timer";
