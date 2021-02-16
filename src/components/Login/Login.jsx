@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import store from "../../store";
-import { USER_LOGIN, LOGGED_IN } from "../../actions/UserActions";
+import { USER_LOGIN, LOGGED_IN, ACCOUNT_CREATED } from "../../actions/UserActions";
 import { LOADING } from "../../actions/TaskActions";
 import API from "../../utils/API";
 import "./Login.css";
@@ -22,6 +22,7 @@ const Login = (props) => {
 
   const handleFormSubmit = async () => {
     try {
+      store.dispatch({ type: ACCOUNT_CREATED, payload: true });
       store.dispatch({ type: LOADING, payload: false });
       const userInfo = await API.login(inputState.email, inputState.password);
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });

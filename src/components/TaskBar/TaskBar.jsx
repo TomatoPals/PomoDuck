@@ -10,8 +10,7 @@ import API from "../../utils/API";
 const TaskBar = (props) => {
   const storeState = useSelector((state) => state);
   const [taskListState, setTaskListState] = useState({
-    tasks: "",
-    taskList: []
+    tasks: ""
   });
 
   const handleTaskListChange = (e) => {
@@ -42,18 +41,15 @@ const TaskBar = (props) => {
   };
 
   const handleTaskSubmit = () => {
-    sendTasks();
-    if (taskListState.tasks.length < 1) {
-      return;
+    if (storeState.userInfo.accountCreated === false) {
+      alert("You must create an account or log in to use this feature!");
+    } else {
+      sendTasks();
+      setTaskListState({
+        ...taskListState,
+        tasks: ""
+      });
     }
-
-    const temp = taskListState.taskList;
-    temp.push(taskListState.tasks);
-    setTaskListState({
-      ...taskListState,
-      taskList: temp,
-      tasks: ""
-    });
   };
 
   useEffect(() => {
