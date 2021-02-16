@@ -130,8 +130,8 @@ const PomoDuckBackendAPIs = {
       console.log(error);
     }
   },
-  taskRemove: async (userID) => {
-    const BASEURL = `http://${envRoutes.taskremove}${userID}`;
+  taskRemove: async (taskID) => {
+    const BASEURL = `http://${envRoutes.taskremove}${taskID}`;
     try {
       const request = await axios.delete(BASEURL);
       return request;

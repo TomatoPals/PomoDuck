@@ -10,6 +10,7 @@ import TextField from "@material-ui/core/TextField";
 import { UPDATE_TASK } from "../../actions/TaskActions";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import API from "../../utils/API";
 
 export default function SettingsForms(props) {
   const storeState = useSelector((state) => state);
@@ -28,12 +29,7 @@ export default function SettingsForms(props) {
             alert("Task Name can not be empty");
             console.log(inputState.taskName.length);
             setInputState({ taskName: "Enter Task" });
-            // setEstimatedPoms({ poms: props.estimatedPoms.estimatedPoms });
-            // updateTask.push({ [props.currentItem[0]]: { estmatedPoms: estimatedPoms.poms } });
           }
-          console.log("current", props.currentItem[0]);
-          console.log("key", key);
-
           updateTask.push({ [inputState.taskName]: { estmatedPoms: estimatedPoms.poms } });
         } else {
           updateTask.push(item);
@@ -45,21 +41,23 @@ export default function SettingsForms(props) {
   };
 
   const handleDelete = () => {
-    const updateTask = [];
-    storeState.taskList.tasks.forEach((item) => {
-      for (const key of Object.keys(item)) {
-        if (props.currentItem[0] === key) {
-          break;
-        } else {
-          updateTask.push(item);
-        }
-      }
-    });
-    store.dispatch({ type: UPDATE_TASK, payload: updateTask });
+    console.log(props.currentItem.taskName);
+    API.taskRemove(props.currentItem.id);
+    // const updateTask = [];
+    // storeState.taskList.tasks.forEach((item) => {
+    //   for (const key of Object.keys(item)) {
+    //     if (props.currentItem.taskName === key) {
+    //       break;
+    //     } else {
+    //       updateTask.push(item);
+    //     }
+    //   }
+    // });
+    // store.dispatch({ type: UPDATE_TASK, payload: updateTask });
   };
 
   useEffect(() => {
-    setInputState({ taskName: props.currentItem });
+    setInputState({ taskName: props.currentItem.taskName });
     if (typeof estimatedPoms.poms === "undefined" || estimatedPoms.poms.length === 0) {
       setEstimatedPoms({ poms: 1 });
     }

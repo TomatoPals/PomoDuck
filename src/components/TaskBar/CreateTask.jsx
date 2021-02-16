@@ -30,14 +30,14 @@ export default function CreateTask() {
     <List className="listitem">
       {storeState.taskList.tasks.map((item) => {
         return (
-          <ListItem key={Object.keys(item)}>
+          <ListItem key={item.taskName}>
             <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
               <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
                 <FormControlLabel
-                  value={` ${Object.keys(item)}`}
+                  value={` ${item.taskName}`}
                   control={<Radio />}
-                  label={` ${Object.keys(item)}`}
-                  onClick={handleToggle(Object.keys(item))}
+                  label={` ${item.taskName}`}
+                  onClick={handleToggle(item.taskName)}
                 />
               </RadioGroup>
             </Grid>

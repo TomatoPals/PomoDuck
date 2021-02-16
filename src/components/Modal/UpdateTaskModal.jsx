@@ -56,8 +56,8 @@ export default function UpdateTaskModal(props) {
         <Fade in={open}>
           <div className={classes.paper}>
             <TaskSettingsForm
-              currentItem={Object.keys(props.currentItem)}
-              estimatedPoms={props.currentItem[Object.keys(props.currentItem)]}
+              currentItem={props.currentItem}
+              estimatedPoms={props.currentItem}
               handleClose={handleClose}
             />
           </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import store from "../../store";
-import { USER_LOGIN, LOADING, LOGGED_IN } from "../../actions/UserActions";
+import { USER_LOGIN, LOGGED_IN } from "../../actions/UserActions";
+import { LOADING } from "../../actions/TaskActions";
 import API from "../../utils/API";
 import "./Login.css";
 import { useSelector } from "react-redux";
@@ -26,7 +27,7 @@ const Login = (props) => {
 
   const handleFormSubmit = async () => {
     try {
-      store.dispatch({ type: LOADING });
+      store.dispatch({ type: LOADING, payload: false });
       const userInfo = await API.login(inputState.email, inputState.password);
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
       store.dispatch({ type: LOGGED_IN, payload: true });
@@ -50,7 +51,10 @@ const Login = (props) => {
       try {
         const request = await API.findAllTasks(userId);
         // setTaskState({ tasks: request.data });
-        store.dispatch({ type: ADD_TASKS, payload: request.data });
+        request.data.forEach((item) => {
+          store.dispatch({ type: ADD_TASKS, payload: item });
+        });
+
         console.log(request);
       } catch (error) {
         console.log(error);

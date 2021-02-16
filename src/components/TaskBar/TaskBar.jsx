@@ -4,9 +4,11 @@ import "../../assets/styles/styles.css";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import store from "../../store";
-import { ADD_TASKS, LOADING } from "../../actions/TaskActions";
+import { UPDATE_TASK, ADD_TASKS_FROM_STORE } from "../../actions/TaskActions";
+import API from "../../utils/API";
 
 const TaskBar = (props) => {
+  const storeState = useSelector((state) => state);
   const [taskListState, setTaskListState] = useState({
     tasks: "",
     taskList: []
@@ -18,12 +20,35 @@ const TaskBar = (props) => {
       tasks: e.target.value
     });
   };
-  const handleTaskSubmit = (e) => {
-    store.dispatch({ type: LOADING });
-    store.dispatch({ type: ADD_TASKS, payload: { [taskListState.tasks]: { estimatedPoms: 1 } } });
+
+  const sendTasks = async () => {
+    try {
+      await API.creatTask(storeState.userInfo.userDetails.id, taskListState.tasks, 1);
+      return store.dispatch({ type: UPDATE_TASK, payload: [] });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getTasks = async (userId) => {
+    try {
+      const request = await API.findAllTasks(userId);
+      request.data.forEach((item) => {
+        store.dispatch({ type: ADD_TASKS_FROM_STORE, payload: item });
+      });
+
+      console.log(request);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleTaskSubmit = () => {
+    sendTasks();
     if (taskListState.tasks.length < 1) {
       return;
     }
+
     const temp = taskListState.taskList;
     temp.push(taskListState.tasks);
     setTaskListState({
@@ -33,14 +58,16 @@ const TaskBar = (props) => {
     });
   };
 
-  const userInfo = useSelector((state) => state.userInfo);
-
   useEffect(() => {
-    if (Object.keys(userInfo.userDetails).length === 0) {
+    if (storeState.taskList.loading === true) {
+      console.log("hit");
+      getTasks(storeState.userInfo.userDetails.id);
+    }
+    if (Object.keys(storeState.userInfo.userDetails).length === 0) {
       return;
     }
-    console.log("userInfo.userDetails.id:", userInfo.userDetails.id);
-  }, [userInfo]);
+    console.log("userInfo.userDetails.id:", storeState.userInfo.userDetails.id);
+  }, [storeState]);
 
   return (
     <>
@@ -56,7 +83,7 @@ const TaskBar = (props) => {
           <Button variant="contained" onClick={handleTaskSubmit} className="addtaskbtn">
             Add Task
           </Button>
-          <CreateTask taskList={taskListState.taskList} setCurrentTask={props.setCurrentTask} />
+          <CreateTask />
         </FormControl>
       </div>
     </>
