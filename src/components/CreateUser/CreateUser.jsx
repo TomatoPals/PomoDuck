@@ -4,7 +4,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import API from "../../utils/API";
 import store from "../../store";
-import { USER_LOGIN, LOGGED_IN } from "../../actions/UserActions";
+import { USER_LOGIN, LOGGED_IN, ACCOUNT_CREATED } from "../../actions/UserActions";
 import { useSelector } from "react-redux";
 import "./CreateUser.css";
 
@@ -28,6 +28,7 @@ const CreateUser = (props) => {
         inputState.email,
         inputState.password
       );
+      store.dispatch({ type: ACCOUNT_CREATED, payload: true });
       store.dispatch({ type: LOGGED_IN, payload: true });
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
     } catch (error) {
