@@ -63,7 +63,7 @@ const CreateStatsTable = (props) => {
         </TableHead>
         <TableBody>
           {props.stats.map((stat) => (
-            <TableRow key={stat.createdAt}>
+            <TableRow key={stat.id}>
               <TableCell component="th" scope="row">
                 {stat.userId}
               </TableCell>
