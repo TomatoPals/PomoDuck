@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import "../../assets/styles/styles.css";
 import Modal from "@material-ui/core/Modal";
 import CreateUser from "../CreateUser/CreateUser";
 import Login from "../Login/Login";
@@ -26,10 +27,13 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
     width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    // backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(4, 6, 4),
+    backgroundColor: "#66bb6a",
+    border: "2px #ef9a9a",
+    color: "white",
+    borderRadius: 20
   }
 }));
 
@@ -99,9 +103,9 @@ export default function SignUpModal() {
   const body = (
     <>
       <div style={modalStyle} className={classes.paper}>
-        <div>
+        <h3 className="SubmitButton">
           <Link onClick={() => setIsNew(!isNew)}>{isNew ? "Been here before? Login" : "New User SignUp"}</Link>
-        </div>
+        </h3>
         {!isNew ? <Login handleClose={handleClose} /> : <CreateUser handleClose={handleClose} />}
       </div>
     </>

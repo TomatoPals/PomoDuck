@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import FormLabel from "@material-ui/core/FormLabel";
+// import FormLabel from "@material-ui/core/FormLabel";
+import "../../assets/styles/styles.css";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import Button from "@material-ui/core/Button";
@@ -83,7 +84,8 @@ export default function SettingsForms(props) {
   };
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Task Settings</FormLabel>
+      <h1 id="TaskSetting">Task Settings</h1>
+      {/* <FormLabel component="legend">Task Settings</FormLabel> */}
       <FormGroup>
         <TextField
           label="Task Name"

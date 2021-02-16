@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { CURRENT_TASK } from "../../actions/TaskActions";
 import Grid from "@material-ui/core/Grid";
 import UpdateTaskModal from "../Modal/UpdateTaskModal";
+import "../../assets/styles/styles.css";
 
 export default function CreateTask() {
   const storeState = useSelector((state) => state);

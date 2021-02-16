@@ -278,6 +278,11 @@ button:hover {
 .taskIcon {
   margin-right: 10px;
 }
+
+/* PrivateSwitchBase-input-9 */
+.taskBar > div > ul > li > div > div > label > span > span > input {
+  width: 70%;
+}
 /* .taskBar > div > ul > .MuiFormGroup-root{
   display: block;
   height: 112px;
@@ -397,12 +402,16 @@ footer {
   .Button-start {
     padding: 10px 20px !important;
   }
+
+  .TaskSetting {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+  .SubmitButton {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
 }
 
-/* @media (min-width: 600px) {
-  .MuiGrid-grid-sm-1 {
-    flex-grow: null !important;
-    max-width: 0 !important;
-    flex-basis: 0 !important;
-  }
-} */
