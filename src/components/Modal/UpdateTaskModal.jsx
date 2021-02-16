@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import "../../assets/styles/styles.css";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -14,10 +15,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center"
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    // backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(2, 4, 3),
+    backgroundColor: "#66bb6a",
+    // border: "2px #ef9a9a",
+    color: "white",
+    borderRadius: 20
   }
 }));
 
