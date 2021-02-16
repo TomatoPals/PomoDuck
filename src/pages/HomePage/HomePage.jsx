@@ -9,7 +9,6 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 
 function SnackAlert(props) {
-  console.log("props:", props);
   return <Alert elevation={6} variant="filled" {...props} />;
 }
 

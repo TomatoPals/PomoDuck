@@ -1,51 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import store from "../../store";
-import { USER_LOGIN, LOADING, LOGGED_IN } from "../../actions/UserActions";
+import { USER_LOGIN, LOGGED_IN, ACCOUNT_CREATED } from "../../actions/UserActions";
+import { LOADING } from "../../actions/TaskActions";
 import API from "../../utils/API";
 import "./Login.css";
+import { useSelector } from "react-redux";
+import { ADD_TASKS } from "../../actions/TaskActions";
 
 const Login = (props) => {
-  const [inputEmailState, setInputEmailState] = useState({
-    email: ""
-  });
-  const [inputPasswordState, setInputPasswordState] = useState({
+  const storeState = useSelector((state) => state);
+  const [inputState, setInputState] = useState({
+    email: "",
     password: ""
   });
-  const handleInputEmailChange = (event) => {
-    setInputEmailState({ email: event.target.value });
+
+  const handleChange = (event) => {
+    setInputState({ ...inputState, [event.target.name]: event.target.value });
   };
-  const handleInputPasswordChange = (event) => {
-    setInputPasswordState({ password: event.target.value });
-  };
+
   const handleFormSubmit = async () => {
     try {
-      store.dispatch({ type: LOADING });
-      const userInfo = await API.login(inputEmailState.email, inputPasswordState.password);
+      store.dispatch({ type: ACCOUNT_CREATED, payload: true });
+      store.dispatch({ type: LOADING, payload: false });
+      const userInfo = await API.login(inputState.email, inputState.password);
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
       store.dispatch({ type: LOGGED_IN, payload: true });
       props.handleClose();
-      // console.log(state);
     } catch (error) {
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    const getTasks = async (userId) => {
+      try {
+        const request = await API.findAllTasks(userId);
+        request.data.forEach((item) => {
+          store.dispatch({ type: ADD_TASKS, payload: item });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (storeState.userInfo.loggedIn === true) {
+      getTasks(storeState.userInfo.userDetails.id);
+    }
+  }, [storeState]);
+
   return (
     <>
       <h1>Login:</h1>
-      {/* <p>{state.userInfo.firstName}</p> */}
       <TextField
-        value={inputEmailState.email}
-        onChange={handleInputEmailChange}
+        value={inputState.email}
+        onChange={handleChange}
         type="text"
+        name="email"
         placeholder="Enter Email address"
       />
       <TextField
-        value={inputPasswordState.password}
-        onChange={handleInputPasswordChange}
+        value={inputState.password}
+        onChange={handleChange}
         type="password"
+        name="password"
         placeholder="Enter Password"
       />
       <Button variant="contained" onClick={handleFormSubmit}>

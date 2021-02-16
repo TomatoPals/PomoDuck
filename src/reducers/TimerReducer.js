@@ -1,6 +1,10 @@
 import { TIME_REMAINING, SHORT_TIME_REMAINING, LONG_TIME_REMAINING } from "../actions/TimerActions";
 
-const initialstate = { pomoTimeRemaining: "", shortTimeRemaining: "", longTimeRemaining: "" };
+const initialstate = {
+  pomoTimeRemaining: "",
+  shortTimeRemaining: "",
+  longTimeRemaining: ""
+};
 
 const TimerReducer = (state = initialstate, action) => {
   switch (action.type) {

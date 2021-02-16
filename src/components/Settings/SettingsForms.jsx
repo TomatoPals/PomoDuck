@@ -1,12 +1,15 @@
 import React from "react";
-import FormLabel from "@material-ui/core/FormLabel";
+// import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
+import { useSelector } from "react-redux";
+import Profile from "../Profile/Profile";
 
 export default function SettingsForms() {
+  const storeState = useSelector((state) => state);
   const [state, setState] = React.useState({
     dark: false,
     sound: true
@@ -18,7 +21,10 @@ export default function SettingsForms() {
 
   return (
     <FormControl component="fieldset">
-      <FormLabel component="legend">Settings</FormLabel>
+      {/* <FormLabel component="legend">Settings</FormLabel> */}
+      <h1 id="Setting">Settings</h1>
+      {storeState.userInfo.loggedIn ? <Profile /> : <></>}
+
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={state.dark} onChange={handleChange} name="dark" />}

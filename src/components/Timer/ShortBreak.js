@@ -51,7 +51,10 @@ const Countdown = () => {
           10
         );
       if (timeState.remainingTime % 1000 === 0) {
-        store.dispatch({ type: SHORT_TIME_REMAINING, payload: `${timeState.minutes}:${timeState.seconds}` });
+        store.dispatch({
+          type: SHORT_TIME_REMAINING,
+          payload: `${parseInt(timeState.minutes) * 60 + parseInt(timeState.seconds)}`
+        });
       }
       return () => clearInterval(timer);
     }

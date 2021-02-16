@@ -1,0 +1,417 @@
+/* === HOMEPAGE ==== */
+
+body {
+  background-color: #01222c;
+  margin: 0 !important;
+}
+
+#appbarStyles {
+  background-color: #001015;
+  height: 100px;
+}
+
+#toolbarStyles {
+  padding: 10px;
+}
+
+.instructions {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.instructions h2 {
+  text-align: center;
+}
+
+.instructions p {
+  width: 50%;
+  line-height: 1.8em;
+}
+
+.instructionContent {
+  display: flex;
+}
+
+.topLayer {
+  background-image: url("../../images/whitebackground-color.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-color: #fff;
+}
+
+.lowerbox {
+  background-image: url("../../images/darktomatoes.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  background-color: #fff;
+}
+
+/* === Navigation === */
+.outside-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 40px;
+}
+
+#logo {
+  margin-left: 60px;
+  margin-top: 4px;
+}
+
+#logo > img {
+  height: 70px;
+}
+.flex-center-all {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
+}
+.contentContainer {
+  background-image: url("../../images/whitebackground-color.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  margin-top: 50px;
+}
+
+.settingsIcon,
+.signupIcon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.taskIcon {
+  width: 100%;
+}
+/* ==== TIMER ==== */
+
+.timer {
+  height: 400px;
+  width: 800px;
+  border-radius: 20px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.CountDownApp {
+  text-align: center;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Sriracha", cursive;
+  /* font-family: 'Alex Brush', cursive; */
+  /* background-color: rgb(34, 34, 34); */
+  /* height: 200vh; */
+  color: rgb(255, 255, 255);
+}
+.Countdown {
+  /* margin-left: 30px;
+    margin-right: 30px; */
+  border: 2px solid rgb(187, 25, 25);
+  border-radius: 4px;
+  padding: 20px;
+  width: calc(1em + 80vw);
+  background-color: rgb(218, 74, 74);
+  box-shadow: 0 3px 6px rgb(12, 12, 12, 0.4);
+  border-radius: 30px 30px 30px 30px;
+}
+.Countdown {
+  padding-top: 10px;
+}
+
+.Countdown-header {
+  font-size: 40px;
+  font-weight: bold;
+}
+/* vv This is for the start button vv */
+button {
+  background-color: transparent;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #106ba3;
+}
+
+.Countdown button {
+  background: none rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 1%;
+}
+
+.Countdown button:hover {
+  background: none rgba(0, 0, 0, 0.55);
+}
+
+.Button-start,
+.Button-stop,
+.Button-reset,
+.addtaskbtn {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 0.9;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+
+.Button-start:hover,
+.Button-stop:hover,
+.Button-reset:hover,
+.addtaskbtn:hover {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.addtaskbtn {
+  width: 200px;
+  margin: 10px auto !important;
+  color: #fff !important;
+}
+
+/* BUTTON STYLES END */
+
+.Countdown-display {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.Countdown-display button {
+  margin: 0 15px;
+  border: solid 1px transparent;
+  border-radius: 2px;
+  padding: 4px 16px;
+  color: #ffffff;
+
+  font-size: 16px;
+}
+.Countdown-display button:hover {
+  background-color: #ffa202;
+}
+.Countdown-label {
+  width: 90%;
+  font-size: 24px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65) !important;
+  padding-bottom: 10px;
+}
+.Countdown-time {
+  font-size: 50px;
+  margin: 5px 0;
+  font-family: "Sriracha", cursive;
+}
+.Countdown-time2 {
+  margin: 5px 0;
+  font-family: "Inter", sans-serif;
+  font-size: calc(1em + 2vw);
+  font-weight: 900;
+  /* -webkit-text-fill-color: 5px rgb(21, 18, 18); */
+  /* -webkit-text-stroke: 2px rgb(212, 88, 88); */
+  text-shadow: 0 0px 10px rgb(84, 31, 31, 0.7);
+}
+.Timers {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- TIMER ENDS */
+
+/* === TASKBAR === */
+
+.taskBar {
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(187, 25, 25);
+  border-radius: 4px;
+  padding: 20px;
+  width: calc(1em + 80vw);
+  background-color: rgb(218, 74, 74);
+  box-shadow: 0 3px 6px rgb(12, 12, 12, 0.4);
+  border-radius: 30px 30px 30px 30px;
+  width: 760px;
+  margin: auto;
+}
+
+.taskBar > div > div > .MuiInput-underline:before {
+  border-bottom: none;
+}
+
+.taskBar input {
+  width: 700px; /* 100%; */
+  text-align: center !important;
+  color: white;
+  background-color: rgba(130, 6, 6, 0.3);
+  border-radius: 6px;
+}
+
+.taskBar input::placeholder {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.listitem {
+  /* background-color: ivory; */
+  width: 100%;
+  color: white;
+}
+
+.MuiRadio-colorSecondary.Mui-checked {
+  color: #fff !important;
+}
+
+.taskIcon {
+  margin-right: 10px;
+}
+
+/* PrivateSwitchBase-input-9 */
+.taskBar > div > ul > li > div > div > label > span > span > input {
+  width: 70%;
+}
+/* .taskBar > div > ul > .MuiFormGroup-root{
+  display: block;
+  height: 112px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color:rgba(116, 39, 39, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+} */
+
+/* ==== FOOTER ==== */
+
+footer {
+  border-top: 1px solid #134150;
+  margin: 50px 0px 30px 0px;
+  text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.copyright {
+  color: rgb(240, 240, 240);
+  font-size: 12px;
+}
+
+.footerlinks h3 {
+  margin: 20px;
+}
+
+.flex-center-all img {
+  height: 40px;
+  margin: 0px 6px 20px 6px;
+}
+
+.instructionbox {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+/* ===== MOBILE STYLES ===== */
+
+@media only screen and (max-width: 750px) {
+  .contentContainer {
+    margin-top: 0;
+  }
+
+  #appbarStyles {
+    height: 80px;
+  }
+  .timer {
+    width: 100%;
+    padding-top: 35px;
+    height: 320px;
+  }
+
+  .outside-box {
+    margin: 0;
+  }
+
+  #logo {
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+
+  #logo > img {
+    height: 40px;
+  }
+
+  .settingsIcon,
+  .signupIcon {
+    margin-right: 0px;
+  }
+
+  .settingsTitle,
+  .signupTitle {
+    display: none;
+  }
+
+  .lowerbox {
+    height: 150px;
+  }
+
+  .instructions p {
+    width: 95%;
+    line-height: 1.8em;
+  }
+
+  .Countdown-time2 {
+    font-size: calc(0.9em + 2vw) !important;
+  }
+
+  .taskBar {
+    width: 85%;
+  }
+
+  .taskBar input {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .MuiFormControl-root {
+    width: 100%;
+  }
+
+  .Countdown button {
+    padding: 6px 8px;
+  }
+
+  .Button-start {
+    padding: 10px 20px !important;
+  }
+
+  .TaskSetting {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+  .SubmitButton {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+}
+

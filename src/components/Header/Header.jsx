@@ -6,7 +6,6 @@ import SignUpModal from "../Modal/SignUpModal";
 import SettingsModal from "../../components/Modal/SettingsModal";
 
 const Header = (props) => {
-  console.log("props:", props);
   return (
     <AppBar position="relative" id="appbarStyles">
       <Toolbar id="toolbarStyles">

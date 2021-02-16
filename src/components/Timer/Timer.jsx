@@ -15,7 +15,8 @@ const Timer = () => {
   const handlePomoClick = () => {
     setTimerState({
       pomo: true,
-      short: false
+      short: false,
+      long: false
     });
   };
 

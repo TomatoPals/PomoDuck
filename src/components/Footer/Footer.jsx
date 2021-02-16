@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 // import Grid from "@material-ui/core/Grid";
 
@@ -10,13 +9,13 @@ const Footer = () => {
         <h3>Contact</h3>
       </div>
       <div className="flex-center-all">
-        <a href="#" target="_blank" rel="noopener">
+        <a href="pomoduck.com" target="_blank" rel="noopener">
           <img src="/Assets/icons/face.svg" alt="facebook icon" />
         </a>
-        <a href="#" target="_blank" rel="noopener">
+        <a href="pomoduck.com" target="_blank" rel="noopener">
           <img src="/Assets/icons/twit.svg" alt="facebook icon" />
         </a>
-        <a href="#" target="_blank" rel="noopener">
+        <a href="pomoduck.com" target="_blank" rel="noopener">
           <img src="/Assets/icons/in.svg" alt="facebook icon" />
         </a>
       </div>
