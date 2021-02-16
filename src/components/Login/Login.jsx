@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import store from "../../store";
-import { USER_LOGIN, LOADING, LOGGED_IN } from "../../actions/UserActions";
+import { USER_LOGIN, LOGGED_IN, ACCOUNT_CREATED } from "../../actions/UserActions";
+import { LOADING } from "../../actions/TaskActions";
 import API from "../../utils/API";
 import "./Login.css";
+import { useSelector } from "react-redux";
+import { ADD_TASKS } from "../../actions/TaskActions";
 
 const Login = (props) => {
+  const storeState = useSelector((state) => state);
   const [inputState, setInputState] = useState({
     email: "",
     password: ""
@@ -18,7 +22,8 @@ const Login = (props) => {
 
   const handleFormSubmit = async () => {
     try {
-      store.dispatch({ type: LOADING });
+      store.dispatch({ type: ACCOUNT_CREATED, payload: true });
+      store.dispatch({ type: LOADING, payload: false });
       const userInfo = await API.login(inputState.email, inputState.password);
       store.dispatch({ type: USER_LOGIN, payload: userInfo.data });
       store.dispatch({ type: LOGGED_IN, payload: true });
@@ -27,6 +32,22 @@ const Login = (props) => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const getTasks = async (userId) => {
+      try {
+        const request = await API.findAllTasks(userId);
+        request.data.forEach((item) => {
+          store.dispatch({ type: ADD_TASKS, payload: item });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (storeState.userInfo.loggedIn === true) {
+      getTasks(storeState.userInfo.userDetails.id);
+    }
+  }, [storeState]);
 
   return (
     <>

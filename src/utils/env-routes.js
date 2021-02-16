@@ -29,6 +29,6 @@ module.exports = {
     gettask: "pomoduck.com/api.task/gettask",
     taskremove: "pomoduck.com/api.task/taskremove",
     taskupdate: "pomoduck.com/api.task/taskupdate",
-    findtasks: "pomoduck.com/api.task/findtasks"
+    findtasks: "pomoduck.com/api.task/findtasks/"
   }
 };
