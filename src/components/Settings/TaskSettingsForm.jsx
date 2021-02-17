@@ -94,6 +94,7 @@ export default function SettingsForms(props) {
           type="text"
           name="taskName"
           placeholder="Enter Task"
+          variant="outlined"
         />
         <Select label="Estimated Poms" value={estimatedPoms.poms} onChange={handlePomChange}>
           <MenuItem value={1}>1</MenuItem>
@@ -102,11 +103,11 @@ export default function SettingsForms(props) {
           <MenuItem value={4}>4</MenuItem>
           <MenuItem value={5}>5</MenuItem>
         </Select>
-        <Grid>
+        <Grid item style={{ marginTop: 20 }}>
           <Button variant="contained" onClick={handleUpdate}>
             Update
           </Button>
-          <Button variant="contained" onClick={handleDelete}>
+          <Button variant="contained" onClick={handleDelete} item style={{ marginLeft: 20 }}>
             Delete
           </Button>
         </Grid>
