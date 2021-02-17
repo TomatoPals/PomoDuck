@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-import "../../assets/styles/styles.css";
 import TaskBar from "../../components/TaskBar/TaskBar";
 import Header from "../../components/Header/Header";
 import Timer from "../../components/Timer/Timer";
 import Footer from "../../components/Footer/Footer";
-// import "../../assets/styles/styles.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import Snackbar from "@material-ui/core/Snackbar";

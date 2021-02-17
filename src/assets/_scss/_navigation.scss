@@ -1,0 +1,73 @@
+.outside-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 40px;
+}
+
+#logo {
+  margin-left: 60px;
+  margin-top: 4px;
+}
+
+#logo > img {
+  height: 70px;
+}
+.flex-center-all {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
+}
+.contentContainer {
+  background-image: url("../../images/whitebackground-color.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  margin-top: 50px;
+}
+
+.settingsIcon,
+.signupIcon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.taskIcon {
+  width: 100%;
+}
+.right-box {
+  display: flex;
+}
+
+@media only screen and (max-width: 750px) {
+  /* header */
+  #appbarStyles {
+    height: 80px;
+  }
+
+  #logo {
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+
+  #logo > img {
+    height: 40px;
+  }
+
+  .settingsIcon,
+  .signupIcon {
+    margin-right: 0px;
+  }
+
+  .settingsTitle,
+  .signupTitle {
+    display: none;
+  }
+
+  // .right-box {
+  //   display: block;
+  // }
+}

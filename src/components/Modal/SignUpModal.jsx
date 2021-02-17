@@ -6,11 +6,11 @@ import CreateUser from "../CreateUser/CreateUser";
 import Login from "../Login/Login";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
-import "../../assets/styles/styles.css";
 import { useSelector } from "react-redux";
 import API from "../../utils/API";
 import store from "../../store";
 import { LOGGED_IN, USER_LOGOUT } from "../../actions/UserActions";
+import { DELETE_ALL_TASKS } from "../../actions/TaskActions";
 
 function getModalStyle() {
   const top = 50;
@@ -91,6 +91,7 @@ export default function SignUpModal() {
       );
       API.logout();
       setLoggedIn(false);
+      store.dispatch({ type: DELETE_ALL_TASKS });
       store.dispatch({ type: USER_LOGOUT });
       store.dispatch({ type: LOGGED_IN, payload: false });
     } catch (error) {
