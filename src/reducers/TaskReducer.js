@@ -1,4 +1,11 @@
-import { ADD_TASKS, LOADING, CURRENT_TASK, UPDATE_TASK, ADD_TASKS_FROM_STORE } from "../actions/TaskActions";
+import {
+  ADD_TASKS,
+  LOADING,
+  CURRENT_TASK,
+  UPDATE_TASK,
+  ADD_TASKS_FROM_STORE,
+  DELETE_ALL_TASKS
+} from "../actions/TaskActions";
 
 const initialstate = { tasks: [], currentTask: "" };
 
@@ -9,6 +16,11 @@ const TaskReducer = (state = initialstate, action) => {
         ...state,
         tasks: [...state.tasks, action.payload],
         loading: false
+      };
+    case DELETE_ALL_TASKS:
+      return {
+        ...state,
+        tasks: []
       };
     case ADD_TASKS_FROM_STORE:
       return {

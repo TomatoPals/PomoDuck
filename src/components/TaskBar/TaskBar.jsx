@@ -70,6 +70,7 @@ const TaskBar = (props) => {
             onChange={handleTaskListChange}
             type="text"
             placeholder="Enter task"
+            variant="outlined"
           />
           <Button variant="contained" onClick={handleTaskSubmit} className="addtaskbtn">
             Add Task
