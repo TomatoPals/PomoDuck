@@ -132,3 +132,23 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (max-width: 750px) {
+  .timer {
+    width: 100%;
+    padding-top: 35px;
+    height: 320px;
+  }
+
+  .Countdown-time2 {
+    font-size: calc(0.9em + 2vw) !important;
+  }
+
+  .Countdown button {
+    padding: 6px 8px;
+  }
+
+  .Button-start {
+    padding: 10px 20px !important;
+  }
+}

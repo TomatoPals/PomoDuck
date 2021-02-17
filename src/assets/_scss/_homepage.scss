@@ -49,3 +49,30 @@ body {
   height: 300px;
   background-color: #fff;
 }
+
+.right-box {
+  display: flex;
+}
+
+@media only screen and (max-width: 750px) {
+  .contentContainer {
+    margin-top: 0;
+  }
+
+  .outside-box {
+    margin: 0;
+  }
+
+  .lowerbox {
+    height: 150px;
+  }
+
+  .instructions p {
+    width: 95%;
+    line-height: 1.8em;
+  }
+
+  // .MuiFormControl-root {
+  //   width: 100%;
+  // }
+}
