@@ -54,8 +54,8 @@ const CreateStatsTable = (props) => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>UserId</TableCell>
-            <TableCell align="right">Task</TableCell>
+            {/* <TableCell>UserId</TableCell> */}
+            <TableCell>Task</TableCell>
             <TableCell align="right">Estimated Poms</TableCell>
             <TableCell align="right">Completed Poms</TableCell>
             <TableCell align="right">Completed Small Breaks</TableCell>
@@ -64,10 +64,10 @@ const CreateStatsTable = (props) => {
         <TableBody>
           {props.stats.map((stat) => (
             <TableRow key={stat.id}>
-              <TableCell component="th" scope="row">
+              {/* <TableCell component="th" scope="row">
                 {stat.userId}
-              </TableCell>
-              <TableCell align="right">{stat.taskName}</TableCell>
+              </TableCell> */}
+              <TableCell>{stat.taskName}</TableCell>
               <TableCell align="right">{stat.estimatedPoms}</TableCell>
               <TableCell align="right">{stat.completedPoms}</TableCell>
               <TableCell align="right">{stat.completedSmallBreak}</TableCell>
