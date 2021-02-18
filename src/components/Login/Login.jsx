@@ -51,11 +51,13 @@ const Login = (props) => {
 
   return (
     <Grid container alignItems="flex-start" spacing={2}>
-      <Typography variant="h5" gutterBottom>
-        Login
-      </Typography>
+      <Grid item xs={12} sm={12}>
+        <Typography variant="h5" gutterBottom>
+          Login
+        </Typography>
+      </Grid>
       {/* <p>{state.userInfo.firstName}</p> */}
-      <Grid item sm={12}>
+      <Grid item xs={10} sm={12}>
         <TextField
           value={inputState.email}
           onChange={handleChange}
@@ -66,7 +68,7 @@ const Login = (props) => {
           fullWidth
         />
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={10} sm={12}>
         <TextField
           value={inputState.password}
           onChange={handleChange}
@@ -77,7 +79,7 @@ const Login = (props) => {
           fullWidth
         />
       </Grid>
-      <Grid item style={{ marginTop: 20 }}>
+      <Grid item style={{ marginTop: 20 }} xs={8} sm={12}>
         <Button variant="contained" onClick={handleFormSubmit}>
           Submit
         </Button>

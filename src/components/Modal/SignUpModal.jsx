@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import "../../assets/styles/styles.css";
 import Modal from "@material-ui/core/Modal";
 import CreateUser from "../CreateUser/CreateUser";
 import Login from "../Login/Login";
@@ -11,17 +10,7 @@ import API from "../../utils/API";
 import store from "../../store";
 import { LOGGED_IN, USER_LOGOUT } from "../../actions/UserActions";
 import { DELETE_ALL_TASKS } from "../../actions/TaskActions";
-
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
-  };
-}
+import { CgProfile } from "react-icons/cg";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,13 +22,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#66bb6a",
     border: "2px #ef9a9a",
     color: "white",
-    borderRadius: 20
+    borderRadius: 20,
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
   }
 }));
 
 export default function SignUpModal() {
   const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
+
   const [open, setOpen] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
 
@@ -103,7 +95,7 @@ export default function SignUpModal() {
 
   const body = (
     <>
-      <div style={modalStyle} className={classes.paper}>
+      <div className={classes.paper}>
         <h3 className="SubmitButton">
           <Link onClick={() => setIsNew(!isNew)}>{isNew ? "Been here before? Login" : "New User SignUp"}</Link>
         </h3>
@@ -121,7 +113,7 @@ export default function SignUpModal() {
           </Button>
         ) : (
           <Button type="button" color="inherit" onClick={handleOpen}>
-            <img src="/Assets/icons/user-white.png" alt="Login" className="signupIcon" />
+            <CgProfile className="signupIcon" alt="login" />
             <div className="signupTitle">Login</div>
           </Button>
         )}

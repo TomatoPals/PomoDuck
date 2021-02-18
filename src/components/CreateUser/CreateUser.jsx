@@ -55,11 +55,13 @@ const CreateUser = (props) => {
   return (
     <FormControl>
       <Grid container alignItems="flex-start" spacing={2}>
-        <Typography variant="h5" gutterBottom>
-          New User Signup
-        </Typography>
+        <Grid item xs={10} sm={12}>
+          <Typography variant="h5" gutterBottom>
+            New User Signup
+          </Typography>
+        </Grid>
 
-        <Grid item sm={12}>
+        <Grid item xs={10} sm={12}>
           <TextField
             value={inputState.firstName}
             onChange={handleChange}
@@ -70,7 +72,7 @@ const CreateUser = (props) => {
             fullWidth
           />
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={10} sm={12}>
           <TextField
             value={inputState.lastName}
             onChange={handleChange}
@@ -81,7 +83,7 @@ const CreateUser = (props) => {
             fullWidth
           />
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={10} sm={12}>
           <TextField
             value={inputState.email}
             onChange={handleChange}
@@ -92,7 +94,7 @@ const CreateUser = (props) => {
             fullWidth
           />
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={10} sm={12}>
           <TextField
             value={inputState.password}
             onChange={handleChange}

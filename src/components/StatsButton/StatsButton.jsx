@@ -5,15 +5,18 @@ import { VscGraph } from "react-icons/vsc";
 
 const StatsButton = () => {
   const styleObj = {
-    fontSize: "20px",
-    color: "inherit",
-    textAlign: "center"
+    fontSize: "inherit",
+    color: "white",
+    textAlign: "center",
+    textDecoration: "none"
   };
   return (
     <>
-      <Button className="stats-button" style={styleObj}>
+      <Button className="stats-button" color="inherit">
         <VscGraph />
-        <Link to={"/stats"}>Stats</Link>
+        <Link to={"/stats"} style={styleObj} className="statsTitle">
+          Stats
+        </Link>
       </Button>
     </>
   );
