@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import { Button, Grid, Typography } from "@material-ui/core";
 import store from "../../store";
 import { USER_LOGIN, LOGGED_IN, ACCOUNT_CREATED } from "../../actions/UserActions";
 import { LOADING } from "../../actions/TaskActions";
@@ -50,26 +50,41 @@ const Login = (props) => {
   }, [storeState]);
 
   return (
-    <>
-      <h1>Login:</h1>
-      <TextField
-        value={inputState.email}
-        onChange={handleChange}
-        type="text"
-        name="email"
-        placeholder="Enter Email address"
-      />
-      <TextField
-        value={inputState.password}
-        onChange={handleChange}
-        type="password"
-        name="password"
-        placeholder="Enter Password"
-      />
-      <Button variant="contained" onClick={handleFormSubmit}>
-        Submit
-      </Button>
-    </>
+    <Grid container alignItems="flex-start" spacing={2}>
+      <Grid item xs={12} sm={12}>
+        <Typography variant="h5" gutterBottom>
+          Login
+        </Typography>
+      </Grid>
+      {/* <p>{state.userInfo.firstName}</p> */}
+      <Grid item xs={10} sm={12}>
+        <TextField
+          value={inputState.email}
+          onChange={handleChange}
+          type="text"
+          name="email"
+          placeholder="Enter Email address"
+          variant="outlined"
+          fullWidth
+        />
+      </Grid>
+      <Grid item xs={10} sm={12}>
+        <TextField
+          value={inputState.password}
+          onChange={handleChange}
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          variant="outlined"
+          fullWidth
+        />
+      </Grid>
+      <Grid item style={{ marginTop: 20 }} xs={8} sm={12}>
+        <Button variant="contained" onClick={handleFormSubmit}>
+          Submit
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 

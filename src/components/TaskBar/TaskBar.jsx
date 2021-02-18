@@ -1,6 +1,5 @@
 import { Button, FormControl, TextField } from "@material-ui/core";
 import CreateTask from "./CreateTask";
-import "../../assets/styles/styles.css";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import store from "../../store";
@@ -71,6 +70,7 @@ const TaskBar = (props) => {
             onChange={handleTaskListChange}
             type="text"
             placeholder="Enter task"
+            variant="outlined"
           />
           <Button variant="contained" onClick={handleTaskSubmit} className="addtaskbtn">
             Add Task

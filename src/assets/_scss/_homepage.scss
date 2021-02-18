@@ -1,0 +1,79 @@
+body {
+  background-color: #01222c;
+  margin: 0 !important;
+}
+
+#appbarStyles {
+  background-color: #001015;
+  height: 100px;
+}
+
+#toolbarStyles {
+  padding: 10px;
+}
+
+.instructions {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.instructions h2 {
+  text-align: center;
+}
+
+.instructions p {
+  width: 50%;
+  line-height: 1.8em;
+}
+
+.instructionContent {
+  display: flex;
+}
+
+.topLayer {
+  background-image: url("../../images/whitebackground-color.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-color: #fff;
+}
+
+.lowerbox {
+  background-image: url("../../images/darktomatoes.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  background-color: #fff;
+}
+
+.right-box {
+  display: flex;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 750px) {
+  .contentContainer {
+    margin-top: 0;
+  }
+
+  .outside-box {
+    margin: 0;
+  }
+
+  .lowerbox {
+    height: 150px;
+  }
+
+  .instructions p {
+    width: 95%;
+    line-height: 1.8em;
+  }
+
+  // .MuiFormControl-root {
+  //   width: 100%;
+  // }
+}
