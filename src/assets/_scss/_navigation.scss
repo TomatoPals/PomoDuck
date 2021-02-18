@@ -57,17 +57,18 @@
     height: 40px;
   }
 
-  .settingsIcon,
-  .signupIcon {
-    margin-right: 0px;
-  }
+  // .settingsIcon,
+  // .signupIcon {
+  //   margin-right: 0px;
+  // }
 
   .settingsTitle,
-  .signupTitle {
+  .signupTitle,
+  .statsTitle {
     display: none;
   }
 
-  // .right-box {
-  //   display: block;
-  // }
+  .right-box {
+    display: block;
+  }
 }
