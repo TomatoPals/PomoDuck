@@ -10,7 +10,8 @@ import API from "../../utils/API";
 import store from "../../store";
 import { LOGGED_IN, USER_LOGOUT } from "../../actions/UserActions";
 import { DELETE_ALL_TASKS } from "../../actions/TaskActions";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
+import { BiLogInCircle, BiLogOutCircle } from "react-icons/bi";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -108,12 +109,12 @@ export default function SignUpModal() {
       <div>
         {loggedIn ? (
           <Button type="button" color="inherit" onClick={handleLogout}>
-            <img src="/Assets/icons/user-white.png" alt="Logout" className="signupIcon" />
+            <BiLogOutCircle alt="Logout" className="signupIcon" />
             <div className="signupTitle">Logout</div>
           </Button>
         ) : (
           <Button type="button" color="inherit" onClick={handleOpen}>
-            <CgProfile className="signupIcon" alt="login" />
+            <BiLogInCircle className="signupIcon" alt="login" />
             <div className="signupTitle">Login</div>
           </Button>
         )}
