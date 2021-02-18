@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "@material-ui/core/Button";
+import { Button, Grid } from "@material-ui/core";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
@@ -15,18 +15,18 @@ function SnackAlert(props) {
   return <Alert elevation={6} variant="filled" {...props} />;
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    "& > * + *": {
-      marginTop: theme.spacing(2)
-    }
-  }
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     width: "100%",
+//     "& > * + *": {
+//       marginTop: theme.spacing(2)
+//     }
+//   }
+// }));
 
 export default function Profile() {
   const storeState = useSelector((state) => state);
-  const classes = useStyles();
+  // const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [inputState, setInputState] = useState({
     firstName: "",
@@ -87,44 +87,64 @@ export default function Profile() {
     <>
       <FormControl component="fieldset">
         <FormGroup>
-          <TextField
-            label="First Name"
-            value={inputState.firstName}
-            onChange={handleChange}
-            type="text"
-            name="firstName"
-            placeholder="Enter First Name"
-          />
-          <TextField
-            label="Last Name"
-            value={inputState.lastName}
-            onChange={handleChange}
-            type="text"
-            name="lastName"
-            placeholder="Enter Last Name"
-          />
-          <TextField
-            label="Email"
-            value={inputState.email}
-            onChange={handleChange}
-            type="text"
-            name="email"
-            placeholder="Enter Email address"
-          />
-          <TextField
-            label="Password"
-            value={inputState.password}
-            onChange={handleChange}
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-          />
-          <Button variant="contained" onClick={handleFormSubmit}>
-            Update Info
-          </Button>
+          <Grid container alignItems="flex-start" spacing={2}>
+          <Grid item xs={12} sm={12}>
+              <TextField
+                label="First Name"
+                value={inputState.firstName}
+                onChange={handleChange}
+                type="text"
+                name="firstName"
+                placeholder="Enter First Name"
+                placeholder="Enter Task"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item xs={12} sm={12}>
+              <TextField
+                label="Last Name"
+                value={inputState.lastName}
+                onChange={handleChange}
+                type="text"
+                name="lastName"
+                placeholder="Enter Last Name"
+                placeholder="Enter Task"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item xs={12} sm={12}>
+              <TextField
+                label="Email"
+                value={inputState.email}
+                onChange={handleChange}
+                type="text"
+                name="email"
+                placeholder="Enter Email address"
+                placeholder="Enter Task"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item xs={12} sm={12}>
+              <TextField
+                label="Password"
+                value={inputState.password}
+                onChange={handleChange}
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                placeholder="Enter Task"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item style={{ marginTop: 20 }}>
+              <Button variant="contained" onClick={handleFormSubmit}>
+                Update Info
+              </Button>
+            </Grid>
+          </Grid>
         </FormGroup>
       </FormControl>
-      <div className={classes.root}>
+      <div>
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <SnackAlert onClose={handleClose} severity="error">
             {"Field cannot be empty!"}

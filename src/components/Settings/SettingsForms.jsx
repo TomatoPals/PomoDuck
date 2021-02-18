@@ -7,6 +7,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import { useSelector } from "react-redux";
 import Profile from "../Profile/Profile";
+import { Typography, Grid } from "@material-ui/core";
 
 export default function SettingsForms() {
   const storeState = useSelector((state) => state);
@@ -22,18 +23,24 @@ export default function SettingsForms() {
   return (
     <FormControl component="fieldset">
       {/* <FormLabel component="legend">Settings</FormLabel> */}
-      <h1 id="Setting">Settings</h1>
+      <Grid item xs={12} sm={12} style={{ marginBottom: 20 }}>
+        <Typography variant="h5" gutterBottom>
+          Settings
+        </Typography>
+      </Grid>
       {storeState.userInfo.loggedIn ? <Profile /> : <></>}
 
       <FormGroup>
         <FormControlLabel
+          item
+          style={{ marginTop: 20 }}
           control={<Switch checked={state.dark} onChange={handleChange} name="dark" />}
           label="Dark Mode"
         />
-        <FormControlLabel
+        {/* <FormControlLabel
           control={<Switch checked={state.sound} onChange={handleChange} name="sound" />}
           label="Sound"
-        />
+        /> */}
       </FormGroup>
     </FormControl>
   );
