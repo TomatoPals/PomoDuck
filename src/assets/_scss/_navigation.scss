@@ -42,6 +42,15 @@
   display: flex;
 }
 
+.stats-button > span > svg {
+  margin-right: 10px;
+}
+
+
+#toolbarStyles > div > div > button {
+  min-width: 30px;
+}
+
 @media only screen and (max-width: 750px) {
   /* header */
   #appbarStyles {
