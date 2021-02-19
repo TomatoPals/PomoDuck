@@ -47,8 +47,18 @@
 }
 
 
-#toolbarStyles > div > div > button {
+// #toolbarStyles > div > div > button {
+//   min-width: 30px;
+// }
+#toolbarStyles button {
   min-width: 30px;
+}
+
+.headernavigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 
 @media only screen and (max-width: 750px) {

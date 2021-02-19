@@ -11,14 +11,17 @@ const Header = (props) => {
     //   /* <Toolbar id="toolbarStyles"> */
     <AppBar position="relative" id="appbarStyles">
       <Toolbar id="toolbarStyles">
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <PomoDuckHome />
-        </IconButton>
-        <ButtonGroup>
-          <StatsButton className="settings" />
-          <SettingsModal className="settings" />
-          <SignUpModal className="settings" isLoggedin={props.isLoggedin} callback={props.callback} />
-        </ButtonGroup>
+        <div className="headernavigation">
+          <IconButton edge="start" color="inherit" aria-label="menu">
+            <PomoDuckHome />
+          </IconButton>
+
+          <ButtonGroup>
+            <StatsButton className="settings" />
+            <SettingsModal className="settings" />
+            <SignUpModal className="settings" isLoggedin={props.isLoggedin} callback={props.callback} />
+          </ButtonGroup>
+        </div>
       </Toolbar>
     </AppBar>
   );
