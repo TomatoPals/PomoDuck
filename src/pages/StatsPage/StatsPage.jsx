@@ -14,14 +14,17 @@ const StatsPage = () => {
     console.log('test');
     if (storeState.userInfo.loggedIn) {
       console.log(storeState.userInfo.userDetails);
-      console.log(storeState.userInfo.userDetails);
     }
   }, [storeState]);
 
-  // const calcTotalBreak = (props) => {
-  //   console.log(props);
-  // };
-  // calcTotalBreak();
+  const calcTotalBreak = () => {
+    console.log(storeState.userInfo.userDetails);
+    let shortBreak = storeState.userInfo.userDetails.shortBreaks;
+    let longBreak = storeState.userInfo.userDetails.longBreaks;
+    let totalBreaks = shortBreak+longBreak;
+    return(totalBreaks);
+  };
+  calcTotalBreak();
 
 
   return (
