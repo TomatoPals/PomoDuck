@@ -1,4 +1,4 @@
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, Toolbar, ButtonGroup } from "@material-ui/core";
 import React from "react";
 import SignUpModal from "../Modal/SignUpModal";
 import SettingsModal from "../../components/Modal/SettingsModal";
@@ -11,12 +11,17 @@ const Header = (props) => {
     //   /* <Toolbar id="toolbarStyles"> */
     <AppBar position="relative" id="appbarStyles">
       <Toolbar id="toolbarStyles">
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <PomoDuckHome />
-        </IconButton>
-        <StatsButton id="signup" />
-        <SettingsModal className="settings" />
-        <SignUpModal id="signup" isLoggedin={props.isLoggedin} callback={props.callback} />
+        <div className="headernavigation">
+          <IconButton edge="start" color="inherit" aria-label="menu">
+            <PomoDuckHome />
+          </IconButton>
+
+          <ButtonGroup>
+            <StatsButton className="settings" />
+            <SettingsModal className="settings" />
+            <SignUpModal className="settings" isLoggedin={props.isLoggedin} callback={props.callback} />
+          </ButtonGroup>
+        </div>
       </Toolbar>
     </AppBar>
   );
