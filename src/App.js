@@ -8,14 +8,14 @@ import StatsPage from "./pages/StatsPage/StatsPage";
 function App() {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/signup" component={CreateUser} />
-          <Route exact path="/stats" component={StatsPage} />
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
+      {/* <div> */}
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/signup" component={CreateUser} />
+        <Route exact path="/stats" component={StatsPage} />
+        <Route component={NoMatch} />
+      </Switch>
+      {/* </div> */}
     </Router>
   );
 }
