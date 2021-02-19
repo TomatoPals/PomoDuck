@@ -13,23 +13,29 @@ const StatsPage = () => {
   useEffect(() => {
     console.log('test');
     if (storeState.userInfo.loggedIn) {
-      console.log(storeState.userInfo.userDetails);
+      // console.log(storeState.userInfo.userDetails);
     }
   }, [storeState]);
 
-  const calcTotalBreak = () => {
+  const calcTotalLongBreak = () => {
     console.log(storeState.userInfo.userDetails);
-    let shortBreak = storeState.userInfo.userDetails.shortBreaks;
-    let longBreak = storeState.userInfo.userDetails.longBreaks;
-    let totalBreaks = shortBreak+longBreak;
-    return(totalBreaks);
+    let longBreak = storeState.userInfo.userDetails.totalBigBreakSeconds;
+    return(longBreak);
   };
-  calcTotalBreak();
 
+  const calcTotalWork = () => {
+    let totalWork = storeState.userInfo.userDetails.totalPomSeconds;
+    return(totalWork);
+  }
+
+  const calcShortBreak = () => {
+    let shortBreak = storeState.userInfo.userDetails.totalSmallBreakSeconds;
+    return(shortBreak);
+  }
 
   return (
     <>
-      <Grid container direction="column">
+      {/* <Grid container direction="column"> */}
         <Grid item>
           <Header />
           <Grid item sm={12}>
@@ -39,29 +45,28 @@ const StatsPage = () => {
           {/* <Button onClick={setStatState}>I'm Useless!</Button> */}
         </Grid>
         {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
-        {/* <Chart
+        <Chart
           width={"500px"}
           height={"500px"}
           chartType="PieChart"
           loader={<div>Loading Chart</div>}
           data={[
-            ["Task", "Hours per Day"],
-            ["Work", 11],
-            ["Eat", 2],
-            ["Commute", 2],
-            ["Watch TV", 2],
-            ["Sleep", 7]
+            ["Works/Break", "Minutes per day"],
+            ["Long Breaks", calcTotalLongBreak()],
+            ["Short Breaks", calcShortBreak()],
+            ["Work", calcTotalWork()],
           ]}
           options={{
-            title: "My Daily Activities",
+            title: "Productivity",
             // Just add this option
             pieHole: 0.4
           }}
           rootProps={{ "data-testid": "3" }}
-        /> */}
-        <Footer />
+        />
         {/* </Grid> */}
-      </Grid>
+      {/* </Grid> */}
+      <Footer />
+
     </>
   );
 };
