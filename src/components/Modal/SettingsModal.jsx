@@ -18,7 +18,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 20,
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    [theme.breakpoints.down(750)]: {
+      width: "70%" // secondary
+    }
   }
 }));
 
