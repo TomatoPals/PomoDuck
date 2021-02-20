@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { VscGraph } from "react-icons/vsc";
+// import { VscGraph } from "react-icons/vsc";
 
 const StatsButton = () => {
   const styleObj = {
@@ -13,7 +13,8 @@ const StatsButton = () => {
   return (
     <>
       <Button className="stats-button" color="inherit">
-        <VscGraph />
+        {/* <VscGraph /> */}
+        <img src="/Assets/icons/graph-white.png" alt="Logout" className="signupIcon" />
         <Link to={"/stats"} style={styleObj} className="statsTitle">
           Stats
         </Link>
