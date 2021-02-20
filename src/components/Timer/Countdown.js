@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from "react";
 import store from "../../store";
 import { TIME_REMAINING } from "../../actions/TimerActions";
+import tom from "../../images/pomoduck_Stats.png";
+import tomSmall from "../../images/pomoduck_stats_smaller.png";
+import { useMediaQuery } from 'react-responsive'
+
 
 const Countdown = () => {
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 750px)'
+  })
+  const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 750px)' })
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: '(max-device-width: 750px)'
+  })
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+
   const [timeState, setTimeState] = useState({
     timerOn: false,
     timerStart: 0,
@@ -68,8 +84,10 @@ const Countdown = () => {
             {minutes} : {seconds}
           </div>
         </div>
+        {isDesktopOrLaptop && <img src={tom} alt="Stats Duck" />}
+        {isTabletOrMobile && <img src={tomSmall} alt="Stats Duck" />}
       </div>
-
+    
       {timerOn === false && (timerStart === 0 || remainingTime === timerStart) && (
         <button className="Button-start" onClick={startTimer}>
           Start
