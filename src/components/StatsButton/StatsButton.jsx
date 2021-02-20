@@ -73,13 +73,13 @@ export default function SettingsModal() {
         aria-labelledby="Stats Modal"
         aria-describedby="See your pomodoro stats here"
       >
-        <div className={classes.paper}>
+        <div className={classes.paper} id= "statsModal">
           <StatsTable stat={storeState.taskList.tasks} />
 
           {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
           <Chart
-            width={"500px"}
-            height={"500px"}
+            width={"100%"}
+            height={"80%"}
             chartType="PieChart"
             loader={<div>Loading Chart</div>}
             data={[
