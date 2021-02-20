@@ -106,12 +106,12 @@ const CreateUser = (props) => {
           />
         </Grid>
         <Grid item style={{ marginTop: 20 }}>
-          <Button variant="contained" onClick={handleFormSubmit}>
+          <Button variant="contained" className="modalbutton" onClick={handleFormSubmit}>
             Submit
           </Button>
         </Grid>
         <Grid item style={{ marginTop: 20 }}>
-          <Button variant="contained" onClick={handleCancelSubmit}>
+          <Button variant="contained" className="modalbutton" onClick={handleCancelSubmit}>
             Cancel
           </Button>
         </Grid>
