@@ -30,14 +30,12 @@ export default function SettingsModal() {
   //This useEffect gets all of the users info after they are logged in
   //you can see their total stats on breaks, pomodoros with this
   useEffect(() => {
-    console.log("test");
     if (storeState.userInfo.loggedIn) {
       // console.log(storeState.userInfo.userDetails);
     }
   }, [storeState]);
 
   const calcTotalLongBreak = () => {
-    console.log(storeState.userInfo.userDetails);
     let longBreak = storeState.userInfo.userDetails.totalBigBreakSeconds; // eslint-disable-line
     return longBreak;
   };
