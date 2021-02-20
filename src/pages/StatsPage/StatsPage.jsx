@@ -45,6 +45,7 @@ const StatsPage = () => {
           {/* <Button onClick={setStatState}>I'm Useless!</Button> */}
         </Grid>
         {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
+        <div id = 'chartDiv'>
         <Chart
           width={"500px"}
           height={"500px"}
@@ -63,6 +64,7 @@ const StatsPage = () => {
           }}
           rootProps={{ "data-testid": "3" }}
         />
+        </div>
         {/* </Grid> */}
       {/* </Grid> */}
       <Footer />
