@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import Modal from "@material-ui/core/Modal";
-import { VscGraph } from "react-icons/vsc";
 import { makeStyles } from "@material-ui/core/";
 import { Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
@@ -64,7 +63,7 @@ export default function SettingsModal() {
     <>
       <Button type="button" color="inherit" onClick={handleOpen}>
         <div className="settingsIcon">
-          <VscGraph />
+          <img src="/assets/icons/graph-white.png" alt="Logout" className="signupIcon" />
         </div>
         <div className="settingsTitle">Stats</div>
       </Button>

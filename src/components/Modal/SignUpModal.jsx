@@ -11,7 +11,6 @@ import store from "../../store";
 import { LOGGED_IN, USER_LOGOUT } from "../../actions/UserActions";
 import { DELETE_ALL_TASKS } from "../../actions/TaskActions";
 // import { CgProfile } from "react-icons/cg";
-import { BiLogInCircle, BiLogOutCircle } from "react-icons/bi";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -109,12 +108,13 @@ export default function SignUpModal() {
       <div>
         {loggedIn ? (
           <Button type="button" color="inherit" onClick={handleLogout}>
-            <BiLogOutCircle alt="Logout" className="signupIcon" />
+            <img src="/Assets/icons/logout-24px.svg" alt="Logout" className="signupIcon" />
             <div className="signupTitle">Logout</div>
           </Button>
         ) : (
           <Button type="button" color="inherit" onClick={handleOpen}>
-            <BiLogInCircle className="signupIcon" alt="login" />
+            {/* <CgProfile className="signupIcon" alt="login" /> */}
+            <img src="/Assets/icons/user-white.png" alt="Login" className="signupIcon" />
             <div className="signupTitle">Login</div>
           </Button>
         )}
