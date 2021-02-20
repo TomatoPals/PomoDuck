@@ -78,8 +78,6 @@ export default function SettingsModal() {
 
           {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
           <Chart
-            width={"500px"}
-            height={"500px"}
             chartType="PieChart"
             loader={<div>Loading Chart</div>}
             data={[
