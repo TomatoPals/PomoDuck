@@ -75,13 +75,8 @@ export default function SettingsModal() {
         aria-describedby="See your pomodoro stats here"
       >
         <div className={classes.paper}>
-          <Grid item>
-            <Grid item sm={12}>
-              <StatsTable stat={storeState.taskList.tasks} />
-            </Grid>
-            <Grid container item sm={12} alignItems="center" justify="center"></Grid>
-            {/* <Button onClick={setStatState}>I'm Useless!</Button> */}
-          </Grid>
+          <StatsTable stat={storeState.taskList.tasks} />
+
           {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
           <Chart
             width={"500px"}
