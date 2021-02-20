@@ -44,10 +44,9 @@ const HomePage = (props) => {
     if (userInfo.loggedIn === null) {
       return;
     }
-    setOpen(true);
-    // return () => {
-    //   cleanup;
-    // };
+    if (userInfo.loggedIn === true) {
+      setOpen(true);
+    }
   }, [userInfo]);
 
   return (
