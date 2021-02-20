@@ -87,20 +87,13 @@ export default function TaskSettingsForm(props) {
     props.handleClose();
   };
 
-  console.log("storeState.tasklist:", storeState.taskList);
-
   const completeTask = async () => {
     store.dispatch({ type: UPDATE_TASK, payload: true });
-    // try {
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   return (
     <FormControl component="fieldset">
       <h1 id="TaskSetting">Task Settings</h1>
-      {/* <FormLabel component="legend">Task Settings</FormLabel> */}
       <FormGroup>
         <TextField
           label="Task Name"
