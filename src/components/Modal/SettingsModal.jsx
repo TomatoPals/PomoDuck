@@ -3,7 +3,7 @@ import Modal from "@material-ui/core/Modal";
 import SettingsForms from "../Settings/SettingsForms";
 import { makeStyles } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
-import { FiSettings } from "react-icons/fi";
+// import { FiSettings } from "react-icons/fi";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,9 +36,10 @@ export default function SettingsModal() {
   return (
     <>
       <Button type="button" color="inherit" onClick={handleOpen}>
-        <div className="settingsIcon">
+        {/* <div className="settingsIcon">
           <FiSettings />
-        </div>
+        </div> */}
+        <img src="/Assets/icons/config-white.png" alt="Logout" className="signupIcon" />
         <div className="settingsTitle">Settings</div>
       </Button>
       <Modal
