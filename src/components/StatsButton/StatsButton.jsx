@@ -95,6 +95,11 @@ export default function SettingsModal() {
             }}
             rootProps={{ "data-testid": "3" }}
           />
+          <Grid item style={{ marginTop: 20 }}>
+            <Button variant="contained" className="modalbutton" onClick={handleClose}>
+              Close
+            </Button>
+          </Grid>
         </div>
       </Modal>
     </>

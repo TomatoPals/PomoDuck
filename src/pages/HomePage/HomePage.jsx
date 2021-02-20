@@ -83,7 +83,7 @@ const HomePage = (props) => {
         </Grid>
       </Grid> */}
       <div className={classes.root}>
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <SnackAlert onClose={handleClose} severity="success">
             {userInfo.loggedIn ? "Login Successful!" : "Logout Succesful!"}
           </SnackAlert>
