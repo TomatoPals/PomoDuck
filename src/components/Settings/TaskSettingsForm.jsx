@@ -20,19 +20,19 @@ export default function TaskSettingsForm(props) {
   const [inputState, setInputState] = useState({
     taskName: ""
   });
+
   const handleUpdate = () => {
     if (inputState.taskName.length === 0) {
       alert("Task Name can not be empty");
     } else {
-      updateTask();
+      updateTask(props.currentItem.id, inputState.taskName, estimatedPoms.poms, false);
       props.handleClose();
     }
   };
 
-  const updateTask = async () => {
-    console.log("props.currentItem.id:", props.currentItem.id);
+  const updateTask = async (id, taskName, estimatedPoms, isComplete) => {
     try {
-      await API.taskUpdate(props.currentItem.id, inputState.taskName, estimatedPoms.poms);
+      await API.taskUpdate(id, taskName, estimatedPoms, isComplete);
       return store.dispatch({ type: UPDATE_TASK, payload: [] });
     } catch (error) {
       console.log(error);
@@ -83,12 +83,8 @@ export default function TaskSettingsForm(props) {
     setEstimatedPoms({ poms: event.target.value });
   };
   const handleComplete = () => {
-    completeTask();
+    updateTask(props.currentItem.id, inputState.taskName, estimatedPoms.poms, true);
     props.handleClose();
-  };
-
-  const completeTask = async () => {
-    store.dispatch({ type: UPDATE_TASK, payload: true });
   };
 
   return (
