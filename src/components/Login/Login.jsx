@@ -80,7 +80,7 @@ const Login = (props) => {
         />
       </Grid>
       <Grid item style={{ marginTop: 20 }} xs={8} sm={12}>
-        <Button variant="contained" onClick={handleFormSubmit}>
+        <Button variant="contained" onClick={handleFormSubmit} className="modalbutton">
           Submit
         </Button>
       </Grid>
