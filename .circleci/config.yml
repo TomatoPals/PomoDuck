@@ -21,11 +21,11 @@ jobs:
           dockerfile: Dockerfile
           image: "pomoduck-frontend"
           registry: "registry.digitalocean.com/pomoduck"
-          tag: "v0.3.8-prod"
+          tag: "v1.0.0-prod"
       - docker/push:
           image: "pomoduck"
           registry: "registry.digitalocean.com/pomoduck"
-          tag: "v0.3.8-prod"
+          tag: "v1.0.0-prod"
 
   test:
     executor:
