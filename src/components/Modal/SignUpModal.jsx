@@ -108,7 +108,7 @@ export default function SignUpModal() {
       <div>
         {loggedIn ? (
           <Button type="button" color="inherit" onClick={handleLogout}>
-            <img src="/Assets/icons/logout-24.svg" alt="Logout" className="signupIcon" />
+            <img src="/Assets/icons/logout-24px.svg" alt="Logout" className="signupIcon" />
             <div className="signupTitle">Logout</div>
           </Button>
         ) : (
