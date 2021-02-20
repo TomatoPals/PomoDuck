@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 // import FormLabel from "@material-ui/core/FormLabel";
-import "../../assets/styles/styles.css";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import Button from "@material-ui/core/Button";
@@ -13,7 +12,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
 
-export default function SettingsForms(props) {
+export default function TaskSettingsForm(props) {
   const storeState = useSelector((state) => state);
   const [estimatedPoms, setEstimatedPoms] = useState({
     poms: ""
@@ -119,14 +118,14 @@ export default function SettingsForms(props) {
           <MenuItem value={4}>4</MenuItem>
           <MenuItem value={5}>5</MenuItem>
         </Select>
-        <Grid item style={{ marginTop: 20 }}>
+        <Grid style={{ marginTop: 20 }}>
           <Button variant="contained" onClick={handleUpdate}>
             Update
           </Button>
-          <Button variant="contained" onClick={handleDelete} item style={{ marginLeft: 20 }}>
+          <Button variant="contained" onClick={handleDelete} style={{ marginLeft: 20 }}>
             Delete
           </Button>
-          <Button variant="contained" onClick={handleComplete} item style={{ marginLeft: 20 }}>
+          <Button variant="contained" onClick={handleComplete} style={{ marginLeft: 20 }}>
             Complete
           </Button>
         </Grid>

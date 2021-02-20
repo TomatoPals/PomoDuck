@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { CURRENT_TASK } from "../../actions/TaskActions";
 import Grid from "@material-ui/core/Grid";
 import UpdateTaskModal from "../Modal/UpdateTaskModal";
-import "../../assets/styles/styles.css";
 
 export default function CreateTask() {
   const storeState = useSelector((state) => state);
@@ -29,21 +28,21 @@ export default function CreateTask() {
 
   return (
     <List className="listitem">
-      {storeState.taskList.tasks.map((item) => {
+      {storeState.taskList.tasks.map((task) => {
         return (
-          <ListItem key={item.taskName}>
+          <ListItem key={task.taskName}>
             <Grid item xs={11} sm={11} md={11} lg={11} xl={11}>
               <RadioGroup aria-label="task" name="task" value={value} onChange={handleChange}>
                 <FormControlLabel
-                  value={` ${item.taskName}`}
+                  value={` ${task.taskName}`}
                   control={<Radio />}
-                  label={` ${item.taskName}`}
-                  onClick={handleToggle(item.taskName)}
+                  label={` ${task.taskName}`}
+                  onClick={handleToggle(task.taskName)}
                 />
               </RadioGroup>
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
-              <UpdateTaskModal currentItem={item} />
+              <UpdateTaskModal currentItem={task} />
             </Grid>
           </ListItem>
         );
