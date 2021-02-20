@@ -10,12 +10,12 @@ import API from "../../utils/API";
 import store from "../../store";
 import { LOGGED_IN, USER_LOGOUT } from "../../actions/UserActions";
 import { DELETE_ALL_TASKS } from "../../actions/TaskActions";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
-    width: 400,
+    // width: 400,
     // backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4, 6, 4),
@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 20,
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    [theme.breakpoints.down(750)]: {
+      width: "70%" // secondary
+    }
   }
 }));
 
@@ -108,12 +111,13 @@ export default function SignUpModal() {
       <div>
         {loggedIn ? (
           <Button type="button" color="inherit" onClick={handleLogout}>
-            <img src="/Assets/icons/user-white.png" alt="Logout" className="signupIcon" />
+            <img src="/Assets/icons/logout-24px.svg" alt="Logout" className="signupIcon" />
             <div className="signupTitle">Logout</div>
           </Button>
         ) : (
           <Button type="button" color="inherit" onClick={handleOpen}>
-            <CgProfile className="signupIcon" alt="login" />
+            {/* <CgProfile className="signupIcon" alt="login" /> */}
+            <img src="/Assets/icons/user-white.png" alt="Login" className="signupIcon" />
             <div className="signupTitle">Login</div>
           </Button>
         )}

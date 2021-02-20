@@ -42,6 +42,25 @@
   display: flex;
 }
 
+.stats-button > span > svg {
+  margin-right: 10px;
+}
+
+
+// #toolbarStyles > div > div > button {
+//   min-width: 30px;
+// }
+#toolbarStyles button {
+  min-width: 30px;
+}
+
+.headernavigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
 @media only screen and (max-width: 750px) {
   /* header */
   #appbarStyles {
@@ -71,4 +90,15 @@
   .right-box {
     display: block;
   }
+}
+
+// .makeStyles-paper-1:focus {
+:focus {
+  // outline: -webkit-focus-ring-color auto 1px;
+  // outline: red 1px;
+  /* outline-color: -webkit-focus-ring-color; */
+  outline-color: red !important;
+  outline-style: auto;
+  outline-width: 1px;
+  // outline-radius: ;
 }
