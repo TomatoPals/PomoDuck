@@ -19,13 +19,13 @@ jobs:
       - run: doctl registry login
       - docker/build:
           dockerfile: Dockerfile
-          image: "pomoduck"
+          image: "pomoduck-frontend"
           registry: "registry.digitalocean.com/pomoduck"
-          tag: "v0.1.0-prod"
+          tag: "v1.0.0-prod"
       - docker/push:
           image: "pomoduck"
           registry: "registry.digitalocean.com/pomoduck"
-          tag: "v0.1.0-prod"
+          tag: "v1.0.0-prod"
 
   test:
     executor:
@@ -46,10 +46,10 @@ workflows:
   devops_flow:
     jobs:
       - test
-      # - build-and-push:
-      #     # filters:
-      #     #   branches:
-      #     #     only:
-      #     #       - main
-      #     requires:
-      #       - test
+      - build-and-push:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - test
