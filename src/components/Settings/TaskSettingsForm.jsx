@@ -31,6 +31,7 @@ export default function SettingsForms(props) {
   };
 
   const updateTask = async () => {
+    console.log("props.currentItem.id:", props.currentItem.id);
     try {
       await API.taskUpdate(props.currentItem.id, inputState.taskName, estimatedPoms.poms);
       return store.dispatch({ type: UPDATE_TASK, payload: [] });
@@ -82,6 +83,21 @@ export default function SettingsForms(props) {
   const handlePomChange = (event) => {
     setEstimatedPoms({ poms: event.target.value });
   };
+  const handleComplete = () => {
+    completeTask();
+    props.handleClose();
+  };
+
+  console.log("storeState.tasklist:", storeState.taskList);
+
+  const completeTask = async () => {
+    store.dispatch({ type: UPDATE_TASK, payload: true });
+    // try {
+    // } catch (error) {
+    //   console.log(error);
+    // }
+  };
+
   return (
     <FormControl component="fieldset">
       <h1 id="TaskSetting">Task Settings</h1>
@@ -109,6 +125,9 @@ export default function SettingsForms(props) {
           </Button>
           <Button variant="contained" onClick={handleDelete} item style={{ marginLeft: 20 }}>
             Delete
+          </Button>
+          <Button variant="contained" onClick={handleComplete} item style={{ marginLeft: 20 }}>
+            Complete
           </Button>
         </Grid>
       </FormGroup>
