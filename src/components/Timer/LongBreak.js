@@ -8,15 +8,9 @@ import { useMediaQuery } from 'react-responsive'
 const Countdown = () => {
 
   const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 750px)'
-  })
-  const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 750px)' })
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: '(max-device-width: 750px)'
-  })
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+    query: "(min-device-width: 750px)"
+  });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 750px)" });
 
   const [timeState, setTimeState] = useState({
     timerOn: false,
@@ -83,7 +77,7 @@ const Countdown = () => {
             {minutes} : {seconds}
           </div>
         </div>
-        {isDesktopOrLaptop && <img src={tom} alt="Stats Duck" />}
+        {isDesktopOrLaptop && <img src={tomSmall} alt="Stats Duck" />}
         {isTabletOrMobile && <img src={tomSmall} alt="Stats Duck" />}
       </div>
 
