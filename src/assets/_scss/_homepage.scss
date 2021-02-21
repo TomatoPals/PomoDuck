@@ -21,7 +21,9 @@ body {
   color: #fff;
 }
 
-.instructions h2 {
+.instructions h2,
+h6,
+h5 {
   text-align: center;
 }
 
@@ -55,6 +57,10 @@ body {
   margin-right: auto;
 }
 
+.pImage {
+  float: right;
+}
+
 @media only screen and (max-width: 750px) {
   .contentContainer {
     margin-top: 0;
@@ -72,8 +78,4 @@ body {
     width: 95%;
     line-height: 1.8em;
   }
-
-  // .MuiFormControl-root {
-  //   width: 100%;
-  // }
 }
