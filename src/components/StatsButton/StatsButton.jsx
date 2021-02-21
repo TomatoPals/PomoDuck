@@ -62,9 +62,7 @@ export default function SettingsModal() {
   return (
     <>
       <Button type="button" color="inherit" onClick={handleOpen}>
-        <div className="settingsIcon">
-          <img src="/assets/icons/graph-white.png" alt="Logout" className="signupIcon" />
-        </div>
+        <img src="/Assets/icons/graph-white.png" alt="Stats" className="signupIcon" />
         <div className="settingsTitle">Stats</div>
       </Button>
       <Modal
@@ -73,7 +71,7 @@ export default function SettingsModal() {
         aria-labelledby="Stats Modal"
         aria-describedby="See your pomodoro stats here"
       >
-        <div className={classes.paper} id= "statsModal">
+        <div className={classes.paper} id="statsModal">
           <StatsTable stat={storeState.taskList.tasks} />
 
           {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
