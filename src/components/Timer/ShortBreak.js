@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import store from "../../store";
 import { SHORT_TIME_REMAINING } from "../../actions/TimerActions";
-import tom from "../../images/pomoduck_Stats.png";
-import tomSmall from "../../images/pomoduck_stats_smaller.png";
+import tom from "../../images/pomoduck_shortbreak.png";
+import tomSmall from "../../images/pomoduck_shortbreak_smaller.png";
 import { useMediaQuery } from "react-responsive";
 
 const Countdown = () => {
