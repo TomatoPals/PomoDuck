@@ -39,9 +39,6 @@ export default function SettingsModal() {
   return (
     <>
       <Button type="button" color="inherit" onClick={handleOpen}>
-        {/* <div className="settingsIcon">
-          <FiSettings />
-        </div> */}
         <img src="/Assets/icons/config-white.png" alt="Logout" className="signupIcon" />
         <div className="settingsTitle">Settings</div>
       </Button>
