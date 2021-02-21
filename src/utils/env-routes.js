@@ -25,10 +25,10 @@ module.exports = {
     login: "https://pomoduck.com/api/userSession/login/",
     logout: "https://pomoduck.com/api/userSession/logout/",
     // task
-    createtask: "https://pomoduck.com/api.task/createtask",
-    gettask: "https://pomoduck.com/api.task/gettask",
-    taskremove: "https://pomoduck.com/api.task/taskremove",
-    taskupdate: "https://pomoduck.com/api.task/taskupdate",
-    findtasks: "https://pomoduck.com/api.task/findtasks/"
+    createtask: "https://pomoduck.com/api/task/createtask/",
+    gettask: "https://pomoduck.com/api/task/gettask/",
+    taskremove: "https://pomoduck.com/api/task/taskremove/",
+    taskupdate: "https://pomoduck.com/api/task/taskupdate/",
+    findtasks: "https://pomoduck.com/api/task/findtasks/"
   }
 };
