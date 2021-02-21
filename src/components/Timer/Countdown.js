@@ -88,8 +88,8 @@ const Countdown = () => {
             {minutes} : {seconds}
           </div>
         </div>
-        {isDesktopOrLaptop && <img src={randomImage} alt="Stats Duck" />}
-        {isTabletOrMobile && <img src={randomImageMobile} alt="Stats Duck" />}
+        {isDesktopOrLaptop && <img src={tom} alt="Stats Duck" />}
+        {isTabletOrMobile && <img src={tomSmall} alt="Stats Duck" />}
       </div>
 
       {timerOn === false && (timerStart === 0 || remainingTime === timerStart) && (
