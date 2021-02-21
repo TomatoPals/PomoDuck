@@ -7,7 +7,7 @@ module.exports = {
     update: "http://localhost:3001/api/user/update/",
     updateprofile: "http://localhost:3001/api/user/updateprofile/",
     login: "http://localhost:3001/api/userSession/login/",
-    logout: "localhost:3001/api/userSession/logout/",
+    logout: "http://localhost:3001/api/userSession/logout/",
     // task
     createtask: "http://localhost:3001/api/task/createtask/",
     gettask: "http://localhost:3001/api/task/gettask/",

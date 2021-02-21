@@ -1,26 +1,75 @@
-# Pomodoro-Timer
+# Pomoduck
 
 [![PomoDuck](https://codecov.io/gh/tomatopals/pomoduck/branch/main/graphs/badge.svg)](https://app.codecov.io/gh/tomatopals/pomoduck/branch/main)
 
-EXPECTATIONS
+![](/src/assets/images/pomoduck-splash.JPG)
 
-We expect whatever you build to have utility.
-We expect you to have market or real-world research that evidences your idea
-has REAL value to people.
-We expect you to have done research on other web/mobile applications in your domain.
-We expect you to put serious time and thought into this.
-We expect you to report problems you are facing along the way.
-We expect you to utilize some form of project management system.
-We expect you to dig deep into documentation and external resources to learn what you need.
-REQUIREMENTS
-Must use ReactJS in some way (even if minimal)
-Must use a Node and Express Web Server
-Must be backed by a MySQL or MongoDB Database with a Sequelize or Mongoose ORM  
-Must have both GET and POST routes for retrieving and adding new data
-Must be deployed using Heroku (with Data)
-Must utilize at least two libraries, packages, or technologies that we haven’t discussed
-Must allow for or involve the authentication of users in some way
-Must have a polished frontend/UI
-Must have folder structure that meets MVC Paradigm
-Must meet good quality coding standards (indentation, scoping, naming)
-Must not expose sensitive API key information on the server
+## Deployed
+
+Check us out here 👉 [Pomoduck](https://pomoduck.com/)
+
+## Description
+
+Pomoduck is simple, responsive pomodoro timer for everyone. Anyone can sign up, login, and start traking their productivity right away! Pomoduck features a standard Pomodoro timer with small and large breaks. Users can update their log in credentials, create, edit and delete their tasks, and view their pomodoro stats.
+
+## Table of Contents
+
+- [Installation](https://github.com/TomatoPals/PomoDuck#installation)
+
+* [Usage](https://github.com/TomatoPals/PomoDuck#usage)
+
+- [License](https://github.com/TomatoPals/PomoDuck#license)
+
+* [Technologies](https://github.com/TomatoPals/PomoDuck#technologies)
+
+- [Contributions](https://github.com/TomatoPals/PomoDuck#contributions)
+
+* [Testing](https://github.com/TomatoPals/PomoDuck#testing)
+
+- [Questions](https://github.com/TomatoPals/PomoDuck#questions)
+
+- [Repo](https://github.com/TomatoPals/PomoDuck#repo)
+
+* [Deployed](https://github.com/TomatoPals/PomoDuck#deployed)
+
+## Installation
+
+Node.js is required in order to install Pomoduck-Frontend. Use a standard NPM install. Pomoduck is dependent on a backend node express application which can be found here - [Pomoduck-Backend](https://github.com/TomatoPals/PomoDuck-Backend) (You will need to provision your own MySQL).
+
+## Usage
+
+Use this app to track your pomodoro time, break time, tasks and view related stats
+
+## License
+
+None
+
+## Technologies
+
+This application is utilizes a React frontend running on an NGINX web server in a docker container. Current deployment is in a Kubernetes cluster.
+
+## Contributions
+
+Submit a pull request.
+
+## Testing
+
+Use NPM run test in order to run Jest unit tests.
+
+## Questions
+
+[Michael Curtis](https://github.com/mcereal)
+
+[Grayson Stricker](https://github.com/g-strick)
+
+[Bart Cusick](https://github.com/bartcusick)
+
+[Patrick Lloyd](https://github.com/Meddle74)
+
+[Kerri Sexton](https://github.com/kas1330)
+
+[Paul Hagwood](https://github.com/pmhagwood)
+
+## Repo
+
+[Pomoduck](https://github.com/TomatoPals/PomoDuck)
