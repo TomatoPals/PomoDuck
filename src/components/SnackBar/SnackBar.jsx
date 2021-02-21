@@ -38,7 +38,7 @@ export default function SnackBar(props) {
       <Button variant="outlined" onClick={handleClick}>
         Submit
       </Button>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
         <SnackAlert onClose={handleClose} severity="success">
           Login Successful
         </SnackAlert>
