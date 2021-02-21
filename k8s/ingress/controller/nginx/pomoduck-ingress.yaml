@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: pomoduck-ingress
@@ -10,10 +10,33 @@ spec:
       http:
         paths:
           - path: "/"
+            pathType: Prefix
             backend:
-              serviceName: pomoduck-frontend
-              servicePort: 80
+              service:
+                name: pomoduck-frontend
+                port:
+                  number: 80
           - path: /api/
+            pathType: Prefix
             backend:
-              serviceName: express-service
-              servicePort: 3001
+              service:
+                name: express-service
+                port:
+                  number: 3001
+    - host: www.pomoduck.com
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: pomoduck-frontend
+                port:
+                  number: 80
+          - path: /api/
+            pathType: Prefix
+            backend:
+              service:
+                name: express-service
+                port:
+                  number: 3001

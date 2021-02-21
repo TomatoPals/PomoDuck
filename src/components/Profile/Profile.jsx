@@ -15,14 +15,14 @@ function SnackAlert(props) {
   return <Alert elevation={6} variant="filled" {...props} />;
 }
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     width: "100%",
-//     "& > * + *": {
-//       marginTop: theme.spacing(2)
-//     }
-//   }
-// }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    "& > * + *": {
+      marginTop: theme.spacing(2)
+    }
+  }
+}));
 
 export default function Profile() {
   const storeState = useSelector((state) => state);
@@ -96,8 +96,8 @@ export default function Profile() {
                 type="text"
                 name="firstName"
                 placeholder="Enter First Name"
-                placeholder="Enter Task"
                 variant="outlined"
+                className="textfieldbox"
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -108,7 +108,7 @@ export default function Profile() {
                 type="text"
                 name="lastName"
                 placeholder="Enter Last Name"
-                placeholder="Enter Task"
+                className="textfieldbox"
                 variant="outlined"
               />
             </Grid>
@@ -120,7 +120,7 @@ export default function Profile() {
                 type="text"
                 name="email"
                 placeholder="Enter Email address"
-                placeholder="Enter Task"
+                className="textfieldbox"
                 variant="outlined"
               />
             </Grid>
@@ -132,12 +132,12 @@ export default function Profile() {
                 type="password"
                 name="password"
                 placeholder="Enter Password"
-                placeholder="Enter Task"
+                className="textfieldbox"
                 variant="outlined"
               />
             </Grid>
             <Grid item style={{ marginTop: 20 }}>
-              <Button variant="contained" onClick={handleFormSubmit}>
+              <Button variant="contained" className="modalbutton" onClick={handleFormSubmit}>
                 Update Info
               </Button>
             </Grid>

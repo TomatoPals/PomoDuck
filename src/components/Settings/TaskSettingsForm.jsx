@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 // import FormLabel from "@material-ui/core/FormLabel";
-import "../../assets/styles/styles.css";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import Button from "@material-ui/core/Button";
@@ -13,7 +12,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
 
-export default function SettingsForms(props) {
+export default function TaskSettingsForm(props) {
   const storeState = useSelector((state) => state);
   const [estimatedPoms, setEstimatedPoms] = useState({
     poms: ""
@@ -23,19 +22,19 @@ export default function SettingsForms(props) {
   const [inputState, setInputState] = useState({
     taskName: ""
   });
+
   const handleUpdate = () => {
     if (inputState.taskName.length === 0) {
       alert("Task Name can not be empty");
     } else {
-      updateTask();
+      updateTask(props.currentItem.id, inputState.taskName, estimatedPoms.poms, false);
       props.handleClose();
     }
   };
 
-  const updateTask = async () => {
-    console.log("props.currentItem.id:", props.currentItem.id);
+  const updateTask = async (id, taskName, estimatedPoms, isComplete) => {
     try {
-      await API.taskUpdate(props.currentItem.id, inputState.taskName, estimatedPoms.poms, isComplete);
+      await API.taskUpdate(id, taskName, estimatedPoms, isComplete);
       return store.dispatch({ type: UPDATE_TASK, payload: [] });
     } catch (error) {
       console.log(error);
@@ -86,17 +85,13 @@ export default function SettingsForms(props) {
     setEstimatedPoms({ poms: event.target.value });
   };
   const handleComplete = () => {
-    SetIsComplete(true);
-    updateTask();
+    updateTask(props.currentItem.id, inputState.taskName, estimatedPoms.poms, true);
     props.handleClose();
   };
-
-  console.log("storeState.tasklist:", storeState.taskList);
 
   return (
     <FormControl component="fieldset">
       <h1 id="TaskSetting">Task Settings</h1>
-      {/* <FormLabel component="legend">Task Settings</FormLabel> */}
       <FormGroup>
         <TextField
           label="Task Name"
@@ -114,14 +109,14 @@ export default function SettingsForms(props) {
           <MenuItem value={4}>4</MenuItem>
           <MenuItem value={5}>5</MenuItem>
         </Select>
-        <Grid item style={{ marginTop: 20 }}>
+        <Grid style={{ marginTop: 20 }}>
           <Button variant="contained" onClick={handleUpdate}>
             Update
           </Button>
-          <Button variant="contained" onClick={handleDelete} item style={{ marginLeft: 20 }}>
+          <Button variant="contained" onClick={handleDelete} style={{ marginLeft: 20 }}>
             Delete
           </Button>
-          <Button variant="contained" onClick={handleComplete} item style={{ marginLeft: 20 }}>
+          <Button variant="contained" onClick={handleComplete} style={{ marginLeft: 20 }}>
             Complete
           </Button>
         </Grid>

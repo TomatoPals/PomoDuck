@@ -15,7 +15,7 @@ import { DELETE_ALL_TASKS } from "../../actions/TaskActions";
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
-    width: 400,
+    // width: 400,
     // backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4, 6, 4),
@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 20,
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    [theme.breakpoints.down(750)]: {
+      width: "70%" // secondary
+    }
   }
 }));
 
