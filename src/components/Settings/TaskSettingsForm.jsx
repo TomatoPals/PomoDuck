@@ -18,6 +18,8 @@ export default function SettingsForms(props) {
   const [estimatedPoms, setEstimatedPoms] = useState({
     poms: ""
   });
+  const [isComplete, SetIsComplete] = useState(false);
+
   const [inputState, setInputState] = useState({
     taskName: ""
   });
@@ -33,7 +35,7 @@ export default function SettingsForms(props) {
   const updateTask = async () => {
     console.log("props.currentItem.id:", props.currentItem.id);
     try {
-      await API.taskUpdate(props.currentItem.id, inputState.taskName, estimatedPoms.poms);
+      await API.taskUpdate(props.currentItem.id, inputState.taskName, estimatedPoms.poms, isComplete);
       return store.dispatch({ type: UPDATE_TASK, payload: [] });
     } catch (error) {
       console.log(error);
@@ -84,19 +86,12 @@ export default function SettingsForms(props) {
     setEstimatedPoms({ poms: event.target.value });
   };
   const handleComplete = () => {
-    completeTask();
+    SetIsComplete(true);
+    updateTask();
     props.handleClose();
   };
 
   console.log("storeState.tasklist:", storeState.taskList);
-
-  const completeTask = async () => {
-    store.dispatch({ type: UPDATE_TASK, payload: true });
-    // try {
-    // } catch (error) {
-    //   console.log(error);
-    // }
-  };
 
   return (
     <FormControl component="fieldset">

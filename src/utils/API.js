@@ -148,10 +148,10 @@ const PomoDuckBackendAPIs = {
       console.log(error);
     }
   },
-  taskUpdate: async (taskID, taskName, estimatedPoms) => {
+  taskUpdate: async (taskID, taskName, estimatedPoms, isComplete) => {
     const BASEURL = `http://${envRoutes.taskupdate}${taskID}`;
     try {
-      const request = await axios.put(BASEURL, { taskName, estimatedPoms });
+      const request = await axios.put(BASEURL, { taskName, estimatedPoms, isComplete });
       return request;
     } catch (error) {
       console.log(error);
