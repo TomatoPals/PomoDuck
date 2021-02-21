@@ -4,6 +4,7 @@ import ShortBreak from "./ShortBreak";
 import LongBreak from "./LongBreak";
 import { Grid, Button } from "@material-ui/core";
 import { useSelector } from "react-redux";
+import Typography from "@material-ui/core/Typography";
 
 const Timer = () => {
   const [timerState, setTimerState] = useState({
@@ -54,7 +55,16 @@ const Timer = () => {
                 <Button variant="contained" onClick={handleLongClick}>
                   Long Break
                 </Button>
+                {currentTask ? (
+                  <Typography variant="subtitle1" style={{ marginTop: 20 }}>
+                    Currently working on
+                  </Typography>
+                ) : (
+                  <> </>
+                )}
+
                 <div className="Countdown-label">{currentTask}</div>
+
                 {timerState.pomo ? <Countdown /> : timerState.short ? <ShortBreak /> : <LongBreak />}
               </div>
             </div>
