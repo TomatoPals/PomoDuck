@@ -7,6 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
+import tom from "../../images/pomoduck_Stats.png";
+import { useMediaQuery } from "react-responsive";
 
 function SnackAlert(props) {
   return <Alert elevation={6} variant="filled" {...props} />;
@@ -20,15 +22,13 @@ const useStyles = makeStyles((theme) => ({
     }
   }
 }));
-// import CreateUser from "../../components/CreateUser/CreateUser";
 const HomePage = (props) => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 750px)"
+  });
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
-  // const handleClick = () => {
-  //   // props.handleFormSubmit();
-  //   setOpen(true);
-  // };
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -66,9 +66,18 @@ const HomePage = (props) => {
           </div>
           <div className="instructions">
             <h3>What is PomoDuck?</h3>
-            {/* prettier-ignore */}
             <p>
-          Pomoduck is a customizable pomodoro timer that works on desktop and mobile browser. The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. This app is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.
+              {isDesktopOrLaptop && <img src={tom} className="pImage" alt="Stats Duck" />}
+              Pomoduck is a customizable pomodoro timer that works on desktop and mobile browser. The aim of this
+              app is to help you focus on any task you are working on, such as study, writing, or coding. This app
+              is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.
+              <br></br>
+              <br></br>
+              Also implemented is the duck which is inspired by <strong>"Rubber Duck Debugging"</strong>". This is
+              a programming methodology where you explain the task you are performing from the goals you are trying
+              to achieve to all the details in your code, line-by-line. By describing the problem the programmer
+              force themselves to express their ideas in a clear way and go through all the details. This
+              explanation is called “telling the duck your problem”.
             </p>
           </div>
         </div>
@@ -76,22 +85,12 @@ const HomePage = (props) => {
       <footer>
         <Footer />
       </footer>
-
-      {/* <CreateUser /> */}
-      {/* <Grid container sm={12} alignItems="center" justify="center">
-        <Grid item xs={12} sm={12} md={10} lg={8}>
-        </Grid>
-      </Grid> */}
       <div className={classes.root}>
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <SnackAlert onClose={handleClose} severity="success">
             {userInfo.loggedIn ? "Login Successful!" : "Logout Succesful!"}
           </SnackAlert>
         </Snackbar>
-        {/* <Alert severity="error">This is an error message!</Alert>
-      <Alert severity="warning">This is a warning message!</Alert>
-      <Alert severity="info">This is an information message!</Alert> */}
-        {/* <SnackAlert severity="success">This is a success message!</SnackAlert> */}
       </div>
     </>
   );

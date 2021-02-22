@@ -6,7 +6,7 @@ const PomoDuckBackendAPIs = {
   // createUser is the
   signup: async (firstName, lastName, email, password) => {
     // chooses url on prod vs dev
-    const BASEURL = `http://${envRoutes.signup}`;
+    const BASEURL = `${envRoutes.signup}`;
 
     try {
       const request = await axios.post(BASEURL, {
@@ -21,7 +21,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   getuser: async (userID) => {
-    const BASEURL = `http://${envRoutes.getuser}${userID}`;
+    const BASEURL = `${envRoutes.getuser}${userID}`;
     try {
       const request = await axios.get(BASEURL);
       return request;
@@ -30,7 +30,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   remove: async (userID) => {
-    const BASEURL = `http://${envRoutes.remove}${userID}`;
+    const BASEURL = `${envRoutes.remove}${userID}`;
     try {
       const request = await axios.delete(BASEURL);
       return request;
@@ -39,7 +39,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   updateTotalUserMinutes: async (userID, totalPomSeconds, totalSmallBreakSeconds, totalBigBreakSeconds) => {
-    const BASEURL = `http://${envRoutes.update}${userID}`;
+    const BASEURL = `${envRoutes.update}${userID}`;
     try {
       const request = await axios.put(BASEURL, {
         totalPomSeconds,
@@ -52,7 +52,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   updateUserProfile: async (userID, firstName, lastName, email, password) => {
-    const BASEURL = `http://${envRoutes.updateprofile}${userID}`;
+    const BASEURL = `${envRoutes.updateprofile}${userID}`;
     try {
       const request = await axios.put(BASEURL, {
         firstName,
@@ -66,7 +66,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   updateDefaultTime: async (userID, pomTime, smallBreakTime, bigBreakTime) => {
-    const BASEURL = `http://${envRoutes.update}${userID}`;
+    const BASEURL = `${envRoutes.update}${userID}`;
     try {
       const request = await axios.put(BASEURL, {
         pomTime,
@@ -81,7 +81,7 @@ const PomoDuckBackendAPIs = {
 
   login: async (email, password) => {
     // chooses url on prod vs dev
-    const BASEURL = `http://${envRoutes.login}`;
+    const BASEURL = `${envRoutes.login}`;
 
     try {
       const request = await axios.post(BASEURL, {
@@ -95,7 +95,7 @@ const PomoDuckBackendAPIs = {
   },
   logout: async () => {
     // chooses url on prod vs dev
-    const BASEURL = `http://${envRoutes.logout}`;
+    const BASEURL = `${envRoutes.logout}`;
 
     try {
       const request = await axios.get(BASEURL);
@@ -105,7 +105,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   creatTask: async (userId, taskName, estimatedPoms) => {
-    const BASEURL = `http://${envRoutes.createtask}`;
+    const BASEURL = `${envRoutes.createtask}`;
     try {
       const request = axios.post(BASEURL, {
         userId,
@@ -118,7 +118,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   taskUpdateMinutes: async (userID, pomMinutes, smallBreakMinutes, bigBreakMinutes) => {
-    const BASEURL = `http://${envRoutes.taskupdate}${userID}`;
+    const BASEURL = `${envRoutes.taskupdate}${userID}`;
     try {
       const request = axios.put(BASEURL, {
         pomMinutes,
@@ -131,7 +131,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   taskRemove: async (taskID) => {
-    const BASEURL = `http://${envRoutes.taskremove}${taskID}`;
+    const BASEURL = `${envRoutes.taskremove}${taskID}`;
     try {
       const request = await axios.delete(BASEURL);
       return request;
@@ -140,7 +140,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   findAllTasks: async (userId) => {
-    const BASEURL = `http://${envRoutes.findtasks}${userId}`;
+    const BASEURL = `${envRoutes.findtasks}${userId}`;
     try {
       const request = await axios.get(BASEURL);
       return request;
@@ -149,7 +149,7 @@ const PomoDuckBackendAPIs = {
     }
   },
   taskUpdate: async (taskID, taskName, estimatedPoms, isComplete) => {
-    const BASEURL = `http://${envRoutes.taskupdate}${taskID}`;
+    const BASEURL = `${envRoutes.taskupdate}${taskID}`;
     try {
       const request = await axios.put(BASEURL, { taskName, estimatedPoms, isComplete });
       return request;
