@@ -6,6 +6,9 @@ import { Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { Chart } from "react-google-charts";
 import StatsTable from "../../components/StatsTable/StatsTable";
+import tomSmall from "../../images/pomoduck_stats_smaller.png";
+import tom from "../../images/pomoduck_Stats.png";
+import { useMediaQuery } from "react-responsive";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SettingsModal() {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 750px)"
+  });
+
   const storeState = useSelector((state) => state);
   //This useEffect gets all of the users info after they are logged in
   //you can see their total stats on breaks, pomodoros with this
@@ -73,29 +80,37 @@ export default function SettingsModal() {
       >
         <div className={classes.paper} id="statsModal">
           <StatsTable stat={storeState.taskList.tasks} />
-
-          {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
-          <Grid item style={{ marginTop: 20 }}>
-            <Chart
-              width={"100vh"}
-              height={"50vh"}
-              chartType="PieChart"
-              loader={<div>Loading Chart</div>}
-              data={[
-                ["Works/Break", "Minutes per day"],
-                ["Long Breaks", calcTotalLongBreak()],
-                ["Short Breaks", calcShortBreak()],
-                ["Work", calcTotalWork()]
-              ]}
-              options={{
-                title: "Productivity",
-                // Just add this option
-                pieHole: 0.4
-              }}
-              rootProps={{ "data-testid": "3" }}
-            />
-
-            <Button variant="contained" className="modalbutton" onClick={handleClose}>
+          {/* container start */}
+          <Grid container spacing={3}>
+            {/* chart start */}
+            <Grid style={{ marginRight: -20, marginTop:20 }} xs={8}>
+              <Chart
+                width={"45vh"}
+                height={"40vh"}
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+                data={[
+                  ["Works/Break", "Minutes per day"],
+                  ["Long Breaks", calcTotalLongBreak()],
+                  ["Short Breaks", calcShortBreak()],
+                  ["Work", calcTotalWork()]
+                ]}
+                options={{
+                  title: "Productivity",
+                  // Just add this option
+                  pieHole: 0.4
+                }}
+                rootProps={{ "data-testid": "3" }}
+              />
+            </Grid>
+            {/* chart end */}
+            <Grid xs={4} style={{ marginTop: 125 }}>
+            {isDesktopOrLaptop && <img src={tom} alt="Stats Duck" />}
+              </Grid>
+          </Grid>
+          {/* containter end */}
+          <Grid style={{ marginTop: -20 }}>
+            <Button variant="contained" className="modalbutton" onClick={handleClose} style={{ marginTop: -50 }}>
               Close
             </Button>
           </Grid>
