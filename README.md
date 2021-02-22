@@ -34,7 +34,7 @@ Pomoduck is simple, responsive pomodoro timer for everyone. Anyone can sign up, 
 
 ## Installation
 
-Node.js is required in order to install Pomoduck-Frontend. Use a standard NPM install. Pomoduck is dependent on a backend node express application which can be found here - [Pomoduck-Backend](https://github.com/TomatoPals/PomoDuck-Backend) (You will need to provision your own MySQL).
+Node.js is required in order to install Pomoduck-Frontend. Use a standard NPM install. Pomoduck is dependent on a backend node express application which can be found here - [Pomoduck-Backend](https://github.com/TomatoPals/PomoDuck-Backend) (You will need to provision your own MySQL DB).
 
 ## Usage
 
