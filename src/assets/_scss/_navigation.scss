@@ -1,0 +1,105 @@
+.outside-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 40px;
+}
+
+#logo {
+  margin-left: 60px;
+  margin-top: 4px;
+}
+
+#logo > img {
+  height: 70px;
+}
+.flex-center-all {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
+}
+.contentContainer {
+  background-image: url("../../images/whitebackground-color.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+  margin-top: 50px;
+}
+
+.settingsIcon,
+.signupIcon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.taskIcon {
+  width: 100%;
+}
+.right-box {
+  display: flex;
+}
+
+.stats-button > span > svg {
+  margin-right: 10px;
+}
+
+
+// #toolbarStyles > div > div > button {
+//   min-width: 30px;
+// }
+#toolbarStyles button {
+  min-width: 30px;
+}
+
+.headernavigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+  /* header */
+  #appbarStyles {
+    height: 80px;
+  }
+
+  #logo {
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+
+  #logo > img {
+    height: 40px;
+  }
+
+  // .settingsIcon,
+  // .signupIcon {
+  //   margin-right: 0px;
+  // }
+
+  .settingsTitle,
+  .signupTitle,
+  .statsTitle {
+    display: none;
+  }
+
+  .right-box {
+    display: block;
+  }
+}
+
+// .makeStyles-paper-1:focus {
+:focus {
+  // outline: -webkit-focus-ring-color auto 1px;
+  // outline: red 1px;
+  /* outline-color: -webkit-focus-ring-color; */
+  // outline-color: rgb(255, 255, 255) !important;
+  // outline-style: auto;
+  // outline-width: 1px;
+  // border-radius: 20px;
+  outline: none;
+}

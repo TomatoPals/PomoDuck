@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+/* Barts added CSS for the timer */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App-title {
+  font-size: 50px;
+  padding: 25px 0;
+}
+
+@media (max-width: 900px) {
+  .Timers {
+    flex-direction: column;
+
+    align-items: center;
+  }
+}

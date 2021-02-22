@@ -1,0 +1,11 @@
+node_modules
+reportWebVitals.js
+setupTests.js
+src/pages/StatsPage/statsPage.jsx
+src/components/StatsTable/StatsTable.jsx
+/src/utils/GlobalState.js
+/src/reducers/
+/src/components/Timer/
+/src/components/Profile
+/src/components/Modal/UpdateTaskModal.jsx
+/src/components/StatsButton/StatsButton.jsx

@@ -3,27 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@material-ui/styles": "^4.11.3",
+    "@react-icons/all-files": "^4.1.0",
+    "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "nan": "^2.14.2",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-google-charts": "^3.0.15",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.2",
+    "react-responsive": "^8.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --ci --coverage && codecov",
-    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test": "react-scripts test",
+    "ci:test": "react-scripts test --ci --coverage && codecov",
+    "lint": "eslint --quiet",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -39,7 +50,10 @@
   },
   "devDependencies": {
     "codecov": "^3.8.1",
-    "nyc": "^15.1.0"
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
   },
   "jest": {
     "collectCoverageFrom": [
