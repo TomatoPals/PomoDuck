@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pomoduck-frontend
-          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v1.0.0-prod
+          image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v1.0.1-prod
           imagePullPolicy: Always
           ports:
             - containerPort: 80
