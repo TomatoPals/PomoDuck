@@ -110,13 +110,13 @@ export default function TaskSettingsForm(props) {
           <MenuItem value={5}>5</MenuItem>
         </Select>
         <Grid style={{ marginTop: 20 }}>
-          <Button variant="contained" onClick={handleUpdate}>
+          <Button className="modalbutton" variant="contained" onClick={handleUpdate}>
             Update
           </Button>
-          <Button variant="contained" onClick={handleDelete} style={{ marginLeft: 20 }}>
+          <Button className="modalbutton" variant="contained" onClick={handleDelete} style={{ marginLeft: 20 }}>
             Delete
           </Button>
-          <Button variant="contained" onClick={handleComplete} style={{ marginLeft: 20 }}>
+          <Button className="modalbutton" variant="contained" onClick={handleComplete} style={{ marginLeft: 20 }}>
             Complete
           </Button>
         </Grid>

@@ -75,25 +75,26 @@ export default function SettingsModal() {
           <StatsTable stat={storeState.taskList.tasks} />
 
           {/* <Grid item xs={12} sm={12} md={10} lg={8}> */}
-          <Chart
-            width={"100%"}
-            height={"80%"}
-            chartType="PieChart"
-            loader={<div>Loading Chart</div>}
-            data={[
-              ["Works/Break", "Minutes per day"],
-              ["Long Breaks", calcTotalLongBreak()],
-              ["Short Breaks", calcShortBreak()],
-              ["Work", calcTotalWork()]
-            ]}
-            options={{
-              title: "Productivity",
-              // Just add this option
-              pieHole: 0.4
-            }}
-            rootProps={{ "data-testid": "3" }}
-          />
           <Grid item style={{ marginTop: 20 }}>
+            <Chart
+              width={"100vh"}
+              height={"50vh"}
+              chartType="PieChart"
+              loader={<div>Loading Chart</div>}
+              data={[
+                ["Works/Break", "Minutes per day"],
+                ["Long Breaks", calcTotalLongBreak()],
+                ["Short Breaks", calcShortBreak()],
+                ["Work", calcTotalWork()]
+              ]}
+              options={{
+                title: "Productivity",
+                // Just add this option
+                pieHole: 0.4
+              }}
+              rootProps={{ "data-testid": "3" }}
+            />
+
             <Button variant="contained" className="modalbutton" onClick={handleClose}>
               Close
             </Button>
