@@ -97,8 +97,9 @@
   // outline: -webkit-focus-ring-color auto 1px;
   // outline: red 1px;
   /* outline-color: -webkit-focus-ring-color; */
-  outline-color: red !important;
-  outline-style: auto;
-  outline-width: 1px;
-  // outline-radius: ;
+  // outline-color: rgb(255, 255, 255) !important;
+  // outline-style: auto;
+  // outline-width: 1px;
+  // border-radius: 20px;
+  outline: none;
 }

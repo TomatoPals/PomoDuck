@@ -7,7 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
-import tom from "../../images/pomoduck_Stats.png";
+import tom from "../../images/PomoDuck_PomComputer.png";
+import duck from "../../images/pomoduck.png";
 import { useMediaQuery } from "react-responsive";
 
 function SnackAlert(props) {
@@ -73,6 +74,7 @@ const HomePage = (props) => {
               is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.
               <br></br>
               <br></br>
+              {isDesktopOrLaptop && <img src={duck} className="pImage" alt="Stats Duck" />}
               Also implemented is the duck which is inspired by <strong>"Rubber Duck Debugging"</strong>". This is
               a programming methodology where you explain the task you are performing from the goals you are trying
               to achieve to all the details in your code, line-by-line. By describing the problem the programmer
