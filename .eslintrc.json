@@ -10,15 +10,15 @@
   },
   "extends": [
     "eslint:recommended",
-    "prettier",
+    // "prettier",
     "react-app",
-    "react-app/jest",
-    "prettier/@typescript-eslint",
-    "prettier/babel",
-    "prettier/flowtype",
-    "prettier/prettier",
-    "prettier/react",
-    "prettier/standard"
+    "react-app/jest"
+    // "prettier/@typescript-eslint",
+    // "prettier/babel",
+    // "prettier/flowtype",
+    // "prettier/prettier",
+    // "prettier/react",
+    // "prettier/standard"
   ],
   "plugins": ["prettier"],
   "rules": {
