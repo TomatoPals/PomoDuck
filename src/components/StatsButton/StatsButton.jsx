@@ -83,7 +83,7 @@ export default function SettingsModal() {
           {/* container start */}
           <Grid container spacing={3}>
             {/* chart start */}
-            <Grid style={{ marginRight: -20, marginTop:20 }} xs={8}>
+            <Grid item style={{ marginRight: -20, marginTop: 20 }} xs={8}>
               <Chart
                 width={"45vh"}
                 height={"40vh"}
@@ -104,9 +104,9 @@ export default function SettingsModal() {
               />
             </Grid>
             {/* chart end */}
-            <Grid xs={4} style={{ marginTop: 125 }}>
-            {isDesktopOrLaptop && <img src={tom} alt="Stats Duck" />}
-              </Grid>
+            <Grid item xs={4} style={{ marginTop: 125 }}>
+              {isDesktopOrLaptop && <img src={tom} alt="Stats Duck" />}
+            </Grid>
           </Grid>
           {/* containter end */}
           <Grid style={{ marginTop: -20 }}>
