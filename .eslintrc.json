@@ -20,7 +20,7 @@
     // "prettier/react",
     // "prettier/standard"
   ],
-  "plugins": ["prettier"],
+  // "plugins": ["prettier"],
   "rules": {
     "array-callback-return": "error",
     "camelcase": "error",
@@ -42,12 +42,12 @@
     "no-var": "error",
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "endOfLine": "auto"
+    //   }
+    // ],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "vars-on-top": "error",
