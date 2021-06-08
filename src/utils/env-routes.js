@@ -17,18 +17,18 @@ module.exports = {
   },
   production: {
     // user
-    signup: "https://pomoduck.com/api/user/signup/",
-    getuser: "https://pomoduck.com/api/user/getuser/",
-    remove: "https://pomoduck.com/api/user/remove/",
-    update: "https://pomoduck.com/api/user/update/",
-    updateprofile: "https://pomoduck.com/api/user/updateprofile/",
-    login: "https://pomoduck.com/api/userSession/login/",
-    logout: "https://pomoduck.com/api/userSession/logout/",
+    signup: "https://pomoduck-backend.herokuapp.com/api/user/signup/",
+    getuser: "https://pomoduck-backend.herokuapp.com/api/user/getuser/",
+    remove: "https://pomoduck-backend.herokuapp.com/api/user/remove/",
+    update: "https://pomoduck-backend.herokuapp.com/api/user/update/",
+    updateprofile: "https://pomoduck-backend.herokuapp.com/api/user/updateprofile/",
+    login: "https://pomoduck-backend.herokuapp.com/api/userSession/login/",
+    logout: "https://pomoduck-backend.herokuapp.com/api/userSession/logout/",
     // task
-    createtask: "https://pomoduck.com/api/task/createtask/",
-    gettask: "https://pomoduck.com/api/task/gettask/",
-    taskremove: "https://pomoduck.com/api/task/taskremove/",
-    taskupdate: "https://pomoduck.com/api/task/taskupdate/",
-    findtasks: "https://pomoduck.com/api/task/findtasks/"
+    createtask: "https://pomoduck-backend.herokuapp.com/api/task/createtask/",
+    gettask: "https://pomoduck-backend.herokuapp.com/api/task/gettask/",
+    taskremove: "https://pomoduck-backend.herokuapp.com/api/task/taskremove/",
+    taskupdate: "https://pomoduck-backend.herokuapp.com/api/task/taskupdate/",
+    findtasks: "https://pomoduck-backend.herokuapp.com/api/task/findtasks/"
   }
 };
