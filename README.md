@@ -6,7 +6,7 @@
 
 ## Deployed
 
-Check us out here 👉 [Pomoduck](https://pomoduck.com/)
+Check us out here 👉 [Pomoduck](https://pomoduck-frontend.herokuapp.com/)
 
 ## Description
 
