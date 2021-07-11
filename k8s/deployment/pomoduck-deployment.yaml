@@ -16,6 +16,13 @@ spec:
         - name: pomoduck-frontend
           image: registry.digitalocean.com/pomoduck/pomoduck-frontend:v1.0.1-prod
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           ports:
             - containerPort: 80
           env:
