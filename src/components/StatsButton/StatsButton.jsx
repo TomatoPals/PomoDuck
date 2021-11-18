@@ -63,7 +63,7 @@ export default function SettingsModal() {
     <>
       <Button type="button" color="inherit" onClick={handleOpen}>
         <div className="settingsIcon">
-          <img src="/assets/icons/graph-white.png" alt="Logout" className="signupIcon" />
+          <img src="/Assets/icons/graph-white.png" alt="Logout" className="signupIcon" />
         </div>
         <div className="settingsTitle">Stats</div>
       </Button>
